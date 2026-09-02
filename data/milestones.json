@@ -1,0 +1,84 @@
+[
+  {
+    "id": "shannon-return",
+    "label": "Shannon returns from vacation",
+    "workstream": "Congress AI",
+    "type": "deadline",
+    "date": "2026-09-08"
+  },
+  {
+    "id": "legal-call-sep11",
+    "label": "Legal call -- abstract library data governance",
+    "workstream": "Congress AI",
+    "type": "deadline",
+    "date": "2026-09-11"
+  },
+  {
+    "id": "congress-ai-demo-sep15",
+    "label": "ESMO core planning team demo",
+    "workstream": "Congress AI",
+    "type": "deadline",
+    "date": "2026-09-15"
+  },
+  {
+    "id": "mid-sept-f2f",
+    "label": "Congress Excellence mid-Sept F2F",
+    "workstream": "Congress AI",
+    "type": "milestone",
+    "date": "2026-09-15",
+    "end_date": "2026-09-19"
+  },
+  {
+    "id": "linda-meeting",
+    "label": "Linda intro meeting with Shannon",
+    "workstream": "Congress AI",
+    "type": "deadline",
+    "date": "2026-09-24"
+  },
+  {
+    "id": "lba-release",
+    "label": "ESMO LBAs available / demo kickoff",
+    "workstream": "Congress AI",
+    "type": "milestone",
+    "date": "2026-09-25"
+  },
+  {
+    "id": "asco-retrospective",
+    "label": "ASCO retrospective experiment target",
+    "workstream": "Asset Reporting",
+    "type": "deadline",
+    "date": "2026-09-30"
+  },
+  {
+    "id": "genesis-first-release",
+    "label": "Sentiment Overview first release (target)",
+    "workstream": "Genesis",
+    "type": "milestone",
+    "date": "2026-10-01",
+    "end_date": "2026-10-15"
+  },
+  {
+    "id": "sep-integration-poc",
+    "label": "SEP integration POC (target)",
+    "workstream": "MRL Debrief",
+    "type": "milestone",
+    "date": "2026-09-25",
+    "end_date": "2026-10-10"
+  },
+  {
+    "id": "esmo-2026",
+    "label": "ESMO 2026",
+    "workstream": "Congress AI",
+    "type": "milestone",
+    "date": "2026-10-23",
+    "end_date": "2026-10-27"
+  },
+  {
+    "id": "aha-2026",
+    "label": "AHA 2026",
+    "workstream": "Congress AI",
+    "type": "milestone",
+    "date": "2026-11-08",
+    "end_date": "2026-11-12"
+  }
+]

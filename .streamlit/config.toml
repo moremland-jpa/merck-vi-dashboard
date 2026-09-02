@@ -1,0 +1,12 @@
+[theme]
+primaryColor = "#E37222"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#EDE8C4"
+textColor = "#002D36"
+font = "sans serif"
+
+[ui]
+hideTopBar = true
+
+[server]
+runOnSave = true
