@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 
@@ -226,6 +227,108 @@ def scan_documents() -> pd.DataFrame:
     df = pd.DataFrame(records)
     df.sort_values("Modified", ascending=False, inplace=True, na_position="last")
     return df
+
+
+def _find_action_section(raw: str) -> tuple[int, int] | None:
+    lines = raw.splitlines(keepends=True)
+
+    body_start = 0
+    if lines and lines[0].strip() == "---":
+        for i, line in enumerate(lines[1:], 1):
+            if line.strip() == "---":
+                body_start = i + 1
+                break
+
+    section_start = None
+    for i in range(body_start, len(lines)):
+        if lines[i].startswith("## "):
+            header = lines[i][3:].strip().lower()
+            if any(
+                kw in header
+                for kw in ["action item", "deliverable", "pending update", "recommendation"]
+            ):
+                section_start = i + 1
+                break
+
+    if section_start is None:
+        for i in range(body_start, len(lines)):
+            if lines[i].startswith("## ") and "action" in lines[i].lower():
+                section_start = i + 1
+                break
+
+    if section_start is None:
+        return None
+
+    section_end = len(lines)
+    for i in range(section_start, len(lines)):
+        if lines[i].startswith("## "):
+            section_end = i
+            break
+
+    return section_start, section_end
+
+
+def _rebuild_action_line(original_line: str, item: dict[str, str]) -> str:
+    owner = item.get("owner", "").strip()
+    desc = item.get("description", "").strip()
+    done = item.get("status", "") == "Done"
+
+    if " -- " in desc:
+        head, tail = desc.split(" -- ", 1)
+    else:
+        head, tail = desc, ""
+
+    bold = f"{owner}: {head}" if owner else head
+
+    stripped = original_line.lstrip()
+    leading = original_line[: len(original_line) - len(stripped)]
+
+    num_match = re.match(r"(\d+)\.\s+", stripped)
+    prefix = f"{num_match.group(1)}. " if num_match else "- "
+
+    if done:
+        body = f"~~**{bold}**~~"
+    else:
+        body = f"**{bold}**"
+
+    if tail:
+        body += f" -- {tail}"
+
+    return f"{leading}{prefix}{body}\n"
+
+
+def save_action_items(workstream: str, items: list[dict[str, str]]) -> bool:
+    cfg = WORKSTREAMS.get(workstream)
+    if not cfg:
+        return False
+
+    path = MEMORY_DIR / cfg["status_file"]
+    raw = _read_file_safe(path)
+    if not raw:
+        return False
+
+    bounds = _find_action_section(raw)
+    if not bounds:
+        return False
+
+    section_start, section_end = bounds
+    lines = raw.splitlines(keepends=True)
+
+    new_section: list[str] = []
+    item_idx = 0
+
+    for i in range(section_start, section_end):
+        line = lines[i]
+        m = parsers._ACTION_PATTERN.match(line) or parsers._NUMBERED_PATTERN.match(line)
+        if m and item_idx < len(items):
+            new_section.append(_rebuild_action_line(line, items[item_idx]))
+            item_idx += 1
+        else:
+            new_section.append(line)
+
+    new_lines = lines[:section_start] + new_section + lines[section_end:]
+    path.write_text("".join(new_lines), encoding="utf-8")
+    return True
 
 
 def get_workstream_doc_count(workstream: str) -> int:

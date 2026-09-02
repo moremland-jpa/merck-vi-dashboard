@@ -327,7 +327,7 @@ def render(workstream: str) -> None:
 
             if not pending.empty:
                 st.markdown(f"### Pending ({len(pending)})")
-                st.data_editor(
+                edited = st.data_editor(
                     pending[["owner", "description"]],
                     use_container_width=True,
                     hide_index=True,
@@ -340,6 +340,29 @@ def render(workstream: str) -> None:
                         ),
                     },
                 )
+
+                orig = pending[["owner", "description"]].reset_index(drop=True)
+                has_changes = not edited.fillna("").equals(orig.fillna(""))
+                if has_changes:
+                    if st.button("Save changes", key=f"save_{workstream}", type="primary"):
+                        updated = list(items)
+                        p_idx = 0
+                        for j, item in enumerate(updated):
+                            if item["status"] == "Pending" and p_idx < len(edited):
+                                updated[j] = {
+                                    **item,
+                                    "owner": str(edited.iloc[p_idx]["owner"]),
+                                    "description": str(edited.iloc[p_idx]["description"]),
+                                }
+                                p_idx += 1
+                        if utils.save_action_items(workstream, updated):
+                            st.success("Changes saved.")
+                            load_workstream_status = utils.load_workstream_status
+                            load_workstream_status.clear()
+                            utils.load_all_statuses.clear()
+                            st.rerun()
+                        else:
+                            st.error("Failed to save changes.")
 
             if not done.empty:
                 st.markdown(f"### Completed ({len(done)})")

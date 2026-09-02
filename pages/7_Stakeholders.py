@@ -35,8 +35,8 @@ with col1:
     search = st.text_input("Search", placeholder="Name, role, or keyword...")
 
 with col2:
-    org_options = ["All"] + sorted(df["Organization"].unique().tolist())
-    org_filter = st.selectbox("Organization", org_options)
+    org_options = sorted(df["Organization"].unique().tolist())
+    org_filter = st.multiselect("Organization", org_options)
 
 with col3:
     ws_options = sorted(
@@ -54,8 +54,8 @@ if search:
     )
     filtered = filtered[mask]
 
-if org_filter != "All":
-    filtered = filtered[filtered["Organization"] == org_filter]
+if org_filter:
+    filtered = filtered[filtered["Organization"].isin(org_filter)]
 
 if ws_filter:
     mask = filtered["Workstreams"].apply(
