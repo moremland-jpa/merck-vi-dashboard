@@ -10,6 +10,7 @@ NAV_ITEMS = [
     ("Asset Reporting", "pages/4_Asset_Reporting.py"),
     ("Calendar", "pages/5_Calendar.py"),
     ("Stakeholders", "pages/7_Stakeholders.py"),
+    ("Process", "pages/8_Process.py"),
 ]
 
 
