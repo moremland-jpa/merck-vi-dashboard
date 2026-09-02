@@ -3,5 +3,3 @@ pandas
 plotly
 pyyaml
 streamlit-cookies-controller
-anthropic
-python-docx
