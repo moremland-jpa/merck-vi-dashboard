@@ -1,19 +1,28 @@
 from __future__ import annotations
 
+import hashlib
 import hmac
 
 import streamlit as st
+from streamlit_cookies_controller import CookieController
+
+_COOKIE_NAME = "merck_vi_auth"
+_COOKIE_MAX_AGE = 30 * 24 * 60 * 60  # 30 days
+
+
+def _expected_token() -> str:
+    pw = st.secrets.get("password", "")
+    return hashlib.sha256(f"merck_vi_{pw}".encode()).hexdigest()[:24]
 
 
 def check_password() -> bool:
-    """Gate the app behind a password. Returns True if authenticated."""
-    if "authenticated" not in st.session_state:
-        st.session_state.authenticated = False
-
-    if st.session_state.authenticated:
+    if "password" not in st.secrets:
         return True
 
-    if "password" not in st.secrets:
+    controller = CookieController()
+
+    token = controller.get(_COOKIE_NAME)
+    if token == _expected_token():
         return True
 
     st.markdown(
@@ -48,7 +57,7 @@ def check_password() -> bool:
 
     if st.button("Sign in", type="primary"):
         if hmac.compare_digest(password, st.secrets["password"]):
-            st.session_state.authenticated = True
+            controller.set(_COOKIE_NAME, _expected_token(), max_age=_COOKIE_MAX_AGE)
             st.rerun()
         else:
             st.error("Incorrect password.")
