@@ -29,6 +29,18 @@ def check_password() -> bool:
         """
         <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:wght@400;600&display=swap');
+        [data-testid="stSidebarNav"] li:first-child {
+            display: none !important;
+        }
+        [data-testid="stSidebarNav"]::before {
+            content: "Merck V&I";
+            display: block;
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #004153;
+            padding: 0.25rem 0.75rem 0.5rem;
+        }
         .login-box {
             max-width: 400px;
             margin: 4rem auto;
