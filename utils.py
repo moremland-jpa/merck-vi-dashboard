@@ -8,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 import streamlit as st
 
+import db
 import parsers
 
 APP_DIR = Path(__file__).parent
@@ -88,13 +89,24 @@ def load_workstream_status(key: str) -> dict:
     raw = _read_file_safe(path)
     body = parsers.strip_frontmatter(raw)
 
+    base_items = parsers.extract_action_items(body)
+    base_hash = db.hash_items(base_items)
+
+    overlay = db.load_action_overlay(key)
+    if overlay and overlay.get("base_hash") == base_hash:
+        action_items = overlay["items"]
+    else:
+        action_items = base_items
+
     return {
         "name": key,
         "description": fm.get("description", ""),
         "modified": fm.get("modified", ""),
         "current_state": parsers.extract_current_state(body),
         "key_developments": parsers.extract_key_developments(body),
-        "action_items": parsers.extract_action_items(body),
+        "action_items": action_items,
+        "base_action_items": base_items,
+        "action_items_base_hash": base_hash,
         "open_questions": parsers.extract_open_questions(body),
         "raw_body": body,
     }
@@ -297,7 +309,12 @@ def _rebuild_action_line(original_line: str, item: dict[str, str]) -> str:
     return f"{leading}{prefix}{body}\n"
 
 
-def save_action_items(workstream: str, items: list[dict[str, str]]) -> bool:
+def save_action_items(
+    workstream: str, items: list[dict[str, str]], base_hash: str = ""
+) -> bool:
+    if db.is_connected() and base_hash:
+        return db.save_action_overlay(workstream, items, base_hash)
+
     cfg = WORKSTREAMS.get(workstream)
     if not cfg:
         return False
