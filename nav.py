@@ -8,6 +8,7 @@ NAV_ITEMS = [
     ("Genesis", "pages/2_Genesis.py"),
     ("MRL Debrief", "pages/3_MRL_Debrief.py"),
     ("Asset Reporting", "pages/4_Asset_Reporting.py"),
+    ("Action Items", "pages/6_Action_Items.py"),
     ("Calendar", "pages/5_Calendar.py"),
     ("Stakeholders", "pages/7_Stakeholders.py"),
 ]

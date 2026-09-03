@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from datetime import date
+
 import pandas as pd
 import streamlit as st
 
@@ -7,6 +9,115 @@ import brand
 import db
 import parsers
 import utils
+
+
+def _normalize_items(items: list[dict]) -> list[dict]:
+    out = []
+    for it in items:
+        out.append({
+            "owner": it.get("owner", ""),
+            "description": it.get("description", ""),
+            "status": it.get("status", "Pending"),
+            "completed_on": it.get("completed_on", ""),
+            "notes": it.get("notes", ""),
+        })
+    return out
+
+
+_PENDING_COLS = {
+    "done": st.column_config.CheckboxColumn("", width=50, default=False),
+    "owner": st.column_config.TextColumn("Owner", width=120),
+    "description": st.column_config.TextColumn("Description", width="large"),
+    "notes": st.column_config.TextColumn("Notes", width="medium"),
+}
+
+_DONE_COLS = {
+    "owner": st.column_config.TextColumn("Owner", width=120),
+    "description": st.column_config.TextColumn("Description", width="large"),
+    "notes": st.column_config.TextColumn("Notes", width="medium"),
+    "completed_on": st.column_config.TextColumn("Completed", width=100),
+}
+
+
+def _render_action_items(workstream: str, ws: dict) -> None:
+    items = _normalize_items(ws.get("action_items", []))
+    base_hash = ws.get("action_items_base_hash", "")
+    has_overlay = (
+        db.is_connected()
+        and items != _normalize_items(ws.get("base_action_items", items))
+    )
+
+    if not items:
+        st.info("No structured action items found. Check the raw status below.")
+        with st.expander("Raw status content"):
+            st.markdown(ws.get("raw_body", ""))
+        return
+
+    df = pd.DataFrame(items)
+    pending = df[df["status"] == "Pending"].reset_index(drop=True)
+    done = df[df["status"] == "Done"].reset_index(drop=True)
+
+    if not pending.empty:
+        st.markdown(f"### Pending ({len(pending)})")
+
+        pending_display = pending[["owner", "description", "notes"]].copy()
+        pending_display.insert(0, "done", False)
+
+        edited = st.data_editor(
+            pending_display,
+            use_container_width=True,
+            hide_index=True,
+            num_rows="fixed",
+            key=f"pending_{workstream}",
+            column_config=_PENDING_COLS,
+        )
+
+        has_changes = not edited.equals(pending_display)
+        if has_changes:
+            if st.button("Save changes", key=f"save_{workstream}", type="primary"):
+                updated = list(items)
+                p_idx = 0
+                today = date.today().isoformat()
+                for j, item in enumerate(updated):
+                    if item["status"] == "Pending" and p_idx < len(edited):
+                        row = edited.iloc[p_idx]
+                        marking_done = bool(row["done"])
+                        updated[j] = {
+                            **item,
+                            "owner": str(row["owner"]),
+                            "description": str(row["description"]),
+                            "notes": str(row["notes"] if pd.notna(row["notes"]) else ""),
+                            "status": "Done" if marking_done else "Pending",
+                            "completed_on": today if marking_done else "",
+                        }
+                        p_idx += 1
+                if utils.save_action_items(workstream, updated, base_hash):
+                    st.success("Changes saved.")
+                    utils.load_workstream_status.clear()
+                    utils.load_all_statuses.clear()
+                    st.rerun()
+                else:
+                    st.error("Failed to save changes.")
+
+    if not done.empty:
+        st.markdown(f"### Completed ({len(done)})")
+        st.dataframe(
+            done[["owner", "description", "notes", "completed_on"]],
+            use_container_width=True,
+            hide_index=True,
+            column_config=_DONE_COLS,
+        )
+
+    if has_overlay:
+        if st.button(
+            "Reset to source",
+            key=f"reset_{workstream}",
+            help="Discard cloud edits and reload from memory files",
+        ):
+            db.clear_action_overlay(workstream)
+            utils.load_workstream_status.clear()
+            utils.load_all_statuses.clear()
+            st.rerun()
 
 _STATUS_COLORS = {
     "Blocked": ("#DC2626", "#FEE2E2"),
@@ -320,93 +431,7 @@ def render(workstream: str) -> None:
                 st.markdown(f"- {q}")
 
     with tab_actions:
-        items = ws.get("action_items", [])
-        base_hash = ws.get("action_items_base_hash", "")
-        has_overlay = (
-            db.is_connected()
-            and items != ws.get("base_action_items", items)
-        )
-
-        if items:
-            df = pd.DataFrame(items)
-            pending = df[df["status"] == "Pending"].reset_index(drop=True)
-            done = df[df["status"] == "Done"].reset_index(drop=True)
-
-            if not pending.empty:
-                st.markdown(f"### Pending ({len(pending)})")
-
-                pending_display = pending[["owner", "description"]].copy()
-                pending_display.insert(0, "done", False)
-
-                edited = st.data_editor(
-                    pending_display,
-                    use_container_width=True,
-                    hide_index=True,
-                    num_rows="fixed",
-                    key=f"pending_{workstream}",
-                    column_config={
-                        "done": st.column_config.CheckboxColumn(
-                            "Done", width="small", default=False
-                        ),
-                        "owner": st.column_config.TextColumn("Owner", width="small"),
-                        "description": st.column_config.TextColumn(
-                            "Description", width="large"
-                        ),
-                    },
-                )
-
-                has_changes = not edited.equals(pending_display)
-                if has_changes:
-                    if st.button("Save changes", key=f"save_{workstream}", type="primary"):
-                        updated = list(items)
-                        p_idx = 0
-                        for j, item in enumerate(updated):
-                            if item["status"] == "Pending" and p_idx < len(edited):
-                                row = edited.iloc[p_idx]
-                                new_status = "Done" if row["done"] else "Pending"
-                                updated[j] = {
-                                    **item,
-                                    "owner": str(row["owner"]),
-                                    "description": str(row["description"]),
-                                    "status": new_status,
-                                }
-                                p_idx += 1
-                        if utils.save_action_items(workstream, updated, base_hash):
-                            st.success("Changes saved.")
-                            utils.load_workstream_status.clear()
-                            utils.load_all_statuses.clear()
-                            st.rerun()
-                        else:
-                            st.error("Failed to save changes.")
-
-            if not done.empty:
-                st.markdown(f"### Completed ({len(done)})")
-                st.dataframe(
-                    done[["owner", "description"]],
-                    use_container_width=True,
-                    hide_index=True,
-                    column_config={
-                        "owner": st.column_config.TextColumn("Owner", width="small"),
-                        "description": st.column_config.TextColumn(
-                            "Description", width="large"
-                        ),
-                    },
-                )
-
-            if has_overlay:
-                if st.button(
-                    "Reset to source",
-                    key=f"reset_{workstream}",
-                    help="Discard cloud edits and reload from memory files",
-                ):
-                    db.clear_action_overlay(workstream)
-                    utils.load_workstream_status.clear()
-                    utils.load_all_statuses.clear()
-                    st.rerun()
-        else:
-            st.info("No structured action items found. Check the raw status below.")
-            with st.expander("Raw status content"):
-                st.markdown(ws.get("raw_body", ""))
+        _render_action_items(workstream, ws)
 
     with tab_people:
         people = utils.load_stakeholders()

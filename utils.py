@@ -155,7 +155,16 @@ def load_meeting_cadence() -> list[dict]:
 
     meetings: list[dict] = []
     for name, content in meeting_sections.items():
-        meeting: dict[str, str] = {"name": name}
+        concluded = any(
+            kw in name.upper() for kw in ("CONCLUDED", "COMPLETED")
+        )
+        for line in content.splitlines():
+            if line.strip().startswith("- **Status:**"):
+                status_text = line.split(":**", 1)[1].upper()
+                if any(kw in status_text for kw in ("ENDED", "CONCLUDED", "COMPLETED")):
+                    concluded = True
+
+        meeting: dict[str, str] = {"name": name, "concluded": concluded}
         for line in content.splitlines():
             stripped = line.strip()
             if stripped.startswith("- **Cadence:**"):

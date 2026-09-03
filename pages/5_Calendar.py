@@ -84,6 +84,23 @@ if milestones:
         )
         fig.update_yaxes(autorange="reversed")
 
+        tasks = [d["Task"] for d in timeline_data]
+        for i in range(len(tasks)):
+            if i % 2 == 0:
+                fig.add_hrect(
+                    y0=i - 0.5,
+                    y1=i + 0.5,
+                    fillcolor="#F5F7F8",
+                    layer="below",
+                    line_width=0,
+                )
+            fig.add_hline(
+                y=i + 0.5,
+                line_color="#E0E0E0",
+                line_width=0.5,
+                layer="below",
+            )
+
         st.plotly_chart(fig, use_container_width=True)
     else:
         st.info("No timeline data matches the selected filters.")
@@ -144,6 +161,7 @@ if meetings:
         cadence = m.get("cadence", "")
         attendees = m.get("attendees", "")
         covers = m.get("covers", "")
+        concluded = m.get("concluded", False)
 
         body = ""
         if cadence:
@@ -153,8 +171,16 @@ if meetings:
         if attendees:
             body += f'<p class="meta-text"><strong>Attendees:</strong> {attendees}</p>'
 
+        if concluded:
+            border_color = "#B0B0B0"
+            extra_style = "background:#F0F0F0; opacity:0.7;"
+        else:
+            border_color = brand.CYAN
+            extra_style = ""
+
         cards_html += (
-            f'<div class="card" style="border-left-color:{brand.CYAN}; '
+            f'<div class="card" style="border-left-color:{border_color}; '
+            f'{extra_style}'
             f'flex:1 1 calc(33.33% - 1rem); min-width:220px;">'
             f"<h3>{m.get('name', 'Meeting')}</h3>"
             f"{body}"

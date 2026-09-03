@@ -1,11 +1,11 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- first release = Sentiment Overview, Figma V3 in progress. Matt has Databricks access (big win), working on table data view. Feature requirements delivered to working team ~Aug 19. Ulf departed. Genesis Validation series ended; Matt joining Core Team. As of Sep 2, 2026."
+description: "Genesis Sentiment 2.0 -- first release = Sentiment Overview, Figma V3 in progress. Matt has Databricks access (big win), working on table data view. Feature requirements delivered to working team ~Aug 19. Ulf departed. Genesis Validation series ended; Matt now on Core Team invites. As of Sep 3, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-02T14:46:12.649Z
+  modified: 2026-09-03T17:23:30.510Z
 ---
 
 ## Current State (Aug 31, 2026)
@@ -41,7 +41,7 @@ metadata:
 
 **Feature requirements delivered** to the Genesis working team (Michal, Ulf, Yun) approximately Aug 19 (~2 weeks ago). High-level features requirement with user research pull quotes.
 
-**Genesis Validation weekly series ended.** Matt has been asked to join the Genesis Core Team meetings -- need to get invite from Patrick.
+**Genesis Validation weekly series ended.** Matt now on Genesis Core Team meeting invites (as of Sep 3).
 
 ## Stakeholder Buy-in (Strong)
 
@@ -102,7 +102,7 @@ Key shifts from the user feedback session with Caitlin, Kristen, Gem, Adi, Ted:
 6. ~~Databricks access for Matt~~ DONE (Matt has access as of Sep 2). Working on table data view (minor technical hurdle).
 7. **Matt offered working session with Gem** on Insights Coach Agent (Studio/node config issues)
 8. **Get access to insights data in Databricks** -- Matt has platform access, need actual table/data view
-9. **Get invite from Patrick** for Genesis Core Team meetings (replacing Validation series)
+9. ~~**Get invite from Patrick** for Genesis Core Team meetings (replacing Validation series)~~ DONE (Matt on invites as of Sep 3)
 
 ## Insights Coach Agent (Gem Roy)
 

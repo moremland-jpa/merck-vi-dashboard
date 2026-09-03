@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-02T14:46:34.950Z
+  modified: 2026-09-03T17:23:35.809Z
 ---
 
 ## Recurring Meeting Series
@@ -30,8 +30,8 @@ metadata:
 - **Transcript pattern:** `Genesis Validation_ weekly touchpoint YYYY MM DD.docx`
 
 ### Genesis Core Team (NEW)
-- **Cadence:** TBD (Matt needs invite from Patrick)
-- **Attendees:** TBD (Matt asked to join)
+- **Cadence:** TBD (Matt on invites as of Sep 3)
+- **Attendees:** TBD (Matt now included)
 - **Covers:** Replaces the Validation series. Genesis product development and release coordination.
 
 ### Stakeholder Interviews (Congress AI) -- COMPLETED
