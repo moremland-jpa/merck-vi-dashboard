@@ -78,6 +78,45 @@ def _file_mtime(path: Path) -> float:
         return 0.0
 
 
+def _merge_overlay(base_items: list[dict], overlay_items: list[dict]) -> list[dict]:
+    """Carry forward cloud edits when the base markdown changes.
+
+    Matches overlay items to new base items by description text.  Any overlay
+    item whose status, notes, due_date, or completed_on differs from its base
+    default is considered an edit and gets merged onto the matching new base
+    item.  New base items with no overlay match pass through untouched.
+    """
+    edits: dict[str, dict] = {}
+    for it in overlay_items:
+        desc = it.get("description", "").strip()
+        if not desc:
+            continue
+        has_edit = (
+            it.get("status", "Pending") != "Pending"
+            or it.get("notes", "").strip()
+            or it.get("due_date", "").strip()
+            or it.get("completed_on", "").strip()
+        )
+        if has_edit:
+            edits[desc] = it
+
+    if not edits:
+        return base_items
+
+    merged = []
+    for item in base_items:
+        desc = item.get("description", "").strip()
+        if desc in edits:
+            ov = edits.pop(desc)
+            merged.append({**item, **{
+                k: ov[k] for k in ("status", "notes", "due_date", "completed_on")
+                if k in ov
+            }})
+        else:
+            merged.append(item)
+    return merged
+
+
 @st.cache_data(ttl=60)
 def load_workstream_status(key: str) -> dict:
     cfg = WORKSTREAMS.get(key)
@@ -95,6 +134,8 @@ def load_workstream_status(key: str) -> dict:
     overlay = db.load_action_overlay(key)
     if overlay and overlay.get("base_hash") == base_hash:
         action_items = overlay["items"]
+    elif overlay and overlay.get("items"):
+        action_items = _merge_overlay(base_items, overlay["items"])
     else:
         action_items = base_items
 
