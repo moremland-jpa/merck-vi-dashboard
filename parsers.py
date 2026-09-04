@@ -137,7 +137,14 @@ def parse_action_items(text: str) -> list[dict[str, str]]:
             }
         )
 
-    return items
+    seen: set[str] = set()
+    deduped: list[dict[str, str]] = []
+    for item in items:
+        key = item["description"].strip().lower()
+        if key not in seen:
+            seen.add(key)
+            deduped.append(item)
+    return deduped
 
 
 def parse_bullet_items(text: str) -> list[str]:

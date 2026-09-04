@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-04T15:09:59.849Z
+  modified: 2026-09-04T15:45:09.997Z
 ---
 
 ## Current State (Aug 31, 2026)
@@ -173,8 +173,7 @@ metadata:
 - ~~**Matt: Schedule offline session with Adam** to walk through RWDEX tables~~ DONE (met Sep 1)
 - **Matt: Complete RWDEX trainings** (training links broken -- Zscaler issue, Rita sending alt link)
 - ~~**Matt: Prepare quick reference guide + backup demo slides** for Sept 1 demo~~ DONE (themed backup deck + QRG built Aug 31)
-- **Matt: MRL Debrief -- meet with Destiny** on technical needs; troubleshoot API connection with Rita/Uri
-- **Matt + Rita: Troubleshoot** centralized API migration blocker
+- **Matt + Rita: MRL Debrief -- meet with Destiny** on technical needs; troubleshoot centralized API migration blocker
 - ~~**Rita: Coordinate with Jen Devers Triggiani and Mellie** for Sept 2 planning feature preview~~ DONE (demo held Sep 2, discovered a bug, fixing)
 - **Matt: Update QRG** with demo follow-up items (upload limits, EP materials info); keep live link current for Adebayo
 - **Cinnamon: Confirm MSL/PDT training timing and ESMO attendee subset** with Mellie/Jen
