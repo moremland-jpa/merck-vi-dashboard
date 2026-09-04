@@ -65,12 +65,10 @@ if ws_filter:
 
 st.markdown(f"**Showing {len(filtered)} of {total} stakeholders**")
 
-st.data_editor(
+st.dataframe(
     filtered[["Person", "Role", "Workstreams", "Notes", "Organization"]],
     use_container_width=True,
     hide_index=True,
-    num_rows="fixed",
-    key="stakeholders_editor",
     column_config={
         "Person": st.column_config.TextColumn("Person", width="medium"),
         "Role": st.column_config.TextColumn("Role", width="large"),

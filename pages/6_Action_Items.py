@@ -12,7 +12,9 @@ import nav
 import utils
 from workstream_page import _normalize_items
 
-st.set_page_config(page_title="Action Items", layout="wide", initial_sidebar_state="collapsed")
+st.set_page_config(
+    page_title="Action Items", layout="wide", initial_sidebar_state="collapsed"
+)
 if not auth.check_password():
     st.stop()
 brand.inject_brand_css()
@@ -51,8 +53,13 @@ done = df[df["status"] == "Done"].reset_index(drop=True)
 if not pending.empty:
     st.markdown(f"### Pending ({len(pending)})")
 
-    pending_display = pending[["initiative", "owner", "description", "notes"]].copy()
+    pending_display = pending[
+        ["initiative", "owner", "description", "due_date", "notes"]
+    ].copy()
     pending_display.insert(0, "done", False)
+    pending_display["due_date"] = pd.to_datetime(
+        pending_display["due_date"], errors="coerce"
+    ).dt.date
 
     edited = st.data_editor(
         pending_display,
@@ -62,9 +69,16 @@ if not pending.empty:
         key="master_pending",
         column_config={
             "done": st.column_config.CheckboxColumn("", width=50, default=False),
-            "initiative": st.column_config.TextColumn("Initiative", width=130, disabled=True),
+            "initiative": st.column_config.TextColumn(
+                "Initiative", width=130, disabled=True
+            ),
             "owner": st.column_config.TextColumn("Owner", width=120),
-            "description": st.column_config.TextColumn("Description", width="large"),
+            "description": st.column_config.TextColumn(
+                "Description", width="large"
+            ),
+            "due_date": st.column_config.DateColumn(
+                "Due", width=110, format="MMM D"
+            ),
             "notes": st.column_config.TextColumn("Notes", width="medium"),
         },
     )
@@ -92,11 +106,16 @@ if not pending.empty:
                         continue
                     if p_count == ws_pending_idx[ws]:
                         marking_done = bool(row["done"])
+                        due = row.get("due_date")
+                        due_str = str(due) if pd.notna(due) else ""
                         items[j] = {
                             **item,
                             "owner": str(row["owner"]),
                             "description": str(row["description"]),
-                            "notes": str(row["notes"] if pd.notna(row["notes"]) else ""),
+                            "due_date": due_str,
+                            "notes": str(
+                                row["notes"] if pd.notna(row["notes"]) else ""
+                            ),
                             "status": "Done" if marking_done else "Pending",
                             "completed_on": today if marking_done else "",
                         }
@@ -106,7 +125,9 @@ if not pending.empty:
 
             ok = True
             for ws, items in ws_items.items():
-                if not utils.save_action_items(ws, items, base_hashes.get(ws, "")):
+                if not utils.save_action_items(
+                    ws, items, base_hashes.get(ws, "")
+                ):
                     ok = False
 
             if ok:
@@ -126,7 +147,9 @@ if not done.empty:
         column_config={
             "initiative": st.column_config.TextColumn("Initiative", width=130),
             "owner": st.column_config.TextColumn("Owner", width=120),
-            "description": st.column_config.TextColumn("Description", width="large"),
+            "description": st.column_config.TextColumn(
+                "Description", width="large"
+            ),
             "notes": st.column_config.TextColumn("Notes", width="medium"),
             "completed_on": st.column_config.TextColumn("Completed", width=100),
         },

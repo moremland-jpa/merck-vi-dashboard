@@ -153,40 +153,40 @@ else:
 # ── Meeting Cadence (equal-height cards via HTML flex) ──
 
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
-st.markdown("## Meeting Cadence")
 
-if meetings:
-    cards_html = '<div style="display:flex; gap:1rem; flex-wrap:wrap;">'
-    for m in meetings:
-        cadence = m.get("cadence", "")
-        attendees = m.get("attendees", "")
-        covers = m.get("covers", "")
-        concluded = m.get("concluded", False)
+with st.expander("Meeting Cadence", expanded=False):
+    if not meetings:
+        st.info("No meeting cadence data found.")
+    else:
+        cards_html = '<div style="display:flex; gap:1rem; flex-wrap:wrap;">'
+        for m in meetings:
+            cadence = m.get("cadence", "")
+            attendees = m.get("attendees", "")
+            covers = m.get("covers", "")
+            concluded = m.get("concluded", False)
 
-        body = ""
-        if cadence:
-            body += f'<p class="meta-text"><strong>Cadence:</strong> {cadence}</p>'
-        if covers:
-            body += f"<p>{covers}</p>"
-        if attendees:
-            body += f'<p class="meta-text"><strong>Attendees:</strong> {attendees}</p>'
+            body = ""
+            if cadence:
+                body += f'<p class="meta-text"><strong>Cadence:</strong> {cadence}</p>'
+            if covers:
+                body += f"<p>{covers}</p>"
+            if attendees:
+                body += f'<p class="meta-text"><strong>Attendees:</strong> {attendees}</p>'
 
-        if concluded:
-            border_color = "#B0B0B0"
-            extra_style = "background:#F0F0F0; opacity:0.7;"
-        else:
-            border_color = brand.CYAN
-            extra_style = ""
+            if concluded:
+                border_color = "#B0B0B0"
+                extra_style = "background:#F0F0F0; opacity:0.7;"
+            else:
+                border_color = brand.CYAN
+                extra_style = ""
 
-        cards_html += (
-            f'<div class="card" style="border-left-color:{border_color}; '
-            f'{extra_style}'
-            f'flex:1 1 calc(33.33% - 1rem); min-width:220px;">'
-            f"<h3>{m.get('name', 'Meeting')}</h3>"
-            f"{body}"
-            f"</div>"
-        )
-    cards_html += "</div>"
-    st.markdown(cards_html, unsafe_allow_html=True)
-else:
-    st.info("No meeting cadence data found.")
+            cards_html += (
+                f'<div class="card" style="border-left-color:{border_color}; '
+                f'{extra_style}'
+                f'flex:1 1 calc(33.33% - 1rem); min-width:220px;">'
+                f"<h3>{m.get('name', 'Meeting')}</h3>"
+                f"{body}"
+                f"</div>"
+            )
+        cards_html += "</div>"
+        st.markdown(cards_html, unsafe_allow_html=True)

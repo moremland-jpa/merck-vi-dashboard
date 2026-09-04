@@ -112,6 +112,20 @@ def inject_brand_css() -> None:
             color: #595959;
             margin-top: 0.25rem;
         }
+
+        .new-badge {
+            display: inline-block;
+            padding: 1px 7px;
+            border-radius: 3px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            background: #E37222;
+            color: #FFFFFF;
+            margin-left: 0.25rem;
+            vertical-align: middle;
+        }
         </style>
         """,
         unsafe_allow_html=True,

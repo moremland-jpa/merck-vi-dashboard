@@ -131,6 +131,7 @@ def parse_action_items(text: str) -> list[dict[str, str]]:
                 "owner": owner,
                 "description": description,
                 "status": "Done" if done else "Pending",
+                "due_date": "",
                 "completed_on": "",
                 "notes": "",
             }
