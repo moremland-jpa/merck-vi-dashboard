@@ -215,8 +215,18 @@ def render(workstream: str) -> None:
         devs = ws.get("key_developments", [])
         if devs:
             st.markdown("## Key Developments")
-            for title, content in reversed(devs):
-                with st.expander(title):
+            dated = []
+            for title, content in devs:
+                dt = parsers._extract_date_from_title(title)
+                dated.append((dt, title, content))
+            dated.sort(
+                key=lambda x: (x[0] is not None, x[0] or date.min),
+                reverse=True,
+            )
+            for dt, title, content in dated:
+                date_str = dt.strftime("%b %d") if dt else ""
+                label = f"{date_str} — {title}" if date_str else title
+                with st.expander(label):
                     st.markdown(content)
 
         questions = ws.get("open_questions", [])
