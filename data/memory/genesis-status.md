@@ -1,16 +1,32 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- first release = Sentiment Overview, Figma V3 in progress. Matt has Databricks access (big win), working on table data view. Feature requirements delivered to working team ~Aug 19. Ulf departed. Genesis Validation series ended; Matt now on Core Team invites. As of Sep 3, 2026."
+description: "Genesis Sentiment 2.0 -- first release (donut widget) late Sept/early Oct. Pre-processed daily for performance. Patrick presented to Brandon+Eric Sep 3; DAC preview Sep 9. Jan planning SME validation via Champions Network. Grace left JPA Sep 4; Molly starts Sep 14. HTA/Outcomes = wait-and-see. As of Sep 4, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-03T17:23:30.510Z
+  modified: 2026-09-04T15:04:48.776Z
 ---
 
-## Current State (Aug 31, 2026)
+## Current State (Sep 4, 2026)
 
-**First release scope narrowed to Sentiment Overview only.** Workshop consensus (Aug 25): ship one really good widget rather than overwhelming users. Heatmap and other features deferred to subsequent releases. Late September / early October target.
+**First release scope narrowed to Sentiment Overview only.** Workshop consensus (Aug 25): ship one really good widget rather than overwhelming users. Late September / early October target.
+
+**Patrick's detailed roadmap (Sep 3 weekly check-in):**
+- **Release 1 (late Sept/early Oct):** Donut widget only (sentiment overview). Filter from regular Genesis, jump to slightly newer sentiment UI. Donut breakdown → clickable positive/negative/neutral drivers → AI summaries → findings with metadata + insight code link back to X-fly. Export: minimally a file, ideally PowerPoint. Full report with original insight text for trust/verify. Topic heatmap may or may not make first release.
+- **Release 2 (late Oct):** Bug fixes, immediate low-hanging fruit improvements.
+- **Release 3 (Nov):** Re-unify Genesis UI (currently bifurcated old vs. sentiment views). Continue widget rollout.
+- **Longitudinal trends:** Deferred until SME agreement on data enrichment quality. "Before we say trends over time, we want to make sure the way we're enriching and displaying has large agreement."
+
+**Critical architecture advantage:** Sentiment data is pre-processed daily (unlike Genesis summaries which generate in real-time). This eliminates the performance/scale issues that sometimes impact existing Genesis. "Really what you see is filtering because all the work has been done." Learnings will be applied back to summary side.
+
+**Data enrichment pipeline currently self-hosted.** Eventual goal: done on Databricks side, but BI team has too many deliverables. Steve and Peter aware. Probably moves next year.
+
+**Brandon Palermo emphasis (Sep 3):** Brandon told Eric directly: "sentiment is the most important thing for him." Eric now putting extra emphasis. Patrick presenting to Brandon + Eric Sep 3 afternoon. Patrick confident (has shown Brandon before, gotten feedback/encouragement), but showing Figma mock-up, not real software -- wishes he could show the real thing. Colin's advice: prepare for "ask for the moon" scenario; have roadmap answers ready.
+
+**DAC preview next Tuesday (Sep 9).** Growing stakeholder exposure beyond the 6 USMA SMEs.
+
+**Jan's SME validation plan (Sep 3):** Wants to put insights + enriched findings in front of SMEs to validate agreement with how data is broken down. Using Genesis Champions Network (may also leverage DAC per Gem's suggestion). Gem offered to participate. Finally happening after months of discussion -- waited until data enrichment pipeline matured.
 
 **First release components:**
 - Donut chart with sentiment breakdown (Positive / Neutral / Negative)
@@ -23,25 +39,17 @@ metadata:
 
 **Key category change: "Uncertain" renamed to "Negative."** Full consensus from Caitlin, Kristen, Adi, and Patrick at Aug 25 workshop. "Mixed" category also removed for now.
 
-**Figma V3 prototype (Aug 28-29):** Patrick shared updated Figma (Sentiment-Analysis-2.0-V3-Sep) with Kristen and Caitlin. Seven design changes implemented. Michal posted 8 agreed next steps targeting Sept 1:
-1. Add topic/aspect descriptions from aspect repository
-2. Findings link opens modal window
-3. "1,430 insights" figure becomes clickable (expands right panel)
-4. Total findings per driver group (as in Ulf's prototype)
-5. Expand disclaimer with clustering context
-6. Findings explanation modal with confidence > 0.7 note
-7. Findings link to original insight
-8. Simplify side panel (only driver-related findings, remove "Original Insights")
+**Figma V3 prototype (Aug 28-29):** Patrick shared updated Figma (Sentiment-Analysis-2.0-V3-Sep) with Kristen and Caitlin. Seven design changes implemented. Michal posted 8 agreed next steps targeting Sept 1.
 
-**Requirements doc shared with dev team (Aug 21):** Distributed to Michal, Ulf, and Yun. High-level features requirement with user research pull quotes, not a technical/business requirements doc. Also serves as JPA onboarding artifact and post-Ulf continuity document.
+**Requirements doc shared with dev team (Aug 21):** High-level features requirement with user research pull quotes. Also serves as JPA onboarding artifact and post-Ulf continuity document.
 
-**Ulf Nielsen departed Aug 31.** JPA positioned as strategic-technical bridge. Backfill timeline unclear (months).
+**Ulf Nielsen departed Aug 31.** JPA positioned as strategic-technical bridge. Backfill timeline unclear (months). Patrick: "Ulf wasn't a data scientist, but he was a jack of all trades... we have no other strong data people."
 
-**Databricks access (Sep 2):** Matt has access to Databricks (big win). Still working on getting actual table data view -- should be a minor technical hurdle.
+**Databricks access (Sep 2-3):** Matt has access to Databricks. Can see insights data is there but can't see the data itself yet. Joanna has been super helpful in pushing access through. Matt expects resolution Sep 3 afternoon. "Minor technical hurdle."
 
-**Feature requirements delivered** to the Genesis working team (Michal, Ulf, Yun) approximately Aug 19 (~2 weeks ago). High-level features requirement with user research pull quotes.
+**Genesis Validation weekly series ended.** Matt now on Genesis Core Team meeting invites (as of Sep 3). Next few weeks' meetings will be on adjusted schedule due to Patrick's travel.
 
-**Genesis Validation weekly series ended.** Matt now on Genesis Core Team meeting invites (as of Sep 3).
+**Grace Abrahams left JPA (Sep 4).** "Databricks FOMO" -- she's sad to miss the data access they just got. New staff member **Molly** starting Sep 14 (NJ-based). Other new hires being considered, partly because of new system access.
 
 ## Stakeholder Buy-in (Strong)
 
@@ -92,16 +100,16 @@ Key shifts from the user feedback session with Caitlin, Kristen, Gem, Adi, Ted:
 - **Sorcero:** Patrick meeting with VP (Aug 27 follow-up). Personnel changes on their side. Shannon flagged as good match for insights.
 - **Jan Folkman:** Met with Shannon Aug 26 for 30-40 min. Taking lead on listing capabilities, reaching out to Patrick for intro.
 
-## JPA Action Items
+## JPA Action Items (Sep 4)
 
-1. **Continue strategic-technical bridge role post-Ulf** -- architecture, strategy, stakeholder facilitation
-2. **Lean into first release delivery** -- partner with Jan, Michal, and devs
+1. **Continue strategic-technical bridge role post-Ulf** -- architecture, strategy, stakeholder facilitation. Patrick's specific ask: "listen to what we're doing and make sure we're not doing something completely asinine" on data science assumptions.
+2. **Lean into first release delivery** -- partner with Jan, Michal, and devs. Next couple weeks = finishing backend data enrichment. Last couple weeks = enabling something.
 3. KPI template (operational vs. strategic impact, kept separate)
 4. Document on why system of record matters vs. ad-hoc GPTeal (up to 20% variance, no validation)
 5. User guide / one-pager for Sentiment 2.0 rollout
-6. ~~Databricks access for Matt~~ DONE (Matt has access as of Sep 2). Working on table data view (minor technical hurdle).
+6. ~~Databricks access for Matt~~ DONE (Matt has access as of Sep 2). Working on table data view (minor technical hurdle -- expects resolution Sep 3).
 7. **Matt offered working session with Gem** on Insights Coach Agent (Studio/node config issues)
-8. **Get access to insights data in Databricks** -- Matt has platform access, need actual table/data view
+8. **Get access to insights data in Databricks** -- Matt has platform access, need actual table/data view. Joanna helping.
 9. ~~**Get invite from Patrick** for Genesis Core Team meetings (replacing Validation series)~~ DONE (Matt on invites as of Sep 3)
 
 ## Insights Coach Agent (Gem Roy)
@@ -111,9 +119,23 @@ Key shifts from the user feedback session with Caitlin, Kristen, Gem, Adi, Ted:
 - Catching fire in the org -- stakeholders asking about production timeline. Gem bringing to Studio.
 - SOP dependency: currently built on "insights must be actionable" SOP that is now changing.
 
-## HTA/Outcomes Research / GPTeal (Aug 13-14)
+## HTA/Outcomes Research / GPTeal (updated Sep 3)
 
-Michael Hamann's (EMEAC hub lead) project: global value dossiers in Gemini Notebook for HTA assessments. Patrick formally requested JPA help. Schedule still pending.
+Michael Hamann's (EMEAC hub lead) project: global value dossiers in Gemini Notebook for HTA assessments. **Status: wait-and-see.** SRO (Strategic Realization Office, Sashin's team under Eric) setting up small workshops. Patrick suggested starting with Gemini Notebook + upload GVD. They're scheduling during Patrick's vacation, broken into 15 small meetings. JPA involvement only if they decide it's promising and need a larger virtual workshop. Patrick explicitly trying to keep JPA out -- focus should be Congress and Genesis.
+
+## Viva/X-fly Future (Sep 3 discussion)
+
+- Patrick frustrated with Viva Medical Insights progress. "What are you doing? We don't want half this stuff."
+- Colin: JPA's official position is everyone should wait a year because of the Viva roadmap. It may turn around.
+- If Merck builds own system, would need to connect to MDM for institution/account resolution.
+- Institution tagging is a major data quality problem: "Other" overwhelmingly selected for institution field. Not a Genesis problem -- it's a data input problem. Germany country directors curate/filter insights before entry.
+- Gem's Insights Coach Agent could help with tagging best practices ("just a reminder, do you need to include...").
+- Patrick envisions: "Genesis becomes the brand of scientific insights."
+
+## MAPS 2027 (Sep 3)
+
+- **Gem formally accepted for Boston AI Ethics Panel.** Recommended by USMA stakeholder, spoke with Robin Wintersberry (Americas leader). Easy acceptance process.
+- Colin and Gem meeting Sep 3 afternoon to ideate on AI ethics content.
 
 ## Related Memories
 

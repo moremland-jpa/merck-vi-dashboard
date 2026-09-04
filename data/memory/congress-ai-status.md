@@ -1,11 +1,11 @@
 ---
 name: congress-ai-status
-description: "Congress AI -- Sept 1 demo went well, follow-up items for QRG + EPAM (co-assignment, late assignment changes). TPA submitted Sep 1. RWDEX trainings starting. Need to ping Rita re Citeline field prioritization. Shannon returns Sep 8. As of Sep 2, 2026."
+description: "Congress AI -- Eleanor Ford pre-read deck finalized. EPAM building parallel co-assignment editing. MSL/PDT training postponed to re-record post-feedback. ESMO scope = US + ex-US. QRG slides in Adebayo's master deck. Stephen Leong still pushing real-time data. Shannon returns Sep 8. As of Sep 4, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-02T14:45:32.176Z
+  modified: 2026-09-04T15:09:59.849Z
 ---
 
 ## Current State (Aug 31, 2026)
@@ -123,42 +123,68 @@ metadata:
 ### New Leader (Linda)
 - Shannon sent intro blurb. Linda scheduled 30 min on Sept 24. Potential executive sponsor now that Susanna moved over. Patrick has a good relationship with Linda.
 
-## Key Developments (Sep 1-2)
+## Key Developments (Sep 1-3)
 
 ### Sept 1 USMA ESMO Core Planning Demo
-- **Demo went well.** JPA covered (Shannon on vacation). Patrick did 30-second intro.
+- **Demo went well.** JPA covered (Shannon on vacation). Patrick did 30-second intro. Patrick: "Matt seriously killed it."
 - Follow-up items documented in `CongressAI/ESMO Demo follow up - QRG and EPAM.docx`.
+- QRG slides + Adi bio sent to Adebayo Ogunniyi; embedded in master ESMO deck (Patrick's preference). Live link shared for ongoing updates.
+
+### Sept 1 ESMO Core Team Planning Call
+- Third ESMO planning call. ~24 US attendees going to ESMO.
+- Next Core Plus call Sept 17, then "Know Before You Go" Oct 14.
+- MSD 360 appointment creation locked by Cadence until Sept 21 (not leadership-approved, Cadence internal decision for visibility during planning phase). Full access restored after Sept 21.
+- Patrick's group presenting new abstract submission process.
+
+### Sept 2 Ways of Working Updates
+- **Eleanor Ford pre-read deck finalized.** Patrick adding "Executive Summary" divider section. Data governance narrative kept off slides (risk tolerance for Jen Hess). Changed "additional experiments underway for ESMO" → "experiments underway for ESMO."
+- **HTML presentations idea (Rita):** Suggested moving away from PPTX toward interactive HTML for debriefs. Patrick open but "not yet" -- start with lower-stakes audiences post-ESMO, not Eleanor Ford. Talia: "pick our battles."
+- **Co-assignment resolved: EPAM building parallel editing.** Both assignees can edit simultaneously with conflict resolution (notifications when something updates). Rules are team-specific (not congress-specific) -- US RMSDs have different ways of working than ex-US MSLs.
+- **Trading/reassignment: keep loose for experiment.** System already supports reassignment. Decision: logging only, no governance gates. Trust the people. Shannon on-site with admin permissions as safety net. Concept floated: "reassign to" button (third option alongside accept/reject).
+- **MSL/PDT training postponed.** Rita recommended waiting until feedback from Sep 1 demo is implemented, then re-record demo with updated workflow. Target: by Sept 14 meeting. Recording shared back to RMSDs too. Cinnamon confirming timing and attendee list with Mellie.
+- **ESMO scope: US + ex-US.** Shannon confirmed experiment covers all field medical, not just US RMSDs. Patrick was surprised. Additional training session needed for MSLs. ~39 MSLs + ~77 PDTs per Emily Shepherd's list (but only ESMO attendees need training -- Jen can subset).
+- **Connectivity concern for ESMO.** Zscaler + congress floor Wi-Fi unreliable. URI noted AWS global outage last week affected Merck systems. Software designed for network weather. Mobile: works on Merck managed devices but tablet optimization postponed after ACC. Hotspot as backup. International iPad data plans unknown.
+- **Stephen Leong still pushing real-time data** at Sep 2 planning demo. Says Larvol spreadsheets are "already outdated." Rita positioning direct congress data as "North Star." Patrick: data acquisition is harder than software engineering. Conversations with CI/GMPIA/Eleanor Ford team continue weekly. Larvol API would improve interface but same data/frequency. Direct society access unlikely near-term.
+- **AI permissions distinction clarified:** Can't feed ESMO-sourced materials into AI for summarization (contract restriction), but CAN use Larvol-sourced data. Experiment with user-uploaded photos/screenshots is the workaround under experimental posture.
 
 ### QRG Follow-Up Items
 - **Debrief materials:** Envision Pharma (EP) provides materials for every debrief presentation. Materials outside debrief presentations still gathered manually. EP sends after presentation concludes.
-- **Compliance (phone photos):** Acceptable as long as images stay on internal-use platform -- pending final legal review.
+- **Compliance (phone photos):** Acceptable as long as images stay on internal-use platform -- pending final legal review. Patrick noted irony: "they've been taking photos forever, now they care." Decision: don't put compliance note in QRG in writing for now.
 - **Upload limits:** 50MB per file, no limit on number of files.
-- **Assignment process:** Still handled outside the system -- done manually by replicating the EDSA spreadsheet.
+- **Assignment process:** Initial assignments still handled outside the system -- EPAM replicates the EDSA spreadsheet on the backend.
 
 ### EPAM Technical Requests (from demo follow-up)
-- **Co-assigned write-ups (RMSDs + Clinical Directors):** Open questions -- can both edit simultaneously or sequential? Whole write-up shared or split into sections? When does second assignee gain visibility?
-- **Late assignment changes / trading write-ups:** Need methodology for changing assignments late (common with LBAs). Can assignees trade write-ups, and how?
+- ~~**Co-assigned write-ups (RMSDs + Clinical Directors):** Can both edit simultaneously or sequential?~~ RESOLVED: EPAM building parallel editing with conflict resolution.
+- **Late assignment changes / trading write-ups:** System already supports it. Keeping loose for experiment. Logging changes, no governance gates.
 
 ### Citeline / Trial Trove Data Access
 - **TPA form submitted** by Matt on Sep 1 after meeting with Adam.
-- Matt starting RWDEX trainings.
+- Matt starting RWDEX trainings (training links broken, possibly Zscaler -- Rita sending alternative link).
 - **Need to ping Rita** about Citeline field prioritization so it can move on to Karena.
 
-## JPA Deliverables / Action Items (Sep 2)
+### Sept 3 Weekly Check-in
+- MRL Debrief + SEP integration "waiting in the wings" per Talia -- picking up as digital planning returns to EPAM for development.
+- Congress AI described as "roadshow coming up" with several demos. Matt: "in good shape."
+
+## JPA Deliverables / Action Items (Sep 4)
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
 - **Matt: Ping Rita** about Citeline field prioritization so it can move to Karena Yu
 - ~~**Matt: Schedule offline session with Adam** to walk through RWDEX tables~~ DONE (met Sep 1)
-- **Matt: Complete RWDEX trainings** (starting now)
+- **Matt: Complete RWDEX trainings** (training links broken -- Zscaler issue, Rita sending alt link)
 - ~~**Matt: Prepare quick reference guide + backup demo slides** for Sept 1 demo~~ DONE (themed backup deck + QRG built Aug 31)
 - **Matt: MRL Debrief -- meet with Destiny** on technical needs; troubleshoot API connection with Rita/Uri
 - **Matt + Rita: Troubleshoot** centralized API migration blocker
-- **Rita: Coordinate with Jen Devers Triggiani and Mellie** for Sept 2 planning feature preview
+- ~~**Rita: Coordinate with Jen Devers Triggiani and Mellie** for Sept 2 planning feature preview~~ DONE (demo held Sep 2, discovered a bug, fixing)
+- **Matt: Update QRG** with demo follow-up items (upload limits, EP materials info); keep live link current for Adebayo
+- **Cinnamon: Confirm MSL/PDT training timing and ESMO attendee subset** with Mellie/Jen
+- **EPAM: Implement co-assignment feedback** from Sep 1 demo; re-record demo with updated workflow by ~Sep 14
 - **Talia + Shannon: Refresh abstract library vision slide** before mid-Sept F2F
 - **Shannon (post-vacation): Northern Lights deep dive** with HH Data Genie contact
 - **Shannon (post-vacation): CI team meeting** for AHA raw data access
 - **Shannon (post-vacation): Legal call Sept 11** on abstract library data governance
 - **Shannon (post-vacation): Study Map legal finalization**
+- **Shannon (post-vacation): Set up on-site base camp** near corporate suites for ESMO support
 - **Cinnamon + Shannon: Schedule AHA EDSA kickoff** with Auntie
 
 ## 2027 Planning
@@ -183,3 +209,7 @@ No AI rights in current event contracts. CI databases and publication content ar
 See [[mrl-debrief-status]] for the debrief automation workstream.
 See [[merck-stakeholders]] for full stakeholder map.
 See [[google-medical-ai]] for the medical-grade AI conversation.
+
+**ESMO planning rosters (screenshots/):**
+- `ESMO USMA core planning team.png` -- Core planning team by tumor team (Breast, GI, GU, Gyn, HN/Mel, Lung), TL/RMSD Congress Leads, and live/virtual attendees. HQ: Uma Srivastava (AVP), Jamie Dettler-Leonard (OMED).
+- `ESMO tumor leads.png` -- All tumor teams mapped to EDSAs, GDMAs, and RTLs. ~15 teams including Precision Medicine (Apostolos Pinakidis, PoC congress activities), Keytruda Asset, DS and Moderna.

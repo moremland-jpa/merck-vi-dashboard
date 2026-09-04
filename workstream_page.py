@@ -215,19 +215,30 @@ def render(workstream: str) -> None:
         devs = ws.get("key_developments", [])
         if devs:
             st.markdown("## Key Developments")
-            dated = []
+            parsed = []
             for title, content in devs:
                 dt = parsers._extract_date_from_title(title)
-                dated.append((dt, title, content))
-            dated.sort(
+                parsed.append((dt, title, content))
+            parsed.sort(
                 key=lambda x: (x[0] is not None, x[0] or date.min),
                 reverse=True,
             )
-            for dt, title, content in dated:
-                date_str = dt.strftime("%b %d") if dt else ""
-                label = f"{date_str} — {title}" if date_str else title
-                with st.expander(label):
-                    st.markdown(content)
+            dated_items = [(dt, t, c) for dt, t, c in parsed if dt]
+            undated_items = [(dt, t, c) for dt, t, c in parsed if not dt]
+
+            if dated_items:
+                with st.container(border=True):
+                    for dt, title, content in dated_items:
+                        label = f"{dt.strftime('%b %d')} — {title}"
+                        with st.expander(label, icon=":material/event:"):
+                            st.markdown(content)
+
+            if undated_items:
+                if dated_items:
+                    st.caption("Other topics")
+                for _, title, content in undated_items:
+                    with st.expander(title):
+                        st.markdown(content)
 
         questions = ws.get("open_questions", [])
         if questions:

@@ -1,16 +1,18 @@
 ---
 name: mrl-debrief-status
-description: "MRL Debrief -- Priority #1. Met with Destiny. Have sample data from Uri, will use to update prototype. API connection still broken (Merck API migration). SEP integration targeting late Sept/early Oct. As of Sep 2, 2026."
+description: "MRL Debrief -- Priority #1. Met with Destiny. Have sample data from Uri. API still broken (Merck API migration). SEP integration targeting late Sept/early Oct. 'Waiting in the wings' per Talia Sep 3 -- picks up as digital planning returns to EPAM. As of Sep 4, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-02T14:45:49.125Z
+  modified: 2026-09-04T15:05:10.099Z
 ---
 
-## Current State (Aug 31, 2026)
+## Current State (Sep 4, 2026)
 
 **Priority #1** in the Congress AI experiment stack (per Aug 20 weekly check-in). Patrick approved as exception to his desire to limit POCs, because Shannon made a strong case it ties into existing deliverables.
+
+**"Waiting in the wings" (Sep 3 weekly check-in).** Talia confirmed MRL Debrief and SEP integration will pick up as digital planning goes back to EPAM for development and execution. Not actively in sprint right now -- focus is on ESMO demo roadshow.
 
 **Met with Destiny** (completed). Software request submitted. Technical need is light.
 

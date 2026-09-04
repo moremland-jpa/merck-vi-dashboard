@@ -1,11 +1,11 @@
 ---
 name: merck-stakeholders
-description: "Key people across all Merck workstreams -- roles, relationships, org changes. Added: Linda (potential exec sponsor), Consuelo Dominguez (Merck Pubs), Michal Libich (Genesis UX), Jen Hess (legal), Rebecca Foringer (HH Data Hub). Updated Aug 31, 2026."
+description: "Key people across all Merck workstreams -- roles, relationships, org changes. Grace left JPA Sep 4; Molly starts Sep 14. Added: Adebayo Ogunniyi, Jamie Dettler, Robin Wintersberry, Joanna (Databricks access). Updated Sep 4, 2026."
 metadata: 
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-02T14:46:54.184Z
+  modified: 2026-09-04T15:05:47.281Z
 ---
 
 ## Merck V&I Operations
@@ -27,7 +27,7 @@ metadata:
 | Eleonora Ford | Congress Excellence Working Group | Congress AI | Reports to Susana. Leading governance by design, copyright team engagement, ESMO data partnership. |
 | Jill Boundar-Conner | Congress Ops lead (HH) | Congress AI | Responsibility for all Tier 1 congress planning. Controls med writer budget. Confirmed ESMO dual-track approach Jul 7. |
 | Peter Baumeister | V&I Data Lake lead | Congress AI, Asset Reporting | Got promotion Aug 12 -- new team with 30 data scientists. Already syncs Citeline data to datalake. Team scrapes "all the sites." Planning "Congress Data as a Product." |
-| Brandon | USMA VP | Genesis | Views sentiment as "conversation starter." Wants pre-meeting before ELT presentation. |
+| Brandon Palermo | USMA VP | Genesis | Told Eric "sentiment is the most important thing for him" (Sep 3). Super demanding, big fan of tech. Patrick presented to him Sep 3. |
 | Kaitlin (Caitlin Bill) | Head of AI strategy within USMA | Genesis, USMA | Previously oncology RMSD (field medical). Did a short strategy gig with Brandon and Gem. One of 4 Sentiment Super Users. She is a V&I customer (like Brandon). Her role: pulling AI through meaningfully across USMA. Patrick impressed with her seriousness. |
 | Gem Roy | US Innovation lead, strategy & technical operations (global ops lens + experiments) | USMA | Coordinating as US takes greater role. DAC projects. Reports to Brandon and Ibrahim. Tasked with rolling out Insights Coaching Agent (originally for HH) across USMA -- running into issues because teams do things different ways / have different requirements. Current status: moved to Studio, playing with parent/child agents. |
 | Ellie Norris | Head of Data Products | Asset Reporting | Internal discovery on asset reporting workflow. |
@@ -69,7 +69,8 @@ metadata:
 | Colin Baughman | Senior strategic advisor. Leads Genesis engagement. Cross-client sentiment experience. |
 | Matt Oremland | Technical/strategic support. Architecture, Databricks, data modeling. |
 | Talia Baghdoyan | Congress AI execution, interviews, stakeholder comms, one-pagers. |
-| Grace Abrahams | Strategic and technical question prep. Getting Databricks access. |
+| Grace Abrahams | ~~Strategic and technical question prep.~~ Left JPA Sep 4. |
+| Molly (TBD last name) | Starting Sep 14, NJ-based. Replacing capacity from Grace's departure + new system access needs. |
 | Cinnamon Walker-Thompson | Meeting coordination, logistics, note-taking. |
 
 ## EPAM
@@ -97,6 +98,13 @@ metadata:
 | Auntie | EDSA for AHA | Cinnamon + Shannon to schedule AHA kickoff post-vacation. |
 | Mladen (Trikic) | Congress Excellence Work Group, Ph I excellence portion | Urged Shannon to position tool as centerpiece of unified portal at mid-Sept F2F. Will send tiering tags once available (may wait until LBAs Sept 25). |
 | Abiola | Project manager | For Melissa Mims and Miguel on ESMO planning. |
+| Adebayo Ogunniyi | ESMO Core Team planning call host | Runs the ESMO planning series. Added QRG slides to master ESMO deck (Sep 1). |
+| Jamie Dettler | Cadence team | MSD 360 appointment scheduling. Locked appointment creation until Sep 21 for planning visibility (not leadership-approved). |
+| Todd Edwards | RMSD, field medical (senior) | Active in Sep 1 demo Q&A. Patrick goes back years with him from oncology days. |
+| Barry Tucker | RMSD, field medical (senior) | Active in Sep 1 demo Q&A. Patrick goes back years with him. Wanted ability to trade write-up assignments. |
+| Robin Wintersberry | MAPS Americas leader | Accepted Gem for Boston AI Ethics Panel (Sep 3). Easy onboarding process. |
+| Joanna | Merck IT / access management | Helping Matt get Databricks table data view access. "Super helpful" per Patrick. Based in Prague; works late hours. |
+| Emily Shepherd | Congress Ops | Provided MSL attendee list (~39 MSLs) and PDT list (~77 PDTs) for ESMO training planning. |
 | Jeff Jamer | CI team, Larvol relationship | Manages Larvol purchase/data agreements company-wide. Skeptical about Congress Excellence Work Group but agreed to receive charter. |
 | Karena (Yu) | Greg Bryman's team | Interim contact while Greg on 2-week vacation. Citeline/Northern Lights exploration. |
 | Rax Wang | RMSD (East team, CVMET) | Pharmacist. Sits on Digital Innovations Council. AHA interview Aug 10. |
