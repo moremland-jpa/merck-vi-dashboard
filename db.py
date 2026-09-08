@@ -2,9 +2,12 @@ from __future__ import annotations
 
 import hashlib
 import json
+import logging
 from datetime import datetime, timezone
 
 import streamlit as st
+
+logger = logging.getLogger(__name__)
 
 
 @st.cache_resource
@@ -41,6 +44,7 @@ def load_action_overlay(workstream: str) -> dict | None:
         if resp.data:
             return resp.data[0]
     except Exception:
+        logger.exception("Failed to load action overlay for %s", workstream)
         return None
 
 
@@ -61,6 +65,7 @@ def save_action_overlay(
         ).execute()
         return True
     except Exception:
+        logger.exception("Failed to save action overlay for %s", workstream)
         return False
 
 
@@ -74,6 +79,7 @@ def clear_action_overlay(workstream: str) -> bool:
         ).execute()
         return True
     except Exception:
+        logger.exception("Failed to clear action overlay for %s", workstream)
         return False
 
 
@@ -94,7 +100,7 @@ def load_user_visit(username: str) -> str | None:
         if resp.data:
             return resp.data[0]["last_visit"]
     except Exception:
-        pass
+        logger.exception("Failed to load visit for %s", username)
     return None
 
 
@@ -111,6 +117,7 @@ def save_user_visit(username: str) -> bool:
         ).execute()
         return True
     except Exception:
+        logger.exception("Failed to save visit for %s", username)
         return False
 
 
@@ -135,6 +142,7 @@ def load_workstream_notes(
         resp = q.execute()
         return resp.data or []
     except Exception:
+        logger.exception("Failed to load workstream notes")
         return []
 
 
@@ -154,6 +162,7 @@ def save_workstream_note(
         ).execute()
         return True
     except Exception:
+        logger.exception("Failed to save note for %s/%s", workstream, author)
         return False
 
 
@@ -174,6 +183,7 @@ def count_new_notes_since(since: str) -> dict[str, int]:
             counts[ws] = counts.get(ws, 0) + 1
         return counts
     except Exception:
+        logger.exception("Failed to count new notes since %s", since)
         return {}
 
 
@@ -189,4 +199,5 @@ def get_overlay_timestamps() -> dict[str, str]:
         )
         return {r["workstream"]: r["updated_at"] for r in (resp.data or [])}
     except Exception:
+        logger.exception("Failed to load overlay timestamps")
         return {}

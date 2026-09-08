@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import json
 import re
-from datetime import datetime
 from pathlib import Path
 
 import pandas as pd
@@ -21,11 +20,6 @@ _LOCAL_MEMORY = Path(
     r"\C--Users-MattOremland-OneDrive---JPA-Health-Sandbox-Merck\memory"
 )
 MEMORY_DIR = _BUNDLED_MEMORY if _BUNDLED_MEMORY.is_dir() else _LOCAL_MEMORY
-
-_LOCAL_PROJECT = Path(
-    r"C:\Users\MattOremland\OneDrive - JPA Health\Sandbox\Merck"
-)
-PROJECT_DIR = _LOCAL_PROJECT if _LOCAL_PROJECT.is_dir() else APP_DIR
 
 WORKSTREAMS = {
     "Congress AI": {
@@ -46,23 +40,6 @@ WORKSTREAMS = {
     },
 }
 
-FOLDER_WORKSTREAM_MAP = {
-    "CongressAI": "Congress AI",
-    "Genesis": "Genesis",
-    "MRL Debrief": "MRL Debrief",
-    "Asset reporting": "Asset Reporting",
-    "transcripts": "Transcripts",
-    "screenshots": "Screenshots",
-    "background documents": "Background Documents",
-}
-
-EXCLUDED_DIRS = {
-    "venv", "__pycache__", ".git", ".claude", ".streamlit",
-    "node_modules", "streamlit",
-}
-
-EXCLUDED_EXTENSIONS = {".pyc", ".pyo"}
-
 
 def _read_file_safe(path: Path) -> str:
     try:
@@ -70,12 +47,6 @@ def _read_file_safe(path: Path) -> str:
     except Exception:
         return ""
 
-
-def _file_mtime(path: Path) -> float:
-    try:
-        return path.stat().st_mtime
-    except Exception:
-        return 0.0
 
 
 def _merge_overlay(base_items: list[dict], overlay_items: list[dict]) -> list[dict]:
@@ -231,65 +202,6 @@ def load_milestones() -> list[dict]:
         return []
 
 
-def _human_size(size_bytes: int) -> str:
-    for unit in ("B", "KB", "MB", "GB"):
-        if abs(size_bytes) < 1024:
-            return f"{size_bytes:.0f} {unit}" if unit == "B" else f"{size_bytes:.1f} {unit}"
-        size_bytes /= 1024  # type: ignore[assignment]
-    return f"{size_bytes:.1f} TB"
-
-
-@st.cache_data(ttl=120)
-def scan_documents() -> pd.DataFrame:
-    records: list[dict] = []
-
-    try:
-        for p in PROJECT_DIR.rglob("*"):
-            if not p.is_file():
-                continue
-            if p.suffix.lower() in EXCLUDED_EXTENSIONS:
-                continue
-
-            rel = p.relative_to(PROJECT_DIR)
-            parts = rel.parts
-            if any(part in EXCLUDED_DIRS for part in parts):
-                continue
-
-            top_folder = parts[0] if len(parts) > 1 else ""
-            workstream = FOLDER_WORKSTREAM_MAP.get(top_folder, "Other")
-
-            try:
-                stat = p.stat()
-                size = stat.st_size
-                modified = datetime.fromtimestamp(stat.st_mtime)
-            except Exception:
-                size = 0
-                modified = None
-
-            records.append(
-                {
-                    "Name": p.name,
-                    "Folder": str(rel.parent) if str(rel.parent) != "." else "",
-                    "Type": p.suffix.lower(),
-                    "Size": _human_size(size),
-                    "size_bytes": size,
-                    "Modified": modified,
-                    "Workstream": workstream,
-                    "path": str(rel),
-                }
-            )
-    except Exception:
-        pass
-
-    if not records:
-        return pd.DataFrame(
-            columns=["Name", "Folder", "Type", "Size", "size_bytes", "Modified", "Workstream", "path"]
-        )
-
-    df = pd.DataFrame(records)
-    df.sort_values("Modified", ascending=False, inplace=True, na_position="last")
-    return df
-
 
 def _find_action_section(raw: str) -> tuple[int, int] | None:
     lines = raw.splitlines(keepends=True)
@@ -396,13 +308,6 @@ def save_action_items(
     new_lines = lines[:section_start] + new_section + lines[section_end:]
     path.write_text("".join(new_lines), encoding="utf-8")
     return True
-
-
-def get_workstream_doc_count(workstream: str) -> int:
-    docs = scan_documents()
-    if docs.empty:
-        return 0
-    return int((docs["Workstream"] == workstream).sum())
 
 
 def get_stakeholders_for_workstream(workstream: str, limit: int = 3) -> list[str]:

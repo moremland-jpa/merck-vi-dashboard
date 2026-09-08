@@ -12,7 +12,7 @@ _COOKIE_MAX_AGE = 30 * 24 * 60 * 60  # 30 days
 
 TEAM_MEMBERS = [
     "Matt Oremland",
-    "Grace Abrahams",
+    "Molly",
     "Cinnamon Walker-Thompson",
     "Talia Baghdoyan",
     "Colin Baughman",

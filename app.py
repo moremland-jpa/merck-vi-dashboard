@@ -22,16 +22,16 @@ brand.inject_brand_css()
 nav.render_nav(active="Overview")
 
 
-def _render_whats_new() -> None:
+def _render_whats_new(
+    new_note_counts: dict[str, int], statuses: dict[str, dict]
+) -> None:
     previous_visit = st.session_state.get("previous_visit")
     user = st.session_state.get("current_user", "")
     if not previous_visit or not user:
         return
 
-    new_note_counts = db.count_new_notes_since(previous_visit)
     total_new_notes = sum(new_note_counts.values())
 
-    statuses = utils.load_all_statuses()
     updated_ws = [
         ws
         for ws, data in statuses.items()
@@ -90,14 +90,13 @@ def render_overview() -> None:
     )
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
-    _render_whats_new()
-
     previous_visit = st.session_state.get("previous_visit")
     new_note_counts = (
         db.count_new_notes_since(previous_visit) if previous_visit else {}
     )
-
     statuses = utils.load_all_statuses()
+
+    _render_whats_new(new_note_counts, statuses)
 
     cols = st.columns(2)
     for i, (ws_name, ws_data) in enumerate(statuses.items()):
@@ -114,8 +113,6 @@ def render_overview() -> None:
 
         top_people = utils.get_stakeholders_for_workstream(ws_name, limit=3)
         people_html = ", ".join(top_people) if top_people else ""
-
-        doc_count = utils.get_workstream_doc_count(ws_name)
 
         new_notes = new_note_counts.get(ws_name, 0)
         ws_updated = (
@@ -148,8 +145,6 @@ def render_overview() -> None:
             )
         if done:
             meta_parts.append(f"{done} completed")
-        if doc_count:
-            meta_parts.append(f"{doc_count} documents")
         if meta_parts:
             body_parts.append(
                 f'<p class="meta-text">{" &middot; ".join(meta_parts)}</p>'
