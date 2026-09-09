@@ -135,7 +135,6 @@ def _render_action_items(workstream: str, ws: dict) -> None:
             utils.load_all_statuses.clear()
             st.rerun()
 
-    _render_add_action_item(workstream, ws)
 
 
 def _render_add_action_item(workstream: str, ws: dict) -> None:
@@ -290,6 +289,7 @@ def render(workstream: str) -> None:
 
     with tab_actions:
         _render_action_items(workstream, ws)
+        _render_add_action_item(workstream, ws)
 
     with tab_people:
         people = utils.load_stakeholders()
