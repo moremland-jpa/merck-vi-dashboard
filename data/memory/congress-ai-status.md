@@ -1,11 +1,11 @@
 ---
 name: congress-ai-status
-description: "Congress AI -- Eleanor Ford pre-read deck finalized. EPAM building parallel co-assignment editing. MSL/PDT training postponed to re-record post-feedback. ESMO scope = US + ex-US. QRG slides in Adebayo's master deck. Stephen Leong still pushing real-time data. Shannon returns Sep 8. As of Sep 4, 2026."
+description: "Congress AI -- Serial workflow confirmed (RMSD then PDT, not parallel). Follow-up demo Sep 17 for Adebayo team. Demo for ESMO Abstract Planning series TBD (closer to ESMO). Shannon back Sep 8. As of Sep 9, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-04T15:45:09.997Z
+  modified: 2026-09-09T15:40:22.539Z
 ---
 
 ## Current State (Aug 31, 2026)
@@ -96,7 +96,7 @@ metadata:
 
 ### AHA 2026
 - CI team member responded positively to request for raw data -- first time ever. Happy to meet. Meeting planned after Shannon returns.
-- Cinnamon + Shannon to schedule post-vacation meeting with Auntie (EDSA for AHA) to walk through goals.
+- Cinnamon + Shannon to schedule post-vacation meeting with Ante Harxhi (EDSA for AHA) to walk through goals.
 
 ### Legal / Governance
 - **Sept 11:** Call with head of legal for division about abstract library risk posture (uploading posters, screenshots, etc.). Current senior leader position: "let them upload whatever" since it's experimental.
@@ -166,7 +166,14 @@ metadata:
 - MRL Debrief + SEP integration "waiting in the wings" per Talia -- picking up as digital planning returns to EPAM for development.
 - Congress AI described as "roadshow coming up" with several demos. Matt: "in good shape."
 
-## JPA Deliverables / Action Items (Sep 4)
+## Key Developments (Sep 9)
+
+### Shannon Returns / Workflow Decision (Sep 9)
+- **Serial workflow confirmed for ESMO:** Shannon wants RMSD to complete their portion first, then it gets assigned to the PDT -- NOT parallel co-assignment. This reverses the earlier EPAM direction of parallel editing with conflict resolution. Need to communicate to EPAM/Rita.
+- **Follow-up demo scheduled Sep 17** for the same USMA Core Planning team from the 9/1 demo (Adebayo's meeting).
+- **ESMO Abstract Planning series:** Matt and Rita will continue attending with the larger team. No demo currently slated for this series, but Shannon wants one closer to ESMO.
+
+## JPA Deliverables / Action Items (Sep 9)
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
 - **Matt: Ping Rita** about Citeline field prioritization so it can move to Karena Yu
@@ -184,7 +191,9 @@ metadata:
 - **Shannon (post-vacation): Legal call Sept 11** on abstract library data governance
 - **Shannon (post-vacation): Study Map legal finalization**
 - **Shannon (post-vacation): Set up on-site base camp** near corporate suites for ESMO support
-- **Cinnamon + Shannon: Schedule AHA EDSA kickoff** with Auntie
+- **Cinnamon + Shannon: Schedule AHA EDSA kickoff** with Ante Harxhi
+- **Matt + EPAM: Prepare follow-up demo for Sep 17** -- Adebayo's USMA Core Planning team. Communicate serial workflow requirement (RMSD completes → then assigned to PDT) to Rita/EPAM.
+- **Matt + Rita: Plan demo for ESMO Abstract Planning series** -- no demo currently slated; Shannon wants one closer to ESMO. Determine timing and content.
 
 ## 2027 Planning
 

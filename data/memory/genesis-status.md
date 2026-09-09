@@ -1,11 +1,11 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- first release (donut widget) late Sept/early Oct. Pre-processed daily for performance. Patrick presented to Brandon+Eric Sep 3; DAC preview Sep 9. Jan planning SME validation via Champions Network. Grace left JPA Sep 4; Molly starts Sep 14. HTA/Outcomes = wait-and-see. As of Sep 4, 2026."
+description: "Genesis Sentiment 2.0 -- first release (donut) late Sept/early Oct. DAC preview Sep 9. JPA defining feature request/intake process. Grace left, Molly Sep 14. As of Sep 9, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-04T15:04:48.776Z
+  modified: 2026-09-09T15:34:49.596Z
 ---
 
 ## Current State (Sep 4, 2026)
@@ -100,7 +100,13 @@ Key shifts from the user feedback session with Caitlin, Kristen, Gem, Adi, Ted:
 - **Sorcero:** Patrick meeting with VP (Aug 27 follow-up). Personnel changes on their side. Shannon flagged as good match for insights.
 - **Jan Folkman:** Met with Shannon Aug 26 for 30-40 min. Taking lead on listing capabilities, reaching out to Patrick for intro.
 
-## JPA Action Items (Sep 4)
+## Key Developments (Sep 8-9)
+
+### Weekly Team Meeting (Sep 8)
+- **Feature request/intake process:** JPA took an action to define a feature request/intake process for Genesis. Will allow prioritization of requests and clear communication about what IS and ISN'T being worked on, with rationale. Enables Patrick to keep all stakeholders informed so there are no surprises.
+- **DAC preview tomorrow (Sep 9).** Growing stakeholder exposure beyond the 6 USMA SMEs.
+
+## JPA Action Items (Sep 9)
 
 1. **Continue strategic-technical bridge role post-Ulf** -- architecture, strategy, stakeholder facilitation. Patrick's specific ask: "listen to what we're doing and make sure we're not doing something completely asinine" on data science assumptions.
 2. **Lean into first release delivery** -- partner with Jan, Michal, and devs. Next couple weeks = finishing backend data enrichment. Last couple weeks = enabling something.
@@ -111,6 +117,7 @@ Key shifts from the user feedback session with Caitlin, Kristen, Gem, Adi, Ted:
 7. **Matt offered working session with Gem** on Insights Coach Agent (Studio/node config issues)
 8. **Get access to insights data in Databricks** -- Matt has platform access, need actual table/data view. Joanna helping.
 9. ~~**Get invite from Patrick** for Genesis Core Team meetings (replacing Validation series)~~ DONE (Matt on invites as of Sep 3)
+10. **JPA: Define feature request/intake process** -- prioritization framework with rationale for what's being worked on / not. Lets Patrick keep stakeholders informed with no surprises.
 
 ## Insights Coach Agent (Gem Roy)
 

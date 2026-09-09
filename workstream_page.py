@@ -14,16 +14,17 @@ import utils
 def _normalize_items(items: list[dict]) -> list[dict]:
     out = []
     for it in items:
-        out.append(
-            {
-                "owner": it.get("owner", ""),
-                "description": it.get("description", ""),
-                "status": it.get("status", "Pending"),
-                "due_date": it.get("due_date", ""),
-                "completed_on": it.get("completed_on", ""),
-                "notes": it.get("notes", ""),
-            }
-        )
+        item = {
+            "owner": it.get("owner", ""),
+            "description": it.get("description", ""),
+            "status": it.get("status", "Pending"),
+            "due_date": it.get("due_date", ""),
+            "completed_on": it.get("completed_on", ""),
+            "notes": it.get("notes", ""),
+        }
+        if it.get("source"):
+            item["source"] = it["source"]
+        out.append(item)
     return out
 
 
@@ -133,6 +134,47 @@ def _render_action_items(workstream: str, ws: dict) -> None:
             utils.load_workstream_status.clear()
             utils.load_all_statuses.clear()
             st.rerun()
+
+    _render_add_action_item(workstream, ws)
+
+
+def _render_add_action_item(workstream: str, ws: dict) -> None:
+    if not db.is_connected():
+        return
+
+    with st.expander("Add action item", icon=":material/add_task:"):
+        with st.form(key=f"add_action_{workstream}", clear_on_submit=True):
+            cols = st.columns([2, 5])
+            with cols[0]:
+                owner = st.text_input("Owner")
+            with cols[1]:
+                description = st.text_input("Description")
+            cols2 = st.columns([2, 5])
+            with cols2[0]:
+                due_date = st.date_input("Due date (optional)", value=None)
+            with cols2[1]:
+                notes = st.text_input("Notes (optional)")
+            submitted = st.form_submit_button("Add", type="primary")
+            if submitted and description.strip():
+                items = _normalize_items(ws.get("action_items", []))
+                base_hash = ws.get("action_items_base_hash", "")
+                new_item = {
+                    "owner": owner.strip(),
+                    "description": description.strip(),
+                    "status": "Pending",
+                    "due_date": str(due_date) if due_date else "",
+                    "completed_on": "",
+                    "notes": notes.strip() if notes else "",
+                    "source": "manual",
+                }
+                items.append(new_item)
+                if utils.save_action_items(workstream, items, base_hash):
+                    st.success("Action item added.")
+                    utils.load_workstream_status.clear()
+                    utils.load_all_statuses.clear()
+                    st.rerun()
+                else:
+                    st.error("Failed to add action item.")
 
 
 def _render_team_notes(workstream: str) -> None:

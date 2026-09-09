@@ -28,6 +28,46 @@ st.markdown(
 )
 st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
+if db.is_connected():
+    with st.expander("Add action item", icon=":material/add_task:"):
+        with st.form(key="add_action_master", clear_on_submit=True):
+            cols = st.columns([2, 2, 4])
+            with cols[0]:
+                new_initiative = st.selectbox(
+                    "Initiative", list(utils.WORKSTREAMS.keys())
+                )
+            with cols[1]:
+                new_owner = st.text_input("Owner")
+            with cols[2]:
+                new_description = st.text_input("Description")
+            cols2 = st.columns([2, 2, 4])
+            with cols2[0]:
+                new_due = st.date_input("Due date (optional)", value=None)
+            with cols2[1]:
+                new_notes = st.text_input("Notes (optional)")
+            submitted = st.form_submit_button("Add", type="primary")
+            if submitted and new_description.strip():
+                ws_data = utils.load_workstream_status(new_initiative)
+                items = _normalize_items(ws_data.get("action_items", []))
+                base_hash = ws_data.get("action_items_base_hash", "")
+                new_item = {
+                    "owner": new_owner.strip(),
+                    "description": new_description.strip(),
+                    "status": "Pending",
+                    "due_date": str(new_due) if new_due else "",
+                    "completed_on": "",
+                    "notes": new_notes.strip() if new_notes else "",
+                    "source": "manual",
+                }
+                items.append(new_item)
+                if utils.save_action_items(new_initiative, items, base_hash):
+                    st.success("Action item added.")
+                    utils.load_workstream_status.clear()
+                    utils.load_all_statuses.clear()
+                    st.rerun()
+                else:
+                    st.error("Failed to add action item.")
+
 
 def _load_all_items() -> tuple[list[dict], dict[str, str]]:
     statuses = utils.load_all_statuses()

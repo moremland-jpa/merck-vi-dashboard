@@ -56,9 +56,14 @@ def _merge_overlay(base_items: list[dict], overlay_items: list[dict]) -> list[di
     item whose status, notes, due_date, or completed_on differs from its base
     default is considered an edit and gets merged onto the matching new base
     item.  New base items with no overlay match pass through untouched.
+    Manually-added items (source=manual) are always preserved.
     """
     edits: dict[str, dict] = {}
+    manual_items: list[dict] = []
     for it in overlay_items:
+        if it.get("source") == "manual":
+            manual_items.append(it)
+            continue
         desc = it.get("description", "").strip()
         if not desc:
             continue
@@ -71,7 +76,7 @@ def _merge_overlay(base_items: list[dict], overlay_items: list[dict]) -> list[di
         if has_edit:
             edits[desc] = it
 
-    if not edits:
+    if not edits and not manual_items:
         return base_items
 
     merged = []
@@ -85,6 +90,8 @@ def _merge_overlay(base_items: list[dict], overlay_items: list[dict]) -> list[di
             }})
         else:
             merged.append(item)
+
+    merged.extend(manual_items)
     return merged
 
 

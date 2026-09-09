@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-04T15:05:47.281Z
+  modified: 2026-09-09T15:41:25.620Z
 ---
 
 ## Merck V&I Operations
@@ -95,7 +95,9 @@ metadata:
 | Alex King | Enterprise IT (formerly Apex) | Shared that Merck blew entire GitHub token budget by May. Token limits will get worse. |
 | Melissa Chenard ("Mellie") | EDSA | Congress AI stakeholder interview participant. Facilitates Sept 2 global planning meeting with Jen Devers Triggiani. |
 | Jen Devers Triggiani | Congress Ops facilitator | Facilitates Sept 2 global planning meeting (with Mellie/Melissa Chenard). Rita coordinating for planning feature preview. |
-| Auntie | EDSA for AHA | Cinnamon + Shannon to schedule AHA kickoff post-vacation. |
+| Ante Harxhi | EDSA for AHA | Cinnamon + Shannon to schedule AHA kickoff post-vacation. |
+| Daniel Timko | AHA planning | AHA planning contact. |
+| Ritu Goyanka | AHA planning | AHA planning contact. |
 | Mladen (Trikic) | Congress Excellence Work Group, Ph I excellence portion | Urged Shannon to position tool as centerpiece of unified portal at mid-Sept F2F. Will send tiering tags once available (may wait until LBAs Sept 25). |
 | Abiola | Project manager | For Melissa Mims and Miguel on ESMO planning. |
 | Adebayo Ogunniyi | ESMO Core Team planning call host | Runs the ESMO planning series. Added QRG slides to master ESMO deck (Sep 1). |
