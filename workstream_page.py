@@ -288,8 +288,8 @@ def render(workstream: str) -> None:
                 st.markdown(f"- {q}")
 
     with tab_actions:
-        _render_action_items(workstream, ws)
         _render_add_action_item(workstream, ws)
+        _render_action_items(workstream, ws)
 
     with tab_people:
         people = utils.load_stakeholders()
