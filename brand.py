@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import html
+
 import streamlit as st
 
 TEAL = "#004153"
@@ -23,6 +25,12 @@ WORKSTREAM_BG_COLORS = {
     "MRL Debrief": "#FFF0E5",
     "Asset Reporting": "#E8ECEE",
 }
+
+
+def safe(text) -> str:
+    if not text:
+        return ""
+    return html.escape(str(text))
 
 
 def inject_brand_css() -> None:
@@ -139,7 +147,7 @@ def render_card(
 ) -> str:
     return (
         f'<div class="card" style="border-left-color: {border_color};">'
-        f"<h3>{title}</h3>"
+        f"<h3>{safe(title)}</h3>"
         f"{body_html}"
         f"</div>"
     )
@@ -148,13 +156,13 @@ def render_card(
 def workstream_chip(name: str) -> str:
     color = WORKSTREAM_COLORS.get(name, TEAL)
     bg = WORKSTREAM_BG_COLORS.get(name, LIGHT_GRAY)
-    return f'<span class="chip" style="background:{bg}; color:{color};">{name}</span>'
+    return f'<span class="chip" style="background:{bg}; color:{color};">{safe(name)}</span>'
 
 
 def status_badge(label: str, color: str = TEAL) -> str:
     return (
         f'<span class="status-badge" style="background:{color}15; color:{color};">'
-        f"{label}</span>"
+        f"{safe(label)}</span>"
     )
 
 

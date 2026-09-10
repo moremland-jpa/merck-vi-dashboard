@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import re
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -88,7 +89,7 @@ def parse_all_tables(text: str) -> list[tuple[str, list[dict[str, str]]]]:
     return results
 
 
-_ACTION_PATTERN = re.compile(
+ACTION_PATTERN = re.compile(
     r"^[\s]*[-*]\s+"
     r"(?P<strike>~~)?"
     r"\*\*(?P<head>[^*]+)\*\*"
@@ -96,7 +97,7 @@ _ACTION_PATTERN = re.compile(
     r"(?P<tail>.*)",
 )
 
-_NUMBERED_PATTERN = re.compile(
+NUMBERED_PATTERN = re.compile(
     r"^[\s]*\d+\.\s+"
     r"(?P<strike>~~)?"
     r"\*\*(?P<head>[^*]+)\*\*"
@@ -108,7 +109,7 @@ _NUMBERED_PATTERN = re.compile(
 def parse_action_items(text: str) -> list[dict[str, str]]:
     items: list[dict[str, str]] = []
     for line in text.splitlines():
-        m = _ACTION_PATTERN.match(line) or _NUMBERED_PATTERN.match(line)
+        m = ACTION_PATTERN.match(line) or NUMBERED_PATTERN.match(line)
         if not m:
             continue
 
@@ -196,20 +197,6 @@ def extract_action_items(body: str) -> list[dict[str, str]]:
     return []
 
 
-def extract_key_developments_grouped(
-    body: str,
-) -> list[tuple[str, list[tuple[str, str]]]]:
-    sections = parse_sections(body, level=2)
-    groups: list[tuple[str, list[tuple[str, str]]]] = []
-    for header, content in sections.items():
-        if "key development" not in header.lower():
-            continue
-        subsections = parse_sections(content, level=3)
-        items = list(subsections.items()) if subsections else [(header, content)]
-        groups.append((header, items))
-    return groups
-
-
 def extract_open_questions(body: str) -> list[str]:
     sections = parse_sections(body, level=2)
     for header, content in sections.items():
@@ -217,8 +204,6 @@ def extract_open_questions(body: str) -> list[str]:
             return parse_bullet_items(content)
     return []
 
-
-# ── Key development classification ──
 
 _MONTH_MAP: dict[str, int] = {
     "jan": 1, "january": 1, "feb": 2, "february": 2,
@@ -236,101 +221,24 @@ _DATE_RE = re.compile(
     re.IGNORECASE,
 )
 
-_PROVENANCE_RE = re.compile(r"\(from\s+(.+?)\)", re.IGNORECASE)
-
-
-def _extract_date_from_title(title: str, year: int = 2026):
-    from datetime import datetime as _dt
+def extract_date_from_title(title: str, year: int | None = None):
+    today = date.today()
+    if year is None:
+        year = today.year
 
     m = _DATE_RE.search(title)
     if not m:
         return None
-    month_str = m.group(1).lower()
-    for prefix, num in _MONTH_MAP.items():
-        if month_str.startswith(prefix):
-            try:
-                return _dt(year, num, int(m.group(2))).date()
-            except ValueError:
-                return None
-    return None
-
-
-def _extract_provenance(title: str) -> str:
-    m = _PROVENANCE_RE.search(title)
-    return m.group(1).strip() if m else ""
-
-
-def _infer_status(content: str) -> str:
-    lower = content.lower()
-    if any(kw in lower for kw in ("blocker", "blocked", "cannot", "can't")):
-        return "Blocked"
-    lines = [l.strip() for l in content.splitlines() if l.strip().startswith("-")]
-    if lines:
-        done_count = sum(1 for l in lines if "~~" in l or "DONE" in l.upper())
-        if done_count > len(lines) / 2:
-            return "Done"
-    if any(
-        kw in lower
-        for kw in (
-            "waiting",
-            "pending",
-            "need to",
-            "coordinating",
-            "scheduling",
-            "open question",
-        )
-    ):
-        return "Waiting"
-    return "Active"
-
-
-def _extract_summary(content: str, max_len: int = 120) -> str:
-    for line in content.splitlines():
-        stripped = line.strip().lstrip("-").lstrip("*").strip()
-        if len(stripped) < 10:
-            continue
-        stripped = stripped.replace("**", "")
-        if len(stripped) > max_len:
-            return stripped[: max_len - 3] + "..."
-        return stripped
-    return ""
-
-
-def classify_key_developments(
-    devs: list[tuple[str, str]],
-) -> tuple[list[dict], list[dict]]:
-    from datetime import date
-
-    today = date.today()
-
-    # Build items, deduplicating by normalized title (last wins)
-    deduped: dict[str, dict] = {}
-    for title, content in devs:
-        if title.lower().startswith("key development"):
-            continue
-
-        norm = re.sub(r"\s*\(.*?\)\s*$", "", title).strip().lower()
-        dt = _extract_date_from_title(title)
-
-        item = {
-            "title": title,
-            "content": content,
-            "summary": _extract_summary(content),
-            "status": _infer_status(content),
-            "provenance": _extract_provenance(title),
-        }
-        if dt:
-            item["date"] = dt
-            item["is_past"] = dt <= today
-
-        deduped[norm] = item
-
-    events = [it for it in deduped.values() if "date" in it]
-    threads = [it for it in deduped.values() if "date" not in it]
-
-    events.sort(key=lambda x: x["date"])
-
-    status_order = {"Blocked": 0, "Waiting": 1, "Active": 2, "Done": 3}
-    threads.sort(key=lambda x: status_order.get(x["status"], 2))
-
-    return events, threads
+    month_num = _MONTH_MAP.get(m.group(1).lower())
+    if month_num is None:
+        return None
+    try:
+        result = date(year, month_num, int(m.group(2)))
+    except ValueError:
+        return None
+    if (result - today).days > 60:
+        try:
+            result = result.replace(year=year - 1)
+        except ValueError:
+            return None
+    return result

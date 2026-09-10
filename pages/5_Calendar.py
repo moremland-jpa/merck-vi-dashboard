@@ -118,9 +118,7 @@ if milestones:
         try:
             d = datetime.strptime(m["date"], "%Y-%m-%d").date()
             if d >= today:
-                m["_date"] = d
-                m["_days_until"] = (d - today).days
-                upcoming.append(m)
+                upcoming.append({**m, "_date": d, "_days_until": (d - today).days})
         except Exception:
             continue
 
@@ -139,7 +137,7 @@ if milestones:
                 f'<div class="card" style="border-left-color:{color}; '
                 f'flex:1 1 calc(33.33% - 1rem); min-width:220px;">'
                 f'<p class="meta-text">{m["_date"].strftime("%b %d, %Y")} &middot; {days_label}</p>'
-                f'<h3 style="font-size:1rem; margin-bottom:0.5rem;">{m["label"]}</h3>'
+                f'<h3 style="font-size:1rem; margin-bottom:0.5rem;">{brand.safe(m["label"])}</h3>'
                 f"{chip}"
                 f"</div>"
             )
@@ -167,11 +165,11 @@ with st.expander("Meeting Cadence", expanded=False):
 
             body = ""
             if cadence:
-                body += f'<p class="meta-text"><strong>Cadence:</strong> {cadence}</p>'
+                body += f'<p class="meta-text"><strong>Cadence:</strong> {brand.safe(cadence)}</p>'
             if covers:
-                body += f"<p>{covers}</p>"
+                body += f"<p>{brand.safe(covers)}</p>"
             if attendees:
-                body += f'<p class="meta-text"><strong>Attendees:</strong> {attendees}</p>'
+                body += f'<p class="meta-text"><strong>Attendees:</strong> {brand.safe(attendees)}</p>'
 
             if concluded:
                 border_color = "#B0B0B0"
@@ -184,7 +182,7 @@ with st.expander("Meeting Cadence", expanded=False):
                 f'<div class="card" style="border-left-color:{border_color}; '
                 f'{extra_style}'
                 f'flex:1 1 calc(33.33% - 1rem); min-width:220px;">'
-                f"<h3>{m.get('name', 'Meeting')}</h3>"
+                f"<h3>{brand.safe(m.get('name', 'Meeting'))}</h3>"
                 f"{body}"
                 f"</div>"
             )

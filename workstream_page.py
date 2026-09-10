@@ -204,11 +204,13 @@ def _render_team_notes(workstream: str) -> None:
             created = note.get("created_at", "")
             time_str = brand.relative_time(created) if created else ""
 
+            safe_author = brand.safe(note.get("author"))
+            safe_content = brand.safe(note.get("content"))
             st.markdown(
                 f'<div style="padding:0.5rem 0; border-bottom:1px solid #EDE8C4;">'
-                f'<span class="meta-text"><strong>{note["author"]}</strong>'
+                f'<span class="meta-text"><strong>{safe_author}</strong>'
                 f" &middot; {time_str}{badge}</span>"
-                f"<br><span style='font-size:0.9rem;'>{note['content']}</span>"
+                f"<br><span style='font-size:0.9rem;'>{safe_content}</span>"
                 f"</div>",
                 unsafe_allow_html=True,
             )
@@ -258,7 +260,7 @@ def render(workstream: str) -> None:
             st.markdown("## Key Developments")
             parsed = []
             for title, content in devs:
-                dt = parsers._extract_date_from_title(title)
+                dt = parsers.extract_date_from_title(title)
                 parsed.append((dt, title, content))
             parsed.sort(
                 key=lambda x: (x[0] is not None, x[0] or date.min),

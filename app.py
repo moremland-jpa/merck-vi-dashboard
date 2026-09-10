@@ -72,10 +72,12 @@ def _render_whats_new(
             ws = note.get("workstream", "")
             chip = brand.workstream_chip(ws)
             time_str = brand.relative_time(note.get("created_at", ""))
+            safe_author = brand.safe(note.get("author"))
+            safe_content = brand.safe(note.get("content"))
             st.markdown(
-                f'{chip} <strong>{note["author"]}</strong> '
+                f'{chip} <strong>{safe_author}</strong> '
                 f'<span class="meta-text">{time_str}</span>'
-                f"<br><span style='font-size:0.9rem;'>{note['content']}</span>",
+                f"<br><span style='font-size:0.9rem;'>{safe_content}</span>",
                 unsafe_allow_html=True,
             )
         st.markdown('<hr class="divider">', unsafe_allow_html=True)
@@ -112,7 +114,7 @@ def render_overview() -> None:
         rel_time = brand.relative_time(modified) if modified else ""
 
         top_people = utils.get_stakeholders_for_workstream(ws_name, limit=3)
-        people_html = ", ".join(top_people) if top_people else ""
+        people_html = ", ".join(brand.safe(p) for p in top_people) if top_people else ""
 
         new_notes = new_note_counts.get(ws_name, 0)
         ws_updated = (
@@ -121,7 +123,7 @@ def render_overview() -> None:
 
         body_parts = []
         if description:
-            body_parts.append(f"<p>{description}</p>")
+            body_parts.append(f"<p>{brand.safe(description)}</p>")
 
         badge_parts = []
         if new_notes:

@@ -12,14 +12,7 @@ import parsers
 
 APP_DIR = Path(__file__).parent
 DATA_DIR = APP_DIR / "data"
-
-# Use bundled data/memory/ in the repo; fall back to local Claude memory dir
-_BUNDLED_MEMORY = DATA_DIR / "memory"
-_LOCAL_MEMORY = Path(
-    r"C:\Users\MattOremland\.claude\projects"
-    r"\C--Users-MattOremland-OneDrive---JPA-Health-Sandbox-Merck\memory"
-)
-MEMORY_DIR = _BUNDLED_MEMORY if _BUNDLED_MEMORY.is_dir() else _LOCAL_MEMORY
+MEMORY_DIR = DATA_DIR / "memory"
 
 WORKSTREAMS = {
     "Congress AI": {
@@ -305,7 +298,7 @@ def save_action_items(
 
     for i in range(section_start, section_end):
         line = lines[i]
-        m = parsers._ACTION_PATTERN.match(line) or parsers._NUMBERED_PATTERN.match(line)
+        m = parsers.ACTION_PATTERN.match(line) or parsers.NUMBERED_PATTERN.match(line)
         if m and item_idx < len(items):
             new_section.append(_rebuild_action_line(line, items[item_idx]))
             item_idx += 1
