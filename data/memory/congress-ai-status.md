@@ -1,11 +1,11 @@
 ---
 name: congress-ai-status
-description: "Congress AI -- Serial workflow confirmed (RMSD then PDT, not parallel). Follow-up demo Sep 17 for Adebayo team. Demo for ESMO Abstract Planning series TBD (closer to ESMO). Shannon back Sep 8. As of Sep 9, 2026."
+description: "Congress AI -- Citeline mirror dead end (Greg Bryman); Congress Excellence 100+ activities inventoried; Linda Kollmar governance meeting Sep 12; serial wizard; demo Sep 17. As of Sep 11, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-09T15:40:22.539Z
+  modified: 2026-09-11T15:16:55.066Z
 ---
 
 ## Current State (Aug 31, 2026)
@@ -169,11 +169,52 @@ metadata:
 ## Key Developments (Sep 9)
 
 ### Shannon Returns / Workflow Decision (Sep 9)
-- **Serial workflow confirmed for ESMO:** Shannon wants RMSD to complete their portion first, then it gets assigned to the PDT -- NOT parallel co-assignment. This reverses the earlier EPAM direction of parallel editing with conflict resolution. Need to communicate to EPAM/Rita.
-- **Follow-up demo scheduled Sep 17** for the same USMA Core Planning team from the 9/1 demo (Adebayo's meeting).
-- **ESMO Abstract Planning series:** Matt and Rita will continue attending with the larger team. No demo currently slated for this series, but Shannon wants one closer to ESMO.
+- **Serial workflow confirmed for ESMO:** Shannon wants RMSD to complete their portion first, then it gets assigned to the PDT -- NOT parallel co-assignment. This reverses the earlier EPAM direction of parallel editing with conflict resolution. Shannon: "I want to stay true to all the interviews we've done... they really do work through a stepwise approach with checks and balances."
+- **Rita's wizard implementation (Sep 9 call):** When MSD completes their part, wizard will prompt: change status or reassign to next colleague. PDT step gets one primary field (relevance and impact statement) plus ability to view/edit everything else. Rita (Marharyta) tracking with Shannon's approach.
+- **Clinical director layer revealed:** Congress Ops (Jill's team) disclosed there's a clinical director layer between MSD/MSL and PDT -- wasn't captured in any stakeholder interviews. They write the relevance and impact statement with the PDT. Shannon: "Whatever this hierarchy of people on the oncology side... when we get to AHA, their process is a bit different." Wizard needs TA-by-TA and event-by-event flexibility after the RMSD/MSL step.
+- **Rita flagged concern:** Needs to talk to an actual PDT or clinical director from last year to understand real workflow before testing -- "I'm a little bit worried about the wizard stuff because it's not that flexible that we think about it."
 
-## JPA Deliverables / Action Items (Sep 9)
+### Demo Planning (Sep 9)
+- **Follow-up demo scheduled Sep 17** for Adebayo's USMA Core Planning team (same audience from 9/1 demo). Shannon doing kickoff intro, Matt doing live demo. Will add slides addressing previous questions and how they've been addressed since.
+- **Sep 14 ESMO Abstract Planning (listen-only):** Enterprise-wide kickoff for ESMO, mainly EDSAs and leaders selecting abstracts. Matt should attend (camera off, listen in). No demo this week. Shannon wants a demo in this series closer to ESMO.
+- **Shannon forwarding Sep 17 invite** to Rita/Uri, Matt, Talia, Cinnamon, Patrick.
+
+### QRG / Training Materials Hosting (Sep 9)
+- **SharePoint Congress AI page proposed:** Shannon wants to create a Congress AI page on the V&I MedOps SharePoint site as single source of truth -- video, QRG, updates all in one place. Avoids version fragmentation and dependency on Patrick hosting. Patrick agreed.
+- **Recording plan:** Original Sep 1 demo not being distributed (feedback required tooling changes). Sep 17 follow-up demo will be recorded as the distributable video.
+- **QRG still being iterated:** Matt added FAQ slide and format changes per Patrick's feedback. Shannon will locate latest version and regroup with Matt.
+
+### Congress Ops Stress / Office Hours Plan (Sep 9)
+- **Jill's team expressing stress and concerns** about ESMO workflow readiness. Shannon met with them Sep 8.
+- **Shannon proposing optional office hours** over the next 30 days across multiple time zones (Asia-friendly slots) so field staff can explore the tool. Record sessions, share video + QRG. Goal: prevent day-before-event stress.
+- **Cinnamon going on vacation soon.** Matt will be primary admin support for Shannon during this period.
+
+### Medical Writer Email Export (Sep 9)
+- **Write-up export to medical writers designed:** When reviewer changes status to "Complete," modal prompts "do you want to send the email?" Pre-populated with medical writer recipient list. Same team for all abstracts (no per-abstract customization). Jill's team CC'd.
+- **Word document attachment preferred** (Congress Ops wants format identical to current process so Envision Pharma doesn't request contract changes). EPAM needs: (1) example Word doc from last year, (2) recipient list, (3) CC list.
+- **No intermediate steps known** between MSD/PDT completing and sending to medical writers -- but Shannon notes this may vary by TA.
+
+### AHA Kickoff (Sep 9)
+- **AHA call held Sep 9 afternoon** with Ante Harxhi and CV team. Informal overview of Congress AI approach for American Heart Association.
+- **CV team workflow differs from oncology:** Goes to MSD/MSL, but then Ante himself writes the relevance and impact statement. Justin Harris, Daniel Timko, and Ritu Goyanka are a layer between MSLs and EDSAs -- not RMSDs or MSLs, not EDSAs.
+- **Shannon's exec leaders prioritizing ESMO and AHA** for conversations with professional societies about real-time/centralized document access (screenshot Sep 10). Shannon met with AHA leaders twice; interested but new to this type of collaboration. Data rights/copyright driving potential direct contracting with events for data access.
+
+## Key Developments (Sep 10-11)
+
+### Citeline Mirror Dead End (Shannon Teams Sep 10 5:28 PM)
+- **Greg Bryman: no clear path forward for enabling a Citeline mirror that hasn't already been created.** Shannon met with Greg this week; he provided quick updates. Shannon wants to discuss with Matt and JPA during weekly call (Sep 11).
+- Implication: RWDEX remains the existing access path. No new mirror or API shortcut emerging from Greg's team.
+
+### Congress Excellence Workgroup Inventory (Shannon Teams Sep 10)
+- **Jagruti Patel from the CI team attending the live Congress Excellence Workgroup session next week.** This is significant -- first CI team presence at this level.
+- **100+ congress-related activities submitted in the enterprise inventory.** Planning team bundled them into ~50 distinct activities that will be the focus of the entire first day.
+- Shannon: "Can't wait to listen and hear all of the wildly inefficient work going on within the company."
+
+### Linda Kollmar Governance Meeting (Shannon Teams Sep 10)
+- **Shannon meeting with lead of compliance for MRL and Linda Kollmar (new org leader) on Friday (Sep 12)** to outline approach to ESMO and AHA governance.
+- Updates Linda's identity: **Linda Kollmar** (last name confirmed). Potential executive sponsor.
+
+## JPA Deliverables / Action Items (Sep 10)
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
 - **Matt: Ping Rita** about Citeline field prioritization so it can move to Karena Yu
@@ -184,15 +225,19 @@ metadata:
 - ~~**Rita: Coordinate with Jen Devers Triggiani and Mellie** for Sept 2 planning feature preview~~ DONE (demo held Sep 2, discovered a bug, fixing)
 - **Matt: Update QRG** with demo follow-up items (upload limits, EP materials info); keep live link current for Adebayo
 - **Cinnamon: Confirm MSL/PDT training timing and ESMO attendee subset** with Mellie/Jen
-- **EPAM: Implement co-assignment feedback** from Sep 1 demo; re-record demo with updated workflow by ~Sep 14
+- **EPAM: Implement serial workflow** (RMSD completes → wizard prompts reassign → PDT gets R&I field). Replaces earlier parallel co-editing direction.
+- **EPAM: Build medical writer email export** -- Word doc attachment on "Complete" status change, pre-populated recipients, CC to Congress Ops. Needs: last year's example Word doc, recipient list.
+- **EPAM: Talk to actual clinical director from last year** to understand real workflow before testing wizard
 - **Talia + Shannon: Refresh abstract library vision slide** before mid-Sept F2F
-- **Shannon (post-vacation): Northern Lights deep dive** with HH Data Genie contact
-- **Shannon (post-vacation): CI team meeting** for AHA raw data access
-- **Shannon (post-vacation): Legal call Sept 11** on abstract library data governance
-- **Shannon (post-vacation): Study Map legal finalization**
-- **Shannon (post-vacation): Set up on-site base camp** near corporate suites for ESMO support
-- **Cinnamon + Shannon: Schedule AHA EDSA kickoff** with Ante Harxhi
-- **Matt + EPAM: Prepare follow-up demo for Sep 17** -- Adebayo's USMA Core Planning team. Communicate serial workflow requirement (RMSD completes → then assigned to PDT) to Rita/EPAM.
+- **Shannon: Create Congress AI page on V&I MedOps SharePoint** -- single source of truth for QRG, video, updates
+- **Shannon: Northern Lights deep dive** with HH Data Genie contact
+- **Shannon: CI team meeting** for AHA raw data access
+- **Shannon: Legal call Sept 11** on abstract library data governance
+- **Shannon: Study Map legal finalization**
+- **Shannon: Set up on-site base camp** near corporate suites for ESMO support
+- **Shannon: Provide last year's Word doc example + medical writer recipient list** to EPAM
+- **Cinnamon + Shannon: Schedule AHA EDSA kickoff** with Ante Harxhi -- initial call held Sep 9, follow-up TBD
+- **Matt + EPAM: Prepare follow-up demo for Sep 17** -- Adebayo's USMA Core Planning team. Shannon doing intro, Matt doing demo. Record this one for distribution.
 - **Matt + Rita: Plan demo for ESMO Abstract Planning series** -- no demo currently slated; Shannon wants one closer to ESMO. Determine timing and content.
 
 ## 2027 Planning

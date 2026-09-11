@@ -1,11 +1,11 @@
 ---
 name: merck-stakeholders
-description: "Key people across all Merck workstreams -- roles, relationships, org changes. Grace left JPA Sep 4; Molly starts Sep 14. Added: Adebayo Ogunniyi, Jamie Dettler, Robin Wintersberry, Joanna (Databricks access). Updated Sep 4, 2026."
+description: "Key people across all Merck workstreams -- roles, relationships, org changes. Grace left JPA Sep 4; Molly starts Sep 14. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Updated Sep 10, 2026."
 metadata: 
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-09T15:41:25.620Z
+  modified: 2026-09-11T15:16:42.106Z
 ---
 
 ## Merck V&I Operations
@@ -20,7 +20,7 @@ metadata:
 | Destiny Miller | MRL IT / Ignite team | MRL Debrief | Built the debrief automation prototype (JS/Azure Functions/React/SharePoint). |
 | Michal Libich | Genesis UX/Figma lead | Genesis | Building Figma prototypes for Sentiment 2.0. Drove V3 design incorporating workshop feedback (Aug 28). Scheduling follow-up user interviews based on analytics data. |
 | Michael Hamann | EMEAC hub lead | Genesis, HTA | HTA/outcomes research project in EMEAC involving Gemini Notebooks (Aug 13). |
-| Linda | New senior leader | Congress AI | Potential executive sponsor now that Susanna moved. Immediately scheduled 30 min with Shannon on Sept 24 after intro blurb. Patrick has a good relationship. |
+| Linda Kollmar | New org leader | Congress AI | Potential executive sponsor now that Susanna moved. Immediately scheduled 30 min with Shannon on Sept 24 after intro blurb. Patrick has a good relationship. Meeting with Shannon + MRL compliance lead on Sep 12 re ESMO/AHA governance. |
 | Consuelo Dominguez | Merck Pubs (GMI-ESKAL) lead, Madrid | Congress AI | Posts full glossary of company submissions on SharePoint before Tier 1 events. Shannon + Rita had call to discuss pulling content into abstract library. |
 | Jen Hess | Legal/compliance | Congress AI | Governance for ESMO/AHA experiments. Sept 11 legal call scheduled. Patrick says she's been "more understanding" lately. |
 | Rebecca Foringer | HH global data hub contact | Congress AI, Asset Reporting | For additional data needs. Backup contact: Lori Moore. |
@@ -28,7 +28,7 @@ metadata:
 | Jill Boundar-Conner | Congress Ops lead (HH) | Congress AI | Responsibility for all Tier 1 congress planning. Controls med writer budget. Confirmed ESMO dual-track approach Jul 7. |
 | Peter Baumeister | V&I Data Lake lead | Congress AI, Asset Reporting | Got promotion Aug 12 -- new team with 30 data scientists. Already syncs Citeline data to datalake. Team scrapes "all the sites." Planning "Congress Data as a Product." |
 | Brandon Palermo | USMA VP | Genesis | Told Eric "sentiment is the most important thing for him" (Sep 3). Super demanding, big fan of tech. Patrick presented to him Sep 3. |
-| Kaitlin (Caitlin Bill) | Head of AI strategy within USMA | Genesis, USMA | Previously oncology RMSD (field medical). Did a short strategy gig with Brandon and Gem. One of 4 Sentiment Super Users. She is a V&I customer (like Brandon). Her role: pulling AI through meaningfully across USMA. Patrick impressed with her seriousness. |
+| Kate Lynn Bill | Head of AI strategy within USMA | Genesis, USMA | Previously oncology RMSD (field medical). Did a short strategy gig with Brandon and Gem. One of 4 Sentiment Super Users. She is a V&I customer (like Brandon). Her role: pulling AI through meaningfully across USMA. Patrick impressed with her seriousness. Suggested classifying topics first then trending sentiment on them. |
 | Gem Roy | US Innovation lead, strategy & technical operations (global ops lens + experiments) | USMA | Coordinating as US takes greater role. DAC projects. Reports to Brandon and Ibrahim. Tasked with rolling out Insights Coaching Agent (originally for HH) across USMA -- running into issues because teams do things different ways / have different requirements. Current status: moved to Studio, playing with parent/child agents. |
 | Ellie Norris | Head of Data Products | Asset Reporting | Internal discovery on asset reporting workflow. |
 | Amy Caswell | Global scientific value content contractor | Congress AI | Northern Lights license via HH. Offered to share all historical Merck pubs and CI posters/presentations. |
@@ -50,7 +50,7 @@ metadata:
 | Person | Notes |
 |--------|-------|
 | Kristen Slangerup | Wrote original sentiment prompt. Power user. Focused on sentiment movement over time. |
-| Caitlin Bill | Now AI strategy lead in USMA (see above). |
+| Kate Lynn Bill | Now AI strategy lead in USMA (see above). |
 | Samira Saad | Health Systems. Uses custom payor-specific prompts. Results-oriented. |
 | Elena | Entered via HIV sentiment request. Practical. |
 
@@ -105,8 +105,10 @@ metadata:
 | Todd Edwards | RMSD, field medical (senior) | Active in Sep 1 demo Q&A. Patrick goes back years with him from oncology days. |
 | Barry Tucker | RMSD, field medical (senior) | Active in Sep 1 demo Q&A. Patrick goes back years with him. Wanted ability to trade write-up assignments. |
 | Robin Wintersberry | MAPS Americas leader | Accepted Gem for Boston AI Ethics Panel (Sep 3). Easy onboarding process. |
-| Joanna | Merck IT / access management | Helping Matt get Databricks table data view access. "Super helpful" per Patrick. Based in Prague; works late hours. |
+| Joseph Cianciulli | Genesis stakeholder | Shared DOR/ISL CROI 2026 sentiment analysis slides (Sep 10) -- donut chart + M184I/V timeline. Reference material for what Genesis produces today. |
+| Jason Shaffer | Genesis stakeholder | Genesis initiative participant. |
 | Emily Shepherd | Congress Ops | Provided MSL attendee list (~39 MSLs) and PDT list (~77 PDTs) for ESMO training planning. |
+| Jagruti Patel | CI team | Attending live Congress Excellence Workgroup session (mid-Sep). First CI team presence at this level. |
 | Jeff Jamer | CI team, Larvol relationship | Manages Larvol purchase/data agreements company-wide. Skeptical about Congress Excellence Work Group but agreed to receive charter. |
 | Karena (Yu) | Greg Bryman's team | Interim contact while Greg on 2-week vacation. Citeline/Northern Lights exploration. |
 | Rax Wang | RMSD (East team, CVMET) | Pharmacist. Sits on Digital Innovations Council. AHA interview Aug 10. |
