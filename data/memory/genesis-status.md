@@ -1,11 +1,11 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- Patrick reframing first release as 'statement of principles' + bespoke report tools (Sep 11). Production release Sep 12 (backend enrichment only). Demo feature with static real data. As of Sep 11, 2026."
+description: "Genesis Sentiment 2.0 -- Patrick reframing first release as 'statement of principles' + bespoke report tools (Sep 11). Joe Cianciulli Figma feedback: brand-specific topics, quarterly cadence, trending. Production release Sep 12 (backend enrichment only). As of Sep 11, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-11T15:16:48.814Z
+  modified: 2026-09-11T17:19:40.284Z
 ---
 
 ## Current State (Sep 4, 2026)
@@ -155,6 +155,14 @@ Based on recent conversations with additional USMA stakeholders, Patrick shared 
 2. **Dashboard + bespoke report tools.** Sentiment Analysis in Genesis may end up being a dashboard AND a set of tools for people to make their own bespoke reports. Patrick: "I don't know if that is completely different from what we were already planning, but our positioning might be better" (message cut off in screenshot -- may contain more).
 
 **Implication:** This aligns with the "export is critical" feedback from Kristen and the workshop, and with Kate Lynn's institution-level filtering use case. The framing shift lowers the bar for first release (demo feature with static data fits this positioning) while raising the long-term ambition (self-service reporting platform, not just a dashboard).
+
+### Figma Preview with Joseph Cianciulli (dashboard team update, ~Sep 10)
+Previewed Figma board with Joseph Cianciulli, Kate Lynn Bill, and Gem Roy. Key feedback:
+- **Driver % breakdown: positive reception.** Joe very positive on the percentages shown in the drivers breakdown.
+- **Heatmap topics must be brand-specific.** Generic topics won't be useful -- each brand will want to prescribe its own set of topics, and insights should be bucketed on those. Reinforces the "domain-specific topics" theme from Brandon's feedback (Sep 8).
+- **Sentiment as strategy benchmark.** Joe's team uses sentiment analysis as a benchmark for the effectiveness of their strategy -- they want to see that sentiment aligns with strategic direction.
+- **Quarterly cadence for reliable signals.** Joe wouldn't recommend using sentiment much more than quarterly to get reliable signals. Contrasts with the daily enrichment pipeline -- the data runs daily but meaningful analysis windows are longer.
+- **Trending requested.** Wants to see trending in some fashion -- consistent with Adi and Kate Lynn's earlier trending requests (Sep 8).
 
 ## JPA Action Items (Sep 10)
 

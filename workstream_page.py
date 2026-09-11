@@ -176,46 +176,75 @@ def _render_add_action_item(workstream: str, ws: dict) -> None:
                     st.error("Failed to add action item.")
 
 
-def _render_team_notes(workstream: str) -> None:
+def _render_single_update(note: dict, previous_visit: str | None) -> None:
+    created = note.get("created_at", "")
+    time_str = brand.relative_time(created) if created else ""
+
+    category = note.get("category") or "Update"
+    cat_badge = brand.category_badge(category)
+    cat_class = f"cat-{category.lower().replace(' ', '-')}"
+    sync_label = brand.sync_indicator(note.get("synced_at"))
+
+    safe_author = brand.safe(note.get("author"))
+    safe_content = brand.safe(note.get("content"))
+
+    st.markdown(
+        f'<div class="update-item {cat_class}">'
+        f"{cat_badge} "
+        f'<span class="meta-text"><strong>{safe_author}</strong>'
+        f" &middot; {time_str} &middot; {sync_label}</span>"
+        f"<br><span style='font-size:0.9rem; margin-top:0.2rem; "
+        f"display:inline-block;'>{safe_content}</span>"
+        f"</div>",
+        unsafe_allow_html=True,
+    )
+
+
+def _render_team_updates(workstream: str) -> None:
     user = st.session_state.get("current_user", "")
 
     if user and db.is_connected():
-        with st.form(key=f"note_form_{workstream}", clear_on_submit=True):
+        with st.form(key=f"update_form_{workstream}", clear_on_submit=True):
+            note_text = st.text_area(
+                "Share an update",
+                placeholder="What's happening? Decisions made, blockers hit, progress updates...",
+                label_visibility="collapsed",
+                height=80,
+            )
             cols = st.columns([5, 1])
             with cols[0]:
-                note_text = st.text_input(
-                    "Quick update",
-                    placeholder="Decision, observation, or update...",
+                category = st.radio(
+                    "Category",
+                    list(brand.UPDATE_CATEGORIES.keys()),
+                    horizontal=True,
+                    index=0,
                     label_visibility="collapsed",
                 )
             with cols[1]:
-                submitted = st.form_submit_button("Post")
+                submitted = st.form_submit_button(
+                    "Post", type="primary"
+                )
             if submitted and note_text.strip():
-                db.save_workstream_note(workstream, user, note_text.strip())
+                db.save_workstream_note(
+                    workstream, user, note_text.strip(), category
+                )
                 st.rerun()
 
-    notes = db.load_workstream_notes(workstream, limit=5)
+    notes = db.load_workstream_notes(workstream, limit=200)
     previous_visit = st.session_state.get("previous_visit")
 
     if notes:
-        for note in notes:
-            is_new = previous_visit and note.get("created_at", "") > previous_visit
-            badge = ' <span class="new-badge">NEW</span>' if is_new else ""
-            created = note.get("created_at", "")
-            time_str = brand.relative_time(created) if created else ""
+        INITIAL_SHOW = 10
+        for note in notes[:INITIAL_SHOW]:
+            _render_single_update(note, previous_visit)
 
-            safe_author = brand.safe(note.get("author"))
-            safe_content = brand.safe(note.get("content"))
-            st.markdown(
-                f'<div style="padding:0.5rem 0; border-bottom:1px solid #EDE8C4;">'
-                f'<span class="meta-text"><strong>{safe_author}</strong>'
-                f" &middot; {time_str}{badge}</span>"
-                f"<br><span style='font-size:0.9rem;'>{safe_content}</span>"
-                f"</div>",
-                unsafe_allow_html=True,
-            )
+        remaining = notes[INITIAL_SHOW:]
+        if remaining:
+            with st.expander(f"Show {len(remaining)} earlier updates"):
+                for note in remaining:
+                    _render_single_update(note, previous_visit)
     elif not db.is_connected():
-        st.caption("Connect Supabase to enable team notes.")
+        st.caption("Connect Supabase to enable team updates.")
 
 
 def render(workstream: str) -> None:
@@ -246,8 +275,8 @@ def render(workstream: str) -> None:
     )
 
     with tab_status:
-        st.markdown("### Team Notes")
-        _render_team_notes(workstream)
+        st.markdown("### Team Updates")
+        _render_team_updates(workstream)
 
         st.markdown('<hr class="divider">', unsafe_allow_html=True)
 

@@ -44,7 +44,7 @@ def _render_whats_new(
     parts = []
     if total_new_notes:
         parts.append(
-            f"{total_new_notes} new team note{'s' if total_new_notes != 1 else ''}"
+            f"{total_new_notes} new team update{'s' if total_new_notes != 1 else ''}"
         )
     if updated_ws:
         parts.append(
@@ -62,20 +62,22 @@ def _render_whats_new(
     )
 
     if total_new_notes:
-        recent_notes = db.load_workstream_notes(limit=5)
+        recent_notes = db.load_workstream_notes(limit=10)
         new_notes = [
             n
             for n in recent_notes
             if n.get("created_at", "") > previous_visit
         ]
-        for note in new_notes[:3]:
+        for note in new_notes[:5]:
             ws = note.get("workstream", "")
             chip = brand.workstream_chip(ws)
+            category = note.get("category") or "Update"
+            cat_badge = brand.category_badge(category)
             time_str = brand.relative_time(note.get("created_at", ""))
             safe_author = brand.safe(note.get("author"))
             safe_content = brand.safe(note.get("content"))
             st.markdown(
-                f'{chip} <strong>{safe_author}</strong> '
+                f'{chip} {cat_badge} <strong>{safe_author}</strong> '
                 f'<span class="meta-text">{time_str}</span>'
                 f"<br><span style='font-size:0.9rem;'>{safe_content}</span>",
                 unsafe_allow_html=True,
@@ -128,7 +130,7 @@ def render_overview() -> None:
         badge_parts = []
         if new_notes:
             badge_parts.append(
-                f"{new_notes} note{'s' if new_notes > 1 else ''}"
+                f"{new_notes} update{'s' if new_notes > 1 else ''}"
             )
         if ws_updated:
             badge_parts.append("status updated")

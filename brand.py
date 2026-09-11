@@ -26,6 +26,14 @@ WORKSTREAM_BG_COLORS = {
     "Asset Reporting": "#E8ECEE",
 }
 
+UPDATE_CATEGORIES = {
+    "Update":      ("&#x1F4AC;", "#004153", "#E8F1F3"),
+    "Decision":    ("&#x2705;",  "#1B7A2B", "#E6F4EA"),
+    "Blocker":     ("&#x1F6A8;", "#C62828", "#FDECEA"),
+    "Action Item": ("&#x1F3AF;", "#E37222", "#FFF0E5"),
+    "FYI":         ("&#x1F4CB;", "#595959", "#F5F5F5"),
+}
+
 
 def safe(text) -> str:
     if not text:
@@ -121,6 +129,26 @@ def inject_brand_css() -> None:
             margin-top: 0.25rem;
         }
 
+        .update-item {
+            padding: 0.6rem 0.75rem;
+            border-left: 3px solid #EDE8C4;
+            margin-bottom: 0.5rem;
+            border-radius: 0 4px 4px 0;
+        }
+        .update-item.cat-update { border-left-color: #004153; }
+        .update-item.cat-decision { border-left-color: #1B7A2B; }
+        .update-item.cat-blocker { border-left-color: #C62828; }
+        .update-item.cat-action-item { border-left-color: #E37222; }
+        .update-item.cat-fyi { border-left-color: #595959; }
+
+        .sync-dot {
+            display: inline-block;
+            font-size: 0.7rem;
+            margin-left: 0.3rem;
+            vertical-align: middle;
+            cursor: default;
+        }
+
         .new-badge {
             display: inline-block;
             padding: 1px 7px;
@@ -164,6 +192,21 @@ def status_badge(label: str, color: str = TEAL) -> str:
         f'<span class="status-badge" style="background:{color}15; color:{color};">'
         f"{safe(label)}</span>"
     )
+
+
+def category_badge(category: str) -> str:
+    icon, fg, bg = UPDATE_CATEGORIES.get(category, UPDATE_CATEGORIES["Update"])
+    return (
+        f'<span class="chip" style="background:{bg}; color:{fg}; '
+        f'font-size:0.72rem; padding:2px 8px;">'
+        f'{icon} {safe(category)}</span>'
+    )
+
+
+def sync_indicator(synced_at: str | None) -> str:
+    if synced_at:
+        return '<span class="sync-dot" style="color:#1B7A2B;">&#x2714; synced</span>'
+    return '<span class="sync-dot" style="color:#9EA7B3;">pending</span>'
 
 
 def relative_time(iso_str: str) -> str:

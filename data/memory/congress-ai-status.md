@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-11T15:16:55.066Z
+  modified: 2026-09-11T17:12:21.122Z
 ---
 
 ## Current State (Aug 31, 2026)
@@ -210,9 +210,12 @@ metadata:
 - **100+ congress-related activities submitted in the enterprise inventory.** Planning team bundled them into ~50 distinct activities that will be the focus of the entire first day.
 - Shannon: "Can't wait to listen and hear all of the wildly inefficient work going on within the company."
 
-### Linda Kollmar Governance Meeting (Shannon Teams Sep 10)
-- **Shannon meeting with lead of compliance for MRL and Linda Kollmar (new org leader) on Friday (Sep 12)** to outline approach to ESMO and AHA governance.
-- Updates Linda's identity: **Linda Kollmar** (last name confirmed). Potential executive sponsor.
+### Governance Approval -- ESMO and AHA Greenlit (Shannon Teams Sep 11 12:14 PM)
+- **Presentation to Jen Hess and Linda Kollmar went "extremely well."** They complimented the work and experimentation model.
+- **Approval to move forward with ESMO and AHA.** This resolves the major governance blocker.
+- Shannon meeting with the legal team next to introduce them to the work.
+- Shannon: "Each of you are part of why this project is so successful... so THANK YOU!"
+- Note: Meeting happened Sep 11 (not Sep 12 as originally scheduled).
 
 ## JPA Deliverables / Action Items (Sep 10)
 
@@ -232,7 +235,7 @@ metadata:
 - **Shannon: Create Congress AI page on V&I MedOps SharePoint** -- single source of truth for QRG, video, updates
 - **Shannon: Northern Lights deep dive** with HH Data Genie contact
 - **Shannon: CI team meeting** for AHA raw data access
-- **Shannon: Legal call Sept 11** on abstract library data governance
+- ~~**Shannon: Legal call Sept 11** on abstract library data governance~~ DONE -- Jen Hess + Linda Kollmar approved ESMO and AHA (Sep 11)
 - **Shannon: Study Map legal finalization**
 - **Shannon: Set up on-site base camp** near corporate suites for ESMO support
 - **Shannon: Provide last year's Word doc example + medical writer recipient list** to EPAM
@@ -248,7 +251,7 @@ metadata:
 
 ## Data Rights Constraint
 
-No AI rights in current event contracts. CI databases and publication content are the #1 priority workaround. Sept 11 legal call will determine post-ESMO policy on uploads (posters, screenshots, etc.). Current posture: senior leaders saying "let them upload whatever" for the experiment. Frame as "upload official files when available, screenshots/personal notes as backup."
+No AI rights in current event contracts. CI databases and publication content are the #1 priority workaround. **Sept 11 governance meeting with Jen Hess + Linda Kollmar: approved to move forward with ESMO and AHA.** Shannon meeting with legal team next to introduce them to the work. Current posture: senior leaders saying "let them upload whatever" for the experiment. Frame as "upload official files when available, screenshots/personal notes as backup."
 
 ## Open Questions
 

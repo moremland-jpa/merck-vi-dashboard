@@ -147,7 +147,7 @@ def load_workstream_notes(
 
 
 def save_workstream_note(
-    workstream: str, author: str, content: str
+    workstream: str, author: str, content: str, category: str = "Update"
 ) -> bool:
     client = _get_client()
     if not client:
@@ -158,12 +158,30 @@ def save_workstream_note(
                 "workstream": workstream,
                 "author": author,
                 "content": content,
+                "category": category,
             }
         ).execute()
         return True
     except Exception:
         logger.exception("Failed to save note for %s/%s", workstream, author)
         return False
+
+
+def mark_notes_synced() -> int:
+    client = _get_client()
+    if not client:
+        return 0
+    try:
+        resp = (
+            client.table("workstream_notes")
+            .update({"synced_at": datetime.now(timezone.utc).isoformat()})
+            .is_("synced_at", "null")
+            .execute()
+        )
+        return len(resp.data) if resp.data else 0
+    except Exception:
+        logger.exception("Failed to mark notes as synced")
+        return 0
 
 
 def count_new_notes_since(since: str) -> dict[str, int]:
