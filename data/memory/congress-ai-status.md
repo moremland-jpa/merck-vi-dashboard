@@ -1,11 +1,11 @@
 ---
 name: congress-ai-status
-description: "Congress AI -- Citeline mirror dead end (Greg Bryman); Congress Excellence 100+ activities inventoried; Linda Kollmar governance meeting Sep 12; serial wizard; demo Sep 17. As of Sep 11, 2026."
+description: "Congress AI -- Citeline/Sightline impasse traced to a GCD contract-addendum precedent; Congress Excellence 100+ activities inventoried; governance approved Sep 11; QRG dry-run with Shannon Sep 16; demo Sep 17. As of Sep 16, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-11T17:12:21.122Z
+  modified: 2026-09-16T13:35:24.740Z
 ---
 
 ## Current State (Aug 31, 2026)
@@ -217,14 +217,53 @@ metadata:
 - Shannon: "Each of you are part of why this project is so successful... so THANK YOU!"
 - Note: Meeting happened Sep 11 (not Sep 12 as originally scheduled).
 
+## Key Developments (Sep 10 Weekly Check-in)
+
+### Citeline/Sightline Impasse -- Root Cause Revealed
+- **GCD (Global Clinical Development) contract addendum set the precedent.** When Merck procurement first engaged Sightline about AI use rights, GCD was the first use case presented. Merck didn't have rights to reuse that data for AI, so GCD built a paid addendum onto the Sightline contract. That precedent now means **every new AI use case costs more money** and needs its own addendum negotiation -- this is specifically why Greg Bryman's SSI team is stuck (not just "no mirror path," but a procurement/contract cost issue).
+- **Karena Yu is on Greg Bryman's team and was on the same call as Shannon** -- she's blocked by the same impasse, which is why her offer to help map fields stalled.
+- **Open question on Pharma Projects module:** Matt's field-mapping spreadsheet lists some fields as sourced from "Pharma Projects" (a Sightline module, like Trial Trove). Unclear whether Adam's V&I Data Lake mirror (RWDEX) includes Pharma Projects data or only Trial Trove -- Shannon believes it does NOT. **Matt to confirm with Adam before doing any Sightline/RWDEX training** -- Shannon's guidance: don't invest in training until it's clear there's enough content in the existing mirror to justify moving forward. If not enough, the Citeline metadata-enhancement use case may be a no-go.
+- **Northern Lights floated as the fallback data source** since its contract hasn't yet been muddied by an AI-rights addendum. Shannon continuing to pursue it in parallel.
+
+### SharePoint Congress AI Page (Sep 10 follow-up)
+- Shannon has a SharePoint contact (goes by "KGB") and has a 45-min meeting set for Tue Sep 16 to get the page live -- single source of truth for QRG/video/updates (see Sep 9 entry below).
+- Revised demo deck (with workflow-change explanations) is due to Adebayo by **Thu Sep 17**, not urgently needed before then -- Shannon already told him not to expect it early.
+
+### RMSD Skill Gap Finding (from 30 AHA/CV stakeholder interviews)
+- **Staff with 2+ years tenure at Merck largely don't know how to download a file, save it, and find it again** to upload into a tool -- confirmed directly in simulation interviews (had people navigate to an event site and try). Staff with <2 years tenure had zero problems.
+- **Implication for tool design:** materials capture from field staff can't rely on manual upload as the primary path -- reinforces the need for an API feed or a dedicated person to gather materials centrally, rather than pushing the task to RMSDs. Shannon: "this is a function of culture and people not having the right skill set for their job."
+
+### Congress Ops Trust Repair (Sep 8-9 friction, resolved Sep 10)
+- Root cause of Jill's team's stress (noted Sep 9) now clearer: they felt blindsided not seeing slides/questions in advance while Shannon was on vacation, and the workflow assumption (clinical director assigns first, then EDSA) presumes **a finalized clinical director list that doesn't exist yet**.
+- Shannon's resolution: workflow is intentionally flexible -- whoever is assigning just needs to know who's next; that's "not a big ask." Congress Ops is currently doing this informally via the Word doc/spreadsheet already, so the tool isn't asking for anything new.
+
+### AHA Workflow Discovery (Sep 10 follow-up to Sep 9 kickoff)
+- Shannon sent the EDSA-equivalent workflow questions to **Dan Temko** (AHA planning contact -- transcript renders as "Temko"; existing stakeholder record has "Daniel Timko," worth confirming spelling) the morning of Sep 10:
+  1. What does the AHA assignment workflow look like from the EDSA side?
+  2. Does AHA use multiple assignees the way ESMO does?
+  3. Where do AH congress materials currently come from? -- **Answer already known:** there is no AHA purchase agreement; RMSDs download materials themselves, same gap as ESMO.
+
+### MRL Debrief -- Concrete Next Step (Sep 10)
+- **Matt to set up a direct meeting with EPAM (Uri)** to reconnect the broken API -- per Uri this "shouldn't be a big deal," just needs access to the backend tunnel into the Congress Library tables (the same tables Destiny's prototype pulled from).
+- **Congress Library underwent a major schema transformation since ASCO** -- went from ~3 columns to ~20. EPAM is finalizing testing; Shannon expects it ready "by the end of the week" (~Sep 11-12), which should unblock the reconnection.
+- **Sequencing confirmed (Talia + Shannon):** MRL Debrief targeted to wrap by **end of September**, SEP retrospective picks up **early October**. SEP materials are already sitting in the "ASCO 2026 folder" per Shannon -- ready whenever capacity allows, no new collection needed.
+- See [[mrl-debrief-status]] for full workstream detail.
+
+### Databricks Access -- Compute Resource Hurdle (Sep 10)
+- Matt now has Databricks access AND permission to see the data, but lacks an **allocated compute resource to actually run code** -- next hurdle, ticket already in with the right IT team with business justification. Once resolved, Databricks becomes a usable dev environment for MRL Debrief prototyping code (point at a data folder) in addition to the Genesis insight-table use case. See [[genesis-status]].
+
+### QRG Dry Run (Sep 16, today)
+- Matt and Shannon meeting today to patch up/finalize the Quick Reference Guide ahead of the Sep 17 Adebayo follow-up demo -- continuation of the "QRG still being iterated" thread from Sep 9 (FAQ slide, format changes per Patrick's feedback).
+
 ## JPA Deliverables / Action Items (Sep 10)
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
-- **Matt: Ping Rita** about Citeline field prioritization so it can move to Karena Yu
+- **Matt: Confirm with Adam whether RWDEX mirror includes Pharma Projects fields** (not just Trial Trove) before doing any Sightline training -- Karena/Greg's team blocked regardless by the GCD contract-addendum precedent (see Sep 10 entry)
 - ~~**Matt: Schedule offline session with Adam** to walk through RWDEX tables~~ DONE (met Sep 1)
-- **Matt: Complete RWDEX trainings** (training links broken -- Zscaler issue, Rita sending alt link)
+- **Matt: Complete RWDEX trainings** -- ON HOLD per Shannon (Sep 10) until confirmed there's enough mirrored content to justify the use case
 - ~~**Matt: Prepare quick reference guide + backup demo slides** for Sept 1 demo~~ DONE (themed backup deck + QRG built Aug 31)
 - **Matt + Rita: MRL Debrief -- meet with Destiny** on technical needs; troubleshoot centralized API migration blocker
+- **Matt: Set up direct meeting with EPAM (Uri)** to reconnect MRL Debrief API to Congress Library backend tables -- should be quick once Congress Library's schema transformation finishes testing (expected ~Sep 11-12)
 - ~~**Rita: Coordinate with Jen Devers Triggiani and Mellie** for Sept 2 planning feature preview~~ DONE (demo held Sep 2, discovered a bug, fixing)
 - **Matt: Update QRG** with demo follow-up items (upload limits, EP materials info); keep live link current for Adebayo
 - **Cinnamon: Confirm MSL/PDT training timing and ESMO attendee subset** with Mellie/Jen

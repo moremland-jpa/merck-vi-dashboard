@@ -1,11 +1,11 @@
 ---
 name: merck-stakeholders
-description: "Key people across all Merck workstreams -- roles, relationships, org changes. Grace left JPA Sep 4; Molly starts Sep 14. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Updated Sep 10, 2026."
+description: "Key people across all Merck workstreams -- roles, relationships, org changes. Grace left JPA Sep 4; Molly starts Sep 14. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Karena Yu now also blocked by Citeline impasse. Updated Sep 16, 2026."
 metadata: 
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-11T15:16:42.106Z
+  modified: 2026-09-16T13:36:40.808Z
 ---
 
 ## Merck V&I Operations
@@ -77,11 +77,9 @@ metadata:
 
 | Person | Role |
 |--------|------|
-| Rita (Hiruta) | Congress AI dev coordination. Described existing API for abstract data. Demoed assignment workflow Aug 12. |
+| Marharyta (Rita) Hiruta | Congress AI dev coordination. Described existing API for abstract data. Demoed assignment workflow Aug 12. Abstract library feature prioritization, Larvol metadata. Often transcribed as "Rita" or "Ryta" -- all the same person. |
 | Dmytro | Congress AI development. |
-| Ryta | Abstract library feature prioritization, Larvol metadata. |
 | Uri (Boro) | EPAM contact for 30-day experiment planning. |
-| Marharyta (Hiruta) | Congress AI team, asks follow-up questions in Teams chat. |
 
 ## Additional Stakeholders (from Aug transcripts)
 
@@ -96,7 +94,7 @@ metadata:
 | Melissa Chenard ("Mellie") | EDSA | Congress AI stakeholder interview participant. Facilitates Sept 2 global planning meeting with Jen Devers Triggiani. |
 | Jen Devers Triggiani | Congress Ops facilitator | Facilitates Sept 2 global planning meeting (with Mellie/Melissa Chenard). Rita coordinating for planning feature preview. |
 | Ante Harxhi | EDSA for AHA | Cinnamon + Shannon to schedule AHA kickoff post-vacation. |
-| Daniel Timko | AHA planning | AHA planning contact. |
+| Daniel Timko | AHA planning | AHA planning contact. Note: Sep 10 transcript renders this as "Dan Temko" -- likely the same person (Teams auto-transcription error), spelling unconfirmed. |
 | Ritu Goyanka | AHA planning | AHA planning contact. |
 | Mladen (Trikic) | Congress Excellence Work Group, Ph I excellence portion | Urged Shannon to position tool as centerpiece of unified portal at mid-Sept F2F. Will send tiering tags once available (may wait until LBAs Sept 25). |
 | Abiola | Project manager | For Melissa Mims and Miguel on ESMO planning. |
@@ -110,7 +108,7 @@ metadata:
 | Emily Shepherd | Congress Ops | Provided MSL attendee list (~39 MSLs) and PDT list (~77 PDTs) for ESMO training planning. |
 | Jagruti Patel | CI team | Attending live Congress Excellence Workgroup session (mid-Sep). First CI team presence at this level. |
 | Jeff Jamer | CI team, Larvol relationship | Manages Larvol purchase/data agreements company-wide. Skeptical about Congress Excellence Work Group but agreed to receive charter. |
-| Karena (Yu) | Greg Bryman's team | Interim contact while Greg on 2-week vacation. Citeline/Northern Lights exploration. |
+| Karena (Yu) | Greg Bryman's team (SSI, MRLIT) | Was on Shannon's original Sightline call -- now blocked by the same GCD contract-addendum impasse as Greg's team (Sep 10). Citeline/Northern Lights exploration. |
 | Rax Wang | RMSD (East team, CVMET) | Pharmacist. Sits on Digital Innovations Council. AHA interview Aug 10. |
 | Justin Harris | AHA planning contact (CVMET) | Won't be at AHA himself. Provided CI contacts and CVRG spreadsheet. |
 | Jan Feltman | Merck | Source of Apex rejection update (Aug 14). Apex not currently viable per his assessment. |

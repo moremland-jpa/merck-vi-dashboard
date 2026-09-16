@@ -1,11 +1,11 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- Patrick reframing first release as 'statement of principles' + bespoke report tools (Sep 11). Joe Cianciulli Figma feedback: brand-specific topics, quarterly cadence, trending. Production release Sep 12 (backend enrichment only). As of Sep 11, 2026."
+description: "Genesis Sentiment 2.0 -- Patrick reframing first release as 'statement of principles' + bespoke report tools (Sep 11). Joe Cianciulli Figma feedback: brand-specific topics, quarterly cadence, trending. Production release Sep 12 (backend enrichment only). Matt's Databricks compute access still pending. Feature intake process may move to Mural -- see [[genesis-feature-process]]. As of Sep 16, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-11T17:19:40.284Z
+  modified: 2026-09-16T13:36:08.877Z
 ---
 
 ## Current State (Sep 4, 2026)
@@ -144,6 +144,12 @@ Key shifts from the user feedback session with Kate Lynn, Kristen, Gem, Adi, Ted
 ### Feature Request / Intake Process (Sep 8)
 - **JPA took action to define process** -- prioritization framework with rationale for what's being worked on and what's not. Matt: "Get ahead of it... otherwise the well gets poisoned because they'll talk to Brandon and say we're giving suggestions and they don't do any of them." Jan agreed: "worst thing is you ask for feedback and then you don't act on it or you don't get back."
 - Matt to work with Yun and Michal on this while Patrick is out.
+
+## Key Developments (Sep 10)
+
+### Databricks Access -- Compute Resource Hurdle
+- Matt confirmed (weekly check-in) he now has Databricks access AND permission to see the insight data tables, but still lacks an **allocated compute resource to run any code against it**. This is a separate, deeper permission -- ticket already routed to the right Databricks/IT team with business justification attached; Matt following up directly rather than waiting.
+- Once resolved, Databricks also becomes usable as a dev environment for MRL Debrief prototyping code (point at a folder as the data source) -- see [[mrl-debrief-status]].
 
 ## Key Developments (Sep 11)
 

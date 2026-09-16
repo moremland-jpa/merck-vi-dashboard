@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-03T17:23:35.809Z
+  modified: 2026-09-11T17:42:53.949Z
 ---
 
 ## Recurring Meeting Series
@@ -18,7 +18,7 @@ metadata:
 
 ### Congress AI Ways of Working (EPAM + JPA)
 - **Cadence:** Weekly (Tuesdays)
-- **Attendees:** Shannon Smith, EPAM (Rita, Dmytro, Ryta, Uri, Marharyta), JPA (Matt, Grace, Cinnamon, Talia)
+- **Attendees:** Shannon Smith, EPAM (Marharyta "Rita" Hiruta, Dmytro, Uri), JPA (Matt, Cinnamon, Talia)
 - **Covers:** EPAM dev coordination, feature specs, technical decisions, Larvol data, abstract library progress, write-up workflow, MRL Debrief integration. The tactical execution meeting for Congress AI.
 - **Transcript pattern:** `Congress AI Ways of Working_ EPAM and JPA YYYY MM DD.docx`
 

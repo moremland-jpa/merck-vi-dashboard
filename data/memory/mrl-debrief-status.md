@@ -1,12 +1,20 @@
 ---
 name: mrl-debrief-status
-description: "MRL Debrief -- Priority #1. Met with Destiny. Have sample data from Uri. API still broken (Merck API migration). SEP integration targeting late Sept/early Oct. 'Waiting in the wings' per Talia Sep 3 -- picks up as digital planning returns to EPAM. As of Sep 4, 2026."
+description: "MRL Debrief -- API reconnection is now a concrete, scoped fix (direct EPAM meeting, Congress Library schema finishing testing ~Sep 11-12). Sequencing: wrap by end of Sept, SEP retrospective picks up early Oct. As of Sep 10, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-04T15:05:10.099Z
+  modified: 2026-09-16T13:35:38.412Z
 ---
+
+## Current State (Sep 10, 2026)
+
+**API fix is now concrete and scoped.** Per Uri (via Shannon, Sep 10 weekly check-in), reconnecting isn't a big deal -- Matt just needs a meeting with EPAM to get access to the backend tunnel into the **Congress Library tables** (the same ones Destiny's prototype pulled from). Root cause of the break: Congress Library went through a major schema transformation since ASCO (~3 columns → ~20 columns); EPAM is finishing testing, expected ready **end of week ~Sep 11-12**. Matt is not blocked on his own environment setup -- this connects directly to Destiny's existing work via EPAM.
+
+**Sequencing confirmed (Talia + Shannon, Sep 10):** MRL Debrief targeted to wrap by **end of September**, ahead of the SEP retrospective which picks up **early October**. SEP materials (ASCO 2026 samples) are already sitting in the "ASCO 2026 folder" per Shannon -- no new collection needed, just capacity.
+
+**Databricks as a dev environment:** Matt's Databricks access (see [[genesis-status]] for the compute-resource hurdle) can double as a code environment for the MRL Debrief prototyping work -- point it at a data folder as the source, useful once the API/tables are reconnected.
 
 ## Current State (Sep 4, 2026)
 

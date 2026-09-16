@@ -1,12 +1,20 @@
 ---
 name: asset-reporting-status
-description: "Asset Reporting -- sac-TMT deep research validated by Susan Shetzline's LT; Talia designing ASCO retrospective experiment; 8 priority assets identified for ESMO expansion. Updated Sep 1, 2026."
+description: "Asset Reporting -- Shannon took over coordination; recurring biweekly meeting with Stephen Leong's group starts Sep 23; Talia drafting prompts for remaining priority assets via Northern Lights beta deep research. Updated Sep 10, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-01T14:32:24.452Z
+  modified: 2026-09-16T13:36:21.158Z
 ---
+
+## Current State (Sep 10, 2026)
+
+**Shannon has taken direct ownership of coordinating this** (weekly check-in) -- set up a recurring **every-other-week meeting with Stephen Leong's group**, first session **Wed Sep 23** (Talia copied). Shannon has access to the Northern Lights beta deep research module and set up a shared folder with the SAC-TMT baseline example.
+
+**Ask of JPA (Talia):** Review the SAC-TMT prompt and help draft foundational prompts for the remaining 4-5 priority assets, run test outputs through the Northern Lights beta module, and share results **in advance of the Sep 23 meeting** so stakeholders can react/validate before the live session.
+
+**Shannon's framing to the stakeholder group:** explicitly experimental, not yet part of the Congress AI tool. Notably, she's declined to do the final polish/report-writing herself this time (a role she'd fallen into with this group ~1.5 years ago) -- pushing ownership of prompt-writing back onto the asset leads.
 
 ## Current State (Sep 1, 2026)
 
