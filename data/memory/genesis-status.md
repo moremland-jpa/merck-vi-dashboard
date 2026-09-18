@@ -1,11 +1,11 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- Patrick reframing first release as 'statement of principles' + bespoke report tools (Sep 11). Joe Cianciulli Figma feedback: brand-specific topics, quarterly cadence, trending. Production release Sep 12 (backend enrichment only). Matt's Databricks compute access still pending. Feature intake process may move to Mural -- see [[genesis-feature-process]]. As of Sep 16, 2026."
+description: "Genesis Sentiment 2.0 -- Patrick reframing first release as 'statement of principles' + bespoke report tools, incl. director-needs triage and USMA-vs-non-USMA feedback triage (Sep 11, full message). Joe Cianciulli Figma feedback: brand-specific topics, quarterly cadence, trending. Production release Sep 12 (backend enrichment only). Matt's Databricks compute access still pending. Feature intake process may move to Mural -- see [[genesis-feature-process]]. As of Sep 18, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-16T13:36:08.877Z
+  modified: 2026-09-18T13:38:56.096Z
 ---
 
 ## Current State (Sep 4, 2026)
@@ -158,9 +158,15 @@ Based on recent conversations with additional USMA stakeholders, Patrick shared 
 
 1. **First release as "statement of principles."** Sentiment needs to get into users' hands as planned, but it probably won't meet everyone's specific needs. First Sentiment Analysis release for Genesis will be a "statement of principles" of where we are and where we want to go -- expectation-setting, not feature-complete.
 
-2. **Dashboard + bespoke report tools.** Sentiment Analysis in Genesis may end up being a dashboard AND a set of tools for people to make their own bespoke reports. Patrick: "I don't know if that is completely different from what we were already planning, but our positioning might be better" (message cut off in screenshot -- may contain more).
+2. **Dashboard + bespoke report tools.** Sentiment Analysis in Genesis may end up being a dashboard AND a set of tools for people to make their own bespoke reports. Patrick: "I don't know if that is completely different from what we were already planning, but our positioning might be better" saying "USMA directors, we'll give you the **tools** to help you make your TA and team-specific reports" rather than "we will make the report." Why: user needs are all probably too different (or believed to be too different) to expect alignment on one way of working, at least for now. The **Dashboard** would serve users (leaders) who want a quick pulse check -- key constraint: the data must stay consistent so the dashboard doesn't contradict what USMA generates for themselves.
 
-**Implication:** This aligns with the "export is critical" feedback from Kristen and the workshop, and with Kate Lynn's institution-level filtering use case. The framing shift lowers the bar for first release (demo feature with static data fits this positioning) while raising the long-term ambition (self-service reporting platform, not just a dashboard).
+3. **Need to capture director user-specific needs and identify trends/commonalities** across them to prioritize features.
+
+4. **Down the road: role-based access vs. user-set preferences.** Patrick floated either role-based access showing more specific user preferences, or letting users set their own preferences directly (possibly easier than building role-based access).
+
+5. **USMA-first, but must be ready for non-USMA feedback** (other TAs, other regions, HH). Patrick flagged this as unresolved -- not sure how to triage requests from outside USMA once they start coming in.
+
+**Implication:** This aligns with the "export is critical" feedback from Kristen and the workshop, and with Kate Lynn's institution-level filtering use case. The framing shift lowers the bar for first release (demo feature with static data fits this positioning) while raising the long-term ambition (self-service reporting platform, not just a dashboard). Points 3-5 also foreshadow a feature-intake/triage problem beyond USMA -- relevant to the [[genesis-feature-process]] work already underway.
 
 ### Figma Preview with Joseph Cianciulli (dashboard team update, ~Sep 10)
 Previewed Figma board with Joseph Cianciulli, Kate Lynn Bill, and Gem Roy. Key feedback:

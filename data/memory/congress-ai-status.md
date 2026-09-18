@@ -1,11 +1,11 @@
 ---
 name: congress-ai-status
-description: "Congress AI -- Citeline/Sightline impasse traced to a GCD contract-addendum precedent; Congress Excellence 100+ activities inventoried; governance approved Sep 11; QRG dry-run with Shannon Sep 16; demo Sep 17. As of Sep 16, 2026."
+description: "Congress AI -- Citeline/Sightline impasse traced to a GCD contract-addendum precedent; Congress Excellence Workshop (mid-Sept F2F) went extremely well Sep 17 with Jen Hess + Jagruti Patel attending, capital investment ask coming; Sep 17 Adebayo demo prepped with dual-track (live vs. mockup) fallback; Molly Kuchler onboarded onto Congress AI. As of Sep 18, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-16T13:35:24.740Z
+  modified: 2026-09-18T13:40:31.732Z
 ---
 
 ## Current State (Aug 31, 2026)
@@ -252,8 +252,32 @@ metadata:
 ### Databricks Access -- Compute Resource Hurdle (Sep 10)
 - Matt now has Databricks access AND permission to see the data, but lacks an **allocated compute resource to actually run code** -- next hurdle, ticket already in with the right IT team with business justification. Once resolved, Databricks becomes a usable dev environment for MRL Debrief prototyping code (point at a data folder) in addition to the Genesis insight-table use case. See [[genesis-status]].
 
-### QRG Dry Run (Sep 16, today)
-- Matt and Shannon meeting today to patch up/finalize the Quick Reference Guide ahead of the Sep 17 Adebayo follow-up demo -- continuation of the "QRG still being iterated" thread from Sep 9 (FAQ slide, format changes per Patrick's feedback).
+### QRG Dry Run (Sep 16)
+- Matt and Shannon met to patch up/finalize the Quick Reference Guide ahead of the Sep 17 Adebayo follow-up demo -- continuation of the "QRG still being iterated" thread from Sep 9 (FAQ slide, format changes per Patrick's feedback).
+
+## Key Developments (Sep 16-17)
+
+### Molly Kuchler Joins Congress AI (Sep 16 Ways of Working)
+- **Molly Kuchler (JPA Engagement Lead, Hub 7)** attended her first Congress AI Ways of Working call ("day three" at JPA). Supporting Talia and Matt. Background: 4 years at a small agency doing HCP engagement/booth/experiential work for major pharma -- deep congress-logistics experience, new to the AI/tech side. See [[merck-stakeholders]].
+
+### Sep 17 Demo Prep -- Assignee UX Friction (Sep 16 Ways of Working w/ EPAM)
+- **Confirmed: only one assignee at a time.** Sequential hand-off model -- Rita demoed removing/re-adding a name in the assignee field to pass a write-up along. No parallel co-assignment (aligns with the Sep 9 decision to reverse EPAM's earlier parallel-editing direction).
+- **UX gaps flagged by Matt and Talia:** No clear affordance for "send to next reviewer" (just X-ing out a name and typing a new one); no visible save confirmation; no notification to the sender when the receiver picks it up; the item still shows in the original assignee's list too (by design, for historical tracking) which could read as confusing without a "previously assigned to me" indicator.
+- **EPAM (Rita) pushed back on holding the demo** for these gaps -- called it consistent with the agile/iterative approach used on the first demo (ship, gather feedback, refine before ESMO). Talia's concern: presenting a "half-baked, in-progress" flow live to the larger Adebayo core-team/core-plus-team audience.
+- **Resolution: dual-track prep.** Team preparing both a live-demo path and a mocked-up/QRG-slide path; Cinnamon looped in Shannon (traveling, meeting-booked all day) via the recording plus a 7:30 AM ET call the morning of Sep 17 so she can decide before the 4 PM demo. Confirmed audience is the same Adebayo core team/core-plus-team series as the Sep 1 demo (larger invite list than attendance).
+- Test environment and dev environment both updated with the new assignee-field build as of Sep 16 evening.
+- Matt posted the demo requirements/UX-gap list on the EPAM/JPA chat on the Merck side same day (team-update note, Sep 16) so the ask is visible outside this call too.
+
+### PDT Assignment Question (Shannon Teams, Sep 16 4:37-4:42 PM)
+- **Jenn/Meli/Jill asked whether RMSD leadership can assign PDT members in the tool on behalf of the RMSDs.** Shannon told them this will be reviewed during testing with their team, hoped to begin the following week (~Sep 21). Manual fallback if needed: Shannon manually routes RMSD/MSL items to the PDT, or sends an IM/email naming the next person.
+- **Technical constraint surfaced (Matt):** initial assignment can only go to one person; that person can then invite co-writers themselves. The tool can't pre-assign to multiple people on an RMSD's behalf as it stands today.
+- **Jen (Congress Ops) raised a related gap:** RMSDs are used to getting their clinical partner's name included in the assignment email, and that's missing now. Flagged as an easy fix -- likely solved by having the assignment table hold that info and including it in the email. Shannon to let Rita weigh in.
+
+### Congress Excellence Workshop -- Went Extremely Well (Shannon Teams, Sep 17)
+- **Mid-September F2F Congress Excellence Workshop delivered a strong outcome.** Per Shannon: "participants were in awe of the experimentation and work we have already done to date."
+- **Jen Hess (VP of Compliance) and Jagruti Patel (AVP for CI) both attended and were supportive of a governed abstract and reporting library** -- notable escalation in visibility/backing beyond the Sep 11 governance approval.
+- **Strategy Realization Office PMs will produce a full recap** of the prioritized work and next steps from the workshop.
+- **Senior leaders agreed to pursue capital investment** to scale Congress AI's work and continue data centralization/AI capabilities -- described by Shannon as "a WIN for all of us."
 
 ## JPA Deliverables / Action Items (Sep 10)
 

@@ -1,11 +1,11 @@
 ---
 name: merck-stakeholders
-description: "Key people across all Merck workstreams -- roles, relationships, org changes. Grace left JPA Sep 4; Molly starts Sep 14. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Karena Yu now also blocked by Citeline impasse. Updated Sep 16, 2026."
+description: "Key people across all Merck workstreams -- roles, relationships, org changes. Grace left JPA Sep 4; Molly Kuchler (Engagement Lead, Hub 7) started Sep 14, joined Congress AI Ways of Working Sep 16. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Karena Yu now also blocked by Citeline impasse. Updated Sep 18, 2026."
 metadata: 
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-16T13:36:40.808Z
+  modified: 2026-09-18T13:37:55.831Z
 ---
 
 ## Merck V&I Operations
@@ -70,7 +70,7 @@ metadata:
 | Matt Oremland | Technical/strategic support. Architecture, Databricks, data modeling. |
 | Talia Baghdoyan | Congress AI execution, interviews, stakeholder comms, one-pagers. |
 | Grace Abrahams | ~~Strategic and technical question prep.~~ Left JPA Sep 4. |
-| Molly (TBD last name) | Starting Sep 14, NJ-based. Replacing capacity from Grace's departure + new system access needs. |
+| Molly Kuchler | Engagement Lead, Hub 7. Started Sep 14 (NJ-based); joined Congress AI Ways of Working meeting Sep 16 ("day three"), supporting Talia and Matt. 4 years at a small agency doing HCP engagement/booth/experiential work for major pharma -- strong congress-logistics background, new to the AI/tech side. Replacing capacity from Grace's departure + new system access needs. Potential user of the Merck Program Dashboard Streamlit app -- see [[project-merck-dashboard-app]]. |
 | Cinnamon Walker-Thompson | Meeting coordination, logistics, note-taking. |
 
 ## EPAM
