@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-18T13:37:55.831Z
+  modified: 2026-09-23T18:44:16.053Z
 ---
 
 ## Merck V&I Operations
@@ -79,7 +79,8 @@ metadata:
 |--------|------|
 | Marharyta (Rita) Hiruta | Congress AI dev coordination. Described existing API for abstract data. Demoed assignment workflow Aug 12. Abstract library feature prioritization, Larvol metadata. Often transcribed as "Rita" or "Ryta" -- all the same person. |
 | Dmytro | Congress AI development. |
-| Uri (Boro) | EPAM contact for 30-day experiment planning. |
+| Uri (Boro) | EPAM contact for 30-day experiment planning. Owns the Congress AI backend behind MRL Debrief (debrief/generate, GPTeal generation service). Very responsive: diagnosed the schema-validation failures, shared the backend schema, and is rolling out a server-side normalizer (Sep 22-23). Teams shows "Boro, Uri [C]". |
+| Merve | Congress AI (likely EPAM; org unconfirmed). Will notify Shannon when the latest Congress Ops requests are implemented, for review with Congress Ops ahead of the final video recording (per Rita, Sep 23). |
 
 ## Additional Stakeholders (from Aug transcripts)
 
@@ -93,10 +94,10 @@ metadata:
 | Alex King | Enterprise IT (formerly Apex) | Shared that Merck blew entire GitHub token budget by May. Token limits will get worse. |
 | Melissa Chenard ("Mellie") | EDSA | Congress AI stakeholder interview participant. Facilitates Sept 2 global planning meeting with Jen Devers Triggiani. |
 | Jen Devers Triggiani | Congress Ops facilitator | Facilitates Sept 2 global planning meeting (with Mellie/Melissa Chenard). Rita coordinating for planning feature preview. |
-| Ante Harxhi | EDSA for AHA | Cinnamon + Shannon to schedule AHA kickoff post-vacation. |
+| Ante Harxhi | EDSA for AHA (CV) | AHA kickoff held Sep 9, follow-up TBD. Sep 23: wants a quick AI experiment tiering abstracts by importance; Shannon wants it ahead of the SEP retrospective, time-boxed (see [[congress-ai-status]]). |
 | Daniel Timko | AHA planning | AHA planning contact. Note: Sep 10 transcript renders this as "Dan Temko" -- likely the same person (Teams auto-transcription error), spelling unconfirmed. |
 | Ritu Goyanka | AHA planning | AHA planning contact. |
-| Mladen (Trikic) | Congress Excellence Work Group, Ph I excellence portion | Urged Shannon to position tool as centerpiece of unified portal at mid-Sept F2F. Will send tiering tags once available (may wait until LBAs Sept 25). |
+| Mladen (Trikic) | Congress Excellence Work Group, Ph I excellence portion | Urged Shannon to position tool as centerpiece of unified portal at mid-Sept F2F. Will send tiering tags once available (may wait until LBAs Sept 25). Relevant input for Ante's abstract tiering experiment (Sep 23). |
 | Abiola | Project manager | For Melissa Mims and Miguel on ESMO planning. |
 | Adebayo Ogunniyi | ESMO Core Team planning call host | Runs the ESMO planning series. Added QRG slides to master ESMO deck (Sep 1). |
 | Jamie Dettler | Cadence team | MSD 360 appointment scheduling. Locked appointment creation until Sep 21 for planning visibility (not leadership-approved). |

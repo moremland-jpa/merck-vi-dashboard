@@ -1,12 +1,23 @@
 ---
 name: congress-ai-status
-description: "Congress AI -- Citeline/Sightline impasse traced to a GCD contract-addendum precedent; Congress Excellence Workshop (mid-Sept F2F) went extremely well Sep 17 with Jen Hess + Jagruti Patel attending, capital investment ask coming; Sep 17 Adebayo demo prepped with dual-track (live vs. mockup) fallback; Molly Kuchler onboarded onto Congress AI. As of Sep 18, 2026."
+description: "Congress AI -- ESMO data drop + Abstract Library link Fri Sep 25; Sep 17 Adebayo demo well received but environment gave no output, re-record targeted Sep 30 after Congress Ops changes; abstract tiering experiment (Ante Harxhi, CV) now ahead of SEP retrospective; JPA owes ESMO/AHA workflow one-pager (MRL one delivered); leads out this week for 2027 planning. As of Sep 23, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-18T13:40:31.732Z
+  modified: 2026-09-23T18:44:23.251Z
 ---
+
+## Current State (Sep 23, 2026)
+
+**Target:** ESMO 2026 (Madrid, Oct 23-27) as the first scaled execution; AHA follows with the CV team.
+
+- **ESMO data drop Friday Sep 25:** ESMO releases LBA talk titles or abstract summaries. Plan is to send the Abstract Library link the same day so users can get access, see the ONC committee's global tier list, and see abstracts already tagged watch/debrief/write-up.
+- **Demo video needs a re-shoot:** the Sep 17 demo with Adebayo's team was well received, but the environment produced no output during it. A fresh recording with the current workflow wizard is targeted for the **Sep 30** meeting, after EPAM lands the latest Congress Ops requests and Shannon reviews them with Congress Ops (Merve to notify).
+- **Experiment queue:** a time-boxed abstract tiering experiment for Ante Harxhi (EDSA, CV) now goes **before** the SEP retrospective. Matt and Shannon discussing Sep 24.
+- **JPA one-pagers:** MRL Debrief delivered Sep 23; the ESMO / AHA workflow experiments one-pager is still owed. Confluence pages are set up for both.
+- **This week's call:** Shannon, Gem, and Patrick out for in-person 2027 planning. Slot used for outstanding items (Debrief link update, workflow updates, video / reference guides); Matt and Uri catching up on MRL Debrief technical findings.
+- **Momentum:** the Sep 17 Congress Excellence Workshop went very well, and senior leaders agreed to pursue capital investment to scale Congress AI.
 
 ## Current State (Aug 31, 2026)
 
@@ -279,15 +290,48 @@ metadata:
 - **Strategy Realization Office PMs will produce a full recap** of the prioritized work and next steps from the workshop.
 - **Senior leaders agreed to pursue capital investment** to scale Congress AI's work and continue data centralization/AI capabilities -- described by Shannon as "a WIN for all of us."
 
-## JPA Deliverables / Action Items (Sep 10)
+## Key Developments (Sep 18-23)
+
+### Demo Follow-up Feedback (dashboard team update, Sep 18)
+- Matt: the Sep 17 demo to the ESMO core planning team went well.
+- Still open: RMSDs want the other assignees' names in the assignment email so they know who to send the write-up to (same gap Jen raised Sep 16).
+- Feature suggestions for EPAM: ability to remove assignees; a list of all currently assigned writers.
+
+### No Output During Adebayo Demo -- Re-record Needed (Shannon Teams, Sep 22 5:14 PM)
+- The environment didn't produce any output during last week's demo with Adebayo's team, so Shannon wants a fresh recording made with the most current workflow wizard.
+
+### Final Video Recording Timing (Rita Teams, Sep 23 9:59 AM)
+- EPAM will implement the latest Congress Ops requests over the next few days; **Merve** will notify Shannon to review them with Congress Ops.
+- Rita recommends recording the final video only after Shannon approves those changes (or at least reviews them with Congress Ops). The **Sep 30 meeting** is the target for the recording.
+- Rita has a parallel call this week and may only join the last 15 minutes.
+
+### Leads Out of This Week's Call for 2027 Planning (Shannon Teams, Sep 22 5:14 PM)
+- Shannon, Gem, and Patrick are skipping this week's call unless something is urgent: a rare chance to work together in person on 2027 planning.
+- Shannon asked the team to use the slot for outstanding items: the Debrief link update, workflow updates, and video creation / reference guides.
+- Matt (Sep 23 11:00 AM): he and Uri will use the time to catch up on MRL Debrief technical findings, then pull the one-pagers together.
+
+### One-Pagers and Confluence Pages Requested (Shannon Teams, Sep 22 5:14 PM)
+- JPA asked for quick one-pagers on **MRL Debrief** and on the **ESMO / AHA workflow experiments**. Confluence pages are already set up for both. Shannon will create one for early asset reports (see [[asset-reporting-status]]).
+- MRL Debrief one-pager slide and Confluence page delivered Sep 23 (see [[mrl-debrief-status]]). ESMO / AHA workflow one-pager still to do.
+- Also discussed: a SEP retrospective test on ASCO 2026 content, to see how SEP information would change abstract summaries.
+
+### ESMO Data Drop and Abstract Library Link Friday (Shannon Teams, Sep 22 5:14 PM)
+- This Friday (Sep 25) ESMO provides new data: either LBA talk titles or abstract summaries.
+- Either way, the Abstract Library link goes out Friday so people can get access and see the **global tier list from the ONC committee** plus any abstracts already tagged to be watched / debriefed / written up.
+
+### Abstract Tiering Experiment -- Ahead of SEP (Shannon Teams, Sep 23 12:19 PM)
+- **Ante Harxhi (EDSA, CV)** wants a quick experiment using AI to tier abstracts by importance. Shannon thinks it should go **before the SEP experiment** and can be time-boxed. Matt agreed to discuss with Shannon on Sep 24.
+- Builds on the tiering-tags thread (Aug 20) and the ONC committee's global tier list going out with the Abstract Library link. Mladen (Congress Excellence Work Group) said he'd send tiering tags once available, possibly after the Sep 25 LBAs, which could serve as reference labels for the experiment.
+
+## JPA Deliverables / Action Items (updated Sep 23)
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
 - **Matt: Confirm with Adam whether RWDEX mirror includes Pharma Projects fields** (not just Trial Trove) before doing any Sightline training -- Karena/Greg's team blocked regardless by the GCD contract-addendum precedent (see Sep 10 entry)
 - ~~**Matt: Schedule offline session with Adam** to walk through RWDEX tables~~ DONE (met Sep 1)
 - **Matt: Complete RWDEX trainings** -- ON HOLD per Shannon (Sep 10) until confirmed there's enough mirrored content to justify the use case
 - ~~**Matt: Prepare quick reference guide + backup demo slides** for Sept 1 demo~~ DONE (themed backup deck + QRG built Aug 31)
-- **Matt + Rita: MRL Debrief -- meet with Destiny** on technical needs; troubleshoot centralized API migration blocker
-- **Matt: Set up direct meeting with EPAM (Uri)** to reconnect MRL Debrief API to Congress Library backend tables -- should be quick once Congress Library's schema transformation finishes testing (expected ~Sep 11-12)
+- ~~**Matt + Rita: MRL Debrief -- meet with Destiny** on technical needs; troubleshoot centralized API migration blocker~~ DONE (Destiny's backend source obtained Sep 22)
+- ~~**Matt: Set up direct meeting with EPAM (Uri)** to reconnect MRL Debrief API to Congress Library backend tables~~ DONE (live connection working, auth resolved Sep 22; see [[mrl-debrief-status]])
 - ~~**Rita: Coordinate with Jen Devers Triggiani and Mellie** for Sept 2 planning feature preview~~ DONE (demo held Sep 2, discovered a bug, fixing)
 - **Matt: Update QRG** with demo follow-up items (upload limits, EP materials info); keep live link current for Adebayo
 - **Cinnamon: Confirm MSL/PDT training timing and ESMO attendee subset** with Mellie/Jen
@@ -303,8 +347,16 @@ metadata:
 - **Shannon: Set up on-site base camp** near corporate suites for ESMO support
 - **Shannon: Provide last year's Word doc example + medical writer recipient list** to EPAM
 - **Cinnamon + Shannon: Schedule AHA EDSA kickoff** with Ante Harxhi -- initial call held Sep 9, follow-up TBD
-- **Matt + EPAM: Prepare follow-up demo for Sep 17** -- Adebayo's USMA Core Planning team. Shannon doing intro, Matt doing demo. Record this one for distribution.
+- ~~**Matt + EPAM: Prepare follow-up demo for Sep 17** -- Adebayo's USMA Core Planning team~~ DONE (held Sep 17 and well received, but the environment produced no output, so the recording needs a re-shoot; see below)
 - **Matt + Rita: Plan demo for ESMO Abstract Planning series** -- no demo currently slated; Shannon wants one closer to ESMO. Determine timing and content.
+- **Matt + Shannon: Discuss abstract tiering experiment (Sep 24)** -- Ante Harxhi (EDSA, CV) wants a quick, time-boxed AI experiment tiering abstracts by importance; Shannon wants it ahead of the SEP retrospective
+- **JPA: One-pager on ESMO / AHA workflow experiments** -- Shannon's ask (Sep 22); Confluence page already set up. MRL Debrief one-pager delivered Sep 23
+- **Shannon + Congress Ops: Review EPAM's latest Congress Ops changes** -- Merve to notify when ready; approval gates the final video recording
+- **Matt + EPAM: Record fresh workflow demo video** -- current workflow wizard; target the Sep 30 meeting, after the Congress Ops changes are approved
+- **Shannon + JPA: Send Abstract Library access link (Fri Sep 25)** -- same day as the ESMO data drop; users see the ONC committee global tier list and abstracts tagged watch/debrief/write-up
+- **Team: Debrief link update** -- outstanding item Shannon flagged for this week's open call slot (Sep 22)
+- **EPAM: Assignee feature suggestions from the Sep 17 demo** -- ability to remove assignees, list of all currently assigned writers, other assignees' names in the assignment email
+- **JPA: SEP retrospective on ASCO 2026 content** -- test how SEP information changes abstract summaries; now sequenced after the tiering experiment
 
 ## 2027 Planning
 

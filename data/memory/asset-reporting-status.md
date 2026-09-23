@@ -1,12 +1,26 @@
 ---
 name: asset-reporting-status
-description: "Asset Reporting -- Shannon took over coordination; recurring biweekly meeting with Stephen Leong's group starts Sep 23; Talia drafting prompts for remaining priority assets via Northern Lights beta deep research. Updated Sep 10, 2026."
+description: "Asset Reporting -- Shannon creating a Confluence page for early asset reports (Sep 22); first biweekly session with Stephen Leong's group Sep 23 (outcome not yet captured); Talia drafting prompts for remaining priority assets via Northern Lights beta deep research. Updated Sep 23, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-16T13:36:21.158Z
+  modified: 2026-09-23T18:43:54.548Z
 ---
+
+## Current State (Sep 23, 2026)
+
+- **Shannon is creating a Confluence page for early asset reports** (Teams, Sep 22), alongside the pages already set up for MRL Debrief and the ESMO / AHA workflow experiments.
+- **First every-other-week session with Stephen Leong's group was scheduled for today (Sep 23).** Outcome not yet captured; add it once known.
+- JPA's open ask from Sep 10 (Talia): review the SAC-TMT prompt and draft foundational prompts for the remaining priority assets, run them through the Northern Lights beta deep research module, and share results ahead of that session.
+
+## Action Items (Sep 23)
+
+- **Shannon: Create Confluence page for early asset reports** -- per Shannon's Sep 22 Teams note
+- **Talia: Draft foundational prompts for remaining priority assets** -- review the SAC-TMT prompt, test through the Northern Lights beta module, share ahead of the Stephen Leong session
+- **Team: Capture outcomes of the first biweekly Stephen Leong session (Sep 23)**
+- **JPA: Demo the asset normalization app to Stephen, Danny, and EPAM** -- not yet scheduled
+- **JPA: Remaining demo-app updates** -- MUSE pairing integration, NCT registry bucket, additional competitor data
 
 ## Current State (Sep 10, 2026)
 
