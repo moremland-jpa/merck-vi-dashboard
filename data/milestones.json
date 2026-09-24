@@ -14,11 +14,18 @@
     "date": "2026-09-11"
   },
   {
-    "id": "congress-ai-demo-sep15",
-    "label": "ESMO core planning team demo",
+    "id": "genesis-prod-release-sep12",
+    "label": "Genesis production release (backend enrichment)",
+    "workstream": "Genesis",
+    "type": "milestone",
+    "date": "2026-09-12"
+  },
+  {
+    "id": "congress-ai-demo-sep17",
+    "label": "ESMO Core Planning follow-up demo (Adebayo)",
     "workstream": "Congress AI",
     "type": "deadline",
-    "date": "2026-09-15"
+    "date": "2026-09-17"
   },
   {
     "id": "mid-sept-f2f",
@@ -36,11 +43,25 @@
     "date": "2026-09-24"
   },
   {
+    "id": "tiering-discussion-sep24",
+    "label": "Discuss abstract tiering experiment (Ante, CV) with Shannon",
+    "workstream": "Congress AI",
+    "type": "deadline",
+    "date": "2026-09-24"
+  },
+  {
     "id": "lba-release",
-    "label": "ESMO LBAs available / demo kickoff",
+    "label": "ESMO data drop (LBA titles or abstract summaries) + Abstract Library link to users",
     "workstream": "Congress AI",
     "type": "milestone",
     "date": "2026-09-25"
+  },
+  {
+    "id": "demo-video-sep30",
+    "label": "Final workflow demo video recording (after Congress Ops review)",
+    "workstream": "Congress AI",
+    "type": "deadline",
+    "date": "2026-09-30"
   },
   {
     "id": "asco-retrospective",
@@ -59,7 +80,7 @@
   },
   {
     "id": "sep-integration-poc",
-    "label": "SEP integration POC (target)",
+    "label": "SEP retrospective POC (target; now after the tiering experiment)",
     "workstream": "MRL Debrief",
     "type": "milestone",
     "date": "2026-09-25",
