@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-23T18:43:43.518Z
+  modified: 2026-09-24T13:27:41.471Z
 ---
 
 ## Current State (Sep 23, 2026)
@@ -73,7 +73,7 @@ Moved from analysis (Sep 16) to a working engine rebuild, tested on both the dev
 
 **Why work on the codebase now (Matt, Sep 16 team-update note):** still blocked on the Databricks compute resource ticket, so the actual Congress Library API reconnection is on hold. In the meantime, using raw sample data Uri already provided to build/test code against, plus leaning on external sources (CT.gov, per the enrichment path found the same day) to improve fields and layout ahead of the live reconnection.
 
-Also installed Node.js locally and on the VDI (portable, added to PATH) — the Sandbox-wide `Merck/CLAUDE.md` still says "No Node.js on this machine," which is now stale.
+Also installed Node.js locally and on the VDI (portable, added to PATH). `Merck/CLAUDE.md` updated to reflect this (Sep 24).
 
 ## Current State (Sep 16, 2026) — Root cause analysis update delivered
 
