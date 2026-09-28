@@ -1,11 +1,11 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- Sep 25: confirmed findings-extraction duplicate-findings defect (extract_findings_v2d prompt, fix exists in v2e but not canonical), independently flagged by Matt via dashboard note too; Matt's field-team manual-labeling idea (training data + trust-building) not yet raised with the team; ESMO sentiment ask blocked on 3 open questions (what data, who uses it, what they want); RMSD dropped as Figma source filter; PowerPoint export agreed for demo but Export button still broken; Genesis Sep 28 weekly (Czech holiday, Jan/Michal out) is the GENESIS launch + ESMO discussion venue. Also: Patrick reframing first release as 'statement of principles' (Sep 11); production release Sep 12 (backend enrichment only); Matt's Databricks compute access still pending. As of Sep 25, 2026."
+description: "Genesis Sentiment 2.0 -- Sep 28 weekly: 'findings' confirmed as launch terminology, real concern is finding-quality not the label; Matt to get code access via Steve Bridgeman and quantify finding-identification issues ASAP; Patrick meeting the former-BI team (Ulf's backfill) Sep 29; adoption risk may be workflow inertia, not awareness. Also Sep 25: confirmed findings-extraction duplicate-findings defect (v2d prompt, fix exists in v2e but not canonical), independently flagged by Matt via dashboard note too; Matt's field-team manual-labeling idea (training data + trust-building) not yet raised with the team; ESMO sentiment ask blocked on 3 open questions; RMSD dropped as Figma source filter; PowerPoint export agreed for demo but Export button still broken. As of Sep 28, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-28T16:15:02.462Z
+  modified: 2026-09-28T20:31:47.562Z
 ---
 
 ## Current State (Sep 4, 2026)
@@ -254,6 +254,20 @@ Michael Hamann's (EMEAC hub lead) project: global value dossiers in Gemini Noteb
 - Idea: ask field teams whether they'd be willing to manually assign sentiment to a set of insights (i.e., label them by hand), and how many they'd be willing to do.
 - Two uses for the labels: (1) training/validation data for the model -- what "right answers" look like -- and (2) a trust-building mechanism, so field teams see the model was built to "think the way they do" rather than having a black-box classification imposed on them.
 - Not yet raised with Patrick/Jan/Michal. Worth surfacing at the Sep 28 weekly alongside the ESMO sentiment ask and launch discussion, since it touches both data quality (relevant to the v2d/v2e findings-extraction problem above) and stakeholder trust (relevant to the Kate Lynn/Kristen buy-in track).
+
+## Key Developments (Sep 28) -- Genesis weekly, dashboard team update (Molly)
+
+### Launch Terminology and Findings-Quality Concern
+- **"Findings" is the term that ships for the 2.0 launch.** Team open to feedback/renaming after launch if users push back, but the bigger concern right now is the quality of filtering into findings, not the label -- directly relevant to the v2d/v2e duplicate-findings defect above.
+- **Matt to get access to code to assess "finding" quality** -- Shannon connected him with Steve Bridgeman.
+- **JPA action item, ASAP:** Matt to quantify/define the potential issues with finding identification for Genesis 2.0.
+
+### Org Change -- Former BI Team Steps Into Ulf's Role
+- **Patrick has a call tomorrow (Sep 29) with the team formerly known as Business Intelligence** -- described as "the new Ulf," i.e. the data-science backfill since Ulf's Aug 31 departure.
+
+### Adoption / Internal Promotion
+- **Potential promotion channels:** the Champions Network (Adi Zmiri) and the newly-integrated former-BI team both seen as opportunities to raise Genesis's internal profile.
+- **Real adoption risk reframed:** may not be lack of awareness of the tool, but internal teams' adherence to existing workflows over switching to Genesis.
 
 ## Related Memories
 

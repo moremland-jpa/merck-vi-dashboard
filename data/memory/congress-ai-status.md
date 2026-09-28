@@ -1,11 +1,11 @@
 ---
 name: congress-ai-status
-description: "Congress AI -- ESMO data drop + Abstract Library link Fri Sep 25; Sep 17 Adebayo demo well received but environment gave no output, re-record targeted Sep 30 after Congress Ops changes; abstract tiering experiment (Ante Harxhi, CV) now ahead of SEP retrospective; JPA owes ESMO/AHA workflow one-pager (MRL one delivered); leads out this week for 2027 planning. As of Sep 23, 2026."
+description: "Congress AI -- ESMO data drop + Abstract Library link Fri Sep 25; Sep 17 Adebayo demo well received but environment gave no output, re-record targeted Sep 30 after Congress Ops changes; abstract tiering experiment (Ante Harxhi, CV) now ahead of SEP retrospective, and per Sep 28 update may extend to other TAs + a CI-perspective experiment (ACC as content example); JPA owes ESMO/AHA workflow one-pager (MRL one delivered); leads out this week for 2027 planning. As of Sep 28, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-23T18:44:23.251Z
+  modified: 2026-09-28T20:31:37.623Z
 ---
 
 ## Current State (Sep 23, 2026)
@@ -323,6 +323,15 @@ metadata:
 - **Ante Harxhi (EDSA, CV)** wants a quick experiment using AI to tier abstracts by importance. Shannon thinks it should go **before the SEP experiment** and can be time-boxed. Matt agreed to discuss with Shannon on Sep 24.
 - Builds on the tiering-tags thread (Aug 20) and the ONC committee's global tier list going out with the Abstract Library link. Mladen (Congress Excellence Work Group) said he'd send tiering tags once available, possibly after the Sep 25 LBAs, which could serve as reference labels for the experiment.
 
+## Key Developments (Sep 28)
+
+### Tiering Experiment Expands Beyond CV (dashboard team update, Molly, Sep 28)
+- **Global Onc's tiering structure has potential to play well with other TAs** -- not just the CV/Ante Harxhi use case it started with.
+- **Request to experiment on tiering abstracts from a CI (Competitive Intelligence) perspective**, based on that same rubric.
+- **SEP retrospective confirmed to be able to run post-ESMO** -- consistent with the existing sequencing (tiering experiment ahead of SEP).
+- **ACC (American College of Cardiology) floated as a content example** -- relevant to the CV team's tiering work.
+- **Next steps:** Shannon to hand off the tiering structure from Global Onc plus SLPs from ASCO; JPA to review previous tiering-experiment materials; Shannon to meet with the CV team on tiering in 2 weeks.
+
 ## JPA Deliverables / Action Items (updated Sep 23)
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
@@ -350,6 +359,7 @@ metadata:
 - ~~**Matt + EPAM: Prepare follow-up demo for Sep 17** -- Adebayo's USMA Core Planning team~~ DONE (held Sep 17 and well received, but the environment produced no output, so the recording needs a re-shoot; see below)
 - **Matt + Rita: Plan demo for ESMO Abstract Planning series** -- no demo currently slated; Shannon wants one closer to ESMO. Determine timing and content.
 - **Matt + Shannon: Discuss abstract tiering experiment (Sep 24)** -- Ante Harxhi (EDSA, CV) wants a quick, time-boxed AI experiment tiering abstracts by importance; Shannon wants it ahead of the SEP retrospective
+- **JPA: Review previous tiering-experiment materials** (Sep 28 ask) -- Global Onc's tiering structure may extend to other TAs and a CI-perspective experiment; Shannon handing off the Global Onc structure + ASCO SLPs; Shannon meeting CV team on tiering in 2 weeks
 - **JPA: One-pager on ESMO / AHA workflow experiments** -- Shannon's ask (Sep 22); Confluence page already set up. MRL Debrief one-pager delivered Sep 23
 - **Shannon + Congress Ops: Review EPAM's latest Congress Ops changes** -- Merve to notify when ready; approval gates the final video recording
 - **Matt + EPAM: Record fresh workflow demo video** -- current workflow wizard; target the Sep 30 meeting, after the Congress Ops changes are approved

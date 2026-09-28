@@ -1,11 +1,11 @@
 ---
 name: mrl-debrief-status
-description: "MRL Debrief -- reliability solved (Uri normalizer, zero 502s Sep 24); draft format rebuilt to match medical writers' decks with selectable sections; tool is a next-morning debrief of a talk already given, built from RMSD screenshots on the fly (confirmed from transcripts); waiting on Uri re capture intake + safety section and on data rights; one-pager v3 + Confluence updated Sep 24. As of Sep 24, 2026."
+description: "MRL Debrief -- reliability solved (Uri normalizer, zero 502s Sep 24); draft format rebuilt to match medical writers' decks with selectable sections; tool is a next-morning debrief of a talk already given, built from RMSD screenshots on the fly (confirmed from transcripts); waiting on Uri re capture intake + safety section and on data rights; one-pager v3 + Confluence updated Sep 24; Sep 28 update: Matt wants an individual meeting with Shannon to review progress, Sep 25 ESMO data may make testing more robust. As of Sep 28, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-24T19:56:53.749Z
+  modified: 2026-09-28T20:31:52.684Z
 ---
 
 ## Current State (end of Sep 24, 2026) -- read this first
@@ -51,6 +51,11 @@ Full technical detail (architecture, tests, VDI setup, scripts, Uri's confirmati
 
 ### Technical Catch-up With Uri in This Week's Open Call Slot (Sep 23)
 - Shannon and Patrick are out of this week's call; Matt and Uri are using the time to go over MRL Debrief technical findings.
+
+## Key Developments (Sep 28, dashboard team update, Molly)
+
+- **Matt has made progress understanding the current state** of the engine/workstream; wants to schedule an individual meeting with Shannon to go over it in more detail.
+- **ESMO data updates land Sep 25** (per congress-ai-status.md's data-drop item) -- may make Matt's MRL Debrief testing more robust once that content is available.
 
 ## Next Steps / Action Items (Sep 24)
 
