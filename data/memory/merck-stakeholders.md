@@ -1,11 +1,11 @@
 ---
 name: merck-stakeholders
-description: "Key people across all Merck workstreams -- roles, relationships, org changes. Grace left JPA Sep 4; Molly Kuchler (Engagement Lead, Hub 7) started Sep 14, joined Congress AI Ways of Working Sep 16. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Karena Yu now also blocked by Citeline impasse. Updated Sep 18, 2026."
+description: "Key people across all Merck workstreams -- roles, relationships, org changes. Sep 25: Adi's last name confirmed (Zmiri); added Alex and Charles from DIA (formerly ACE team), Genesis data scientists. Grace left JPA Sep 4; Molly Kuchler (Engagement Lead, Hub 7) started Sep 14, joined Congress AI Ways of Working Sep 16. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Karena Yu now also blocked by Citeline impasse. Updated Sep 25, 2026."
 metadata: 
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-23T18:44:16.053Z
+  modified: 2026-09-25T19:07:27.374Z
 ---
 
 ## Merck V&I Operations
@@ -58,7 +58,7 @@ metadata:
 
 | Person | Role |
 |--------|------|
-| Adi | Scientific Insights -- knows nuances of insight definition/submission |
+| Adi Zmiri | Scientific Insights -- knows nuances of insight definition/submission. Last name confirmed via Teams Sep 25. Weighing in on ESMO sentiment ask scoping (thinks matching Oncology's leadership-report format may be too big an ask by end of ESMO) and on the Sep 25 DIA call reschedule. |
 | Raji | BI team -- experimenting with Databricks AI |
 | John | Developer on Genesis team |
 
@@ -114,6 +114,8 @@ metadata:
 | Justin Harris | AHA planning contact (CVMET) | Won't be at AHA himself. Provided CI contacts and CVRG spreadsheet. |
 | Jan Feltman | Merck | Source of Apex rejection update (Aug 14). Apex not currently viable per his assessment. |
 | Michael Hamann | EMEAC hub lead | HTA/outcomes research project using Gemini Notebooks for Global Value Dossiers. Patrick formally requested JPA help Aug 13. |
+| Alex (DIA) | Data scientist, DIA (V&I data-science team, formerly ACE per the Aug 11 ACE+BI merge; exact current team name unconfirmed) | Genesis call with Adi's team, moved to 11 AM ET Sep 25 due to a scheduling conflict. Last name not yet captured. |
+| Charles (DIA) | Data scientist, DIA (same team as Alex above) | Same Sep 25 rescheduled Genesis call. Last name not yet captured. |
 
 ## Org Changes
 

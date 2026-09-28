@@ -1,23 +1,31 @@
 ---
 name: mrl-debrief-status
-description: "MRL Debrief -- live Congress AI connection working; generation reliability is the open issue (Uri rolling out a server-side normalizer, re-test once live); HR/CI + safety still missing; one-pager + Confluence page delivered Sep 23; SEP retrospective now follows the abstract tiering experiment. As of Sep 23, 2026."
+description: "MRL Debrief -- reliability solved (Uri normalizer, zero 502s Sep 24); draft format rebuilt to match medical writers' decks with selectable sections; tool is a next-morning debrief of a talk already given, built from RMSD screenshots on the fly (confirmed from transcripts); waiting on Uri re capture intake + safety section and on data rights; one-pager v3 + Confluence updated Sep 24. As of Sep 24, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-24T13:27:41.471Z
+  modified: 2026-09-24T19:56:53.749Z
 ---
 
-## Current State (Sep 23, 2026)
+## Current State (end of Sep 24, 2026) -- read this first
 
-- **Live connection working:** the JPA engine now talks to Congress AI's debrief endpoint (auth resolved Sep 22). Destiny's original backend source is in hand.
-- **Main open issue is generation reliability:** many live calls fail schema validation. Uri diagnosed the causes and is rolling out a server-side normalizer (first deploy attempt on Sep 23 didn't succeed). Re-test the same ASCO abstracts as soon as it's live; that before/after comparison is the most important next check.
-- **Data gaps confirmed on successful calls:** hazard ratios and confidence intervals come back empty, and the Congress AI schema has no safety / adverse-event section.
-- **ESMO (Oct 23-27):** abstracts mostly have no content yet, which is expected pre-congress. Real ESMO testing waits for content to arrive.
-- **Delivered Sep 23:** user-facing one-pager slide for Shannon, and a rewritten Confluence status page.
-- **Sequencing:** the SEP retrospective now follows a new abstract tiering experiment (Ante Harxhi, CV) that Shannon wants first (see [[congress-ai-status]]).
+**Technical status**
+- **Reliability solved:** Uri's normalizer is live. 100 ASCO abstracts: 89 x 200 on the first call, 11 x 422 (no content), **zero 502s** (was 50-85%). HR in 17%, full CI in 24% of the 200s (Sep 22: 0/4). The earlier "encoding bug" was our own PowerShell capture, not Congress AI (closed).
+- **Draft format rebuilt to match the medical writers' ASCO 2026 master files** (`MRL Debrief/actual writeups/`), with selectable sections, in the engine (`layout: 'writeup'`). Sample: `mrl-debrief-engine/local-samples/LBA3508_writeup.pptx`. Detail in [[project-mrl-debrief-engine]].
+- **Remaining gaps:** no safety/AE section in the Congress AI schema; deployment location + real auth (today the token is grabbed by hand from browser cookies).
 
-Full technical detail (architecture, tests, VDI setup, retry-convergence hypothesis, Uri's exact confirmations) is in [[project-mrl-debrief-engine]]. Check that first when resuming.
+**How the tool is actually used (confirmed from transcripts, Sep 24)**
+- It's a **next-morning debrief of an assigned talk that already happened**, not a pre-talk "what to go see" briefing. Matt asked about the pre-talk idea; the transcripts don't support it. Citations: Shannon, Jul 30 MRL Debrief session 12:27 (assigned the talk, debrief "for the senior leaders the next morning") and 36:18 (info at 5, in the tool by 8, leaders pre-read); Shannon, Aug 12 EPAM Ways of Working 14:06 ("this data won't come available until that day"; depends on whoever is assigned "taken screenshots"). "What to go see today" belongs to the Congress AI Digital Planning side.
+- Pre-talk pieces that do exist: the early-September planning calls pick which abstracts become debriefs vs write-ups (Round 2 Digital Planning interview); some content may be in Congress AI if the poster/presentation was uploaded the night before (Jul 30, 21:31), so Background/Methods could be pre-built with results added after the talk (idea worth raising with Shannon).
+- **Sep 24 call (no transcript in `transcripts/`; newest is Sep 16; from Matt's verbal report):** Shannon wants it used on the fly at the congress. Source = RMSD screenshots, so a 422 is the normal state for same-day late-breakers. Envisioned flow: RMSD uploads captures, checks/unchecks sections (she said this Jul 30 42:16 and Aug 12 too), generates, writer reviews.
+- **Who processes the captures (open, waiting on Uri):** (a) Uri/EPAM ingest them and we consume the same `debrief/generate` output (preferred; Congress AI already lists "poster, slide text, enhancements" as sources and has `poster_enhanced`/`poster_filename` fields), or (b) we process them ourselves (needs GPTeal access inside Merck's network + legal, breaks the engine's no-LLM design). Destiny's code does no screenshot processing (JSON input only; `parseMultipart.js` is unused dead code).
+- **Data-rights flag:** the Jul 8 constraint (contracts allow screenshots, no AI rights for automation) applies directly to AI-processing RMSD captures. Needs Shannon's escalation answered before building either option.
+- **Usability tension:** earlier field testing found upload workflows are a struggle for many RMSDs; the capture step must be very light (phone photos) or supported.
+
+**Deliverables current as of Sep 24:** one-pager v3 (`MRL Debrief/MRL Debrief - Process One-Pager.pptx`), Confluence page (`MRL Debrief/MRL Debrief Automation - Confluence.md`, paste-ready, Matt pastes it into Confluence), engine `50965ee` on GitHub.
+
+Full technical detail (architecture, tests, VDI setup, scripts, Uri's confirmations) is in [[project-mrl-debrief-engine]].
 
 ## Key Developments (Sep 21-23)
 
@@ -44,30 +52,31 @@ Full technical detail (architecture, tests, VDI setup, retry-convergence hypothe
 ### Technical Catch-up With Uri in This Week's Open Call Slot (Sep 23)
 - Shannon and Patrick are out of this week's call; Matt and Uri are using the time to go over MRL Debrief technical findings.
 
-## Action Items (Sep 23)
+## Next Steps / Action Items (Sep 24)
 
-- **Matt + Uri: Re-test live generation once the normalizer is live** -- same ASCO 500-abstract sample plus the retry test; before/after comparison
-- **Uri: Server-side normalizer rollout** -- fixes the formatting causes of the schema-validation failures
-- **Matt + Uri: MRL Debrief technical catch-up** -- during this week's open call slot
-- **Matt: Report text-encoding issue to Uri** -- character corruption in extracted text (e.g. "HER2" minus sign garbled)
-- **Matt: Request an adverse-event section in the Congress AI debrief schema** -- none exists in the backend schema
-- **Matt: Client-side resilience if the normalizer falls short** -- retry (3x / 5 s), envelope unwrap, accept partial responses; publication fallback for missing values
-- **Matt: Run retry-convergence survey on a fresh ASCO sample** -- quantify how many failures recover on retry
-- **Legal: Clear use of Congress AI generated content and PubMed abstract quoting** -- the ENABLE_CONGRESS_AI_CONTENT setting stays off until cleared
-- **Team: Decide where the production version runs** -- Congress AI is only reachable inside Merck's network
-- **JPA: SEP retrospective on ASCO 2026 content** -- now after the abstract tiering experiment
-- ~~**Matt: MRL Debrief one-pager for Shannon**~~ DONE (Sep 23)
-- ~~**Matt: Rewrite MRL Debrief Confluence page**~~ DONE (Sep 23)
+- **Waiting on Uri** (Matt asked; responses pending): can RMSD captures feed Congress AI's existing slide/poster/enhancement intake, and is there an upload route? Upload-to-draft latency? Phone photos OK? **Plus:** can a safety/AE section be added to the output? **Plus (minor):** his normalizer writes an unvalidated CI into `notes` as a Python dict (6/102 endpoints; we strip it).
+- **Shannon: data-rights answer** for AI processing of captures (via Congress Excellence Workgroup).
+- **Matt -> Shannon (drafted but not yet sent, offered):** send the LBA3508 writeup + one-pager v3; ask for format review with a medical writer, which sections are on by default, how the Presenter / PDT-EDT Partner fields get filled (engine assumes rmsd_presenter / mrl_discussant); flag the data-rights point and the upload-usability tension.
+- **ESMO (Oct 23-27) pilot:** a few assigned late-breakers, captures in, drafts out, writers time their review. Needs the Uri answers + data rights by early October; otherwise fall back to drafts from abstract content + same-day publications, with writers adding figures/numbers.
+- **Needed for any live use:** decide where it runs inside Merck's network; replace manual cookie/token grab with real auth + token refresh.
+- **Engine follow-ups:** filter/flag empty 200s from industry symposia (ESMO Pfizer example); consider pre-building Background/Methods before the talk.
+- **Legal:** ENABLE_CONGRESS_AI_CONTENT (off until cleared); PubMed abstract quoting.
+- **JPA: SEP retrospective** -- after the abstract tiering experiment.
+- ~~Re-test after normalizer~~ DONE Sep 24 (zero 502s). ~~Report encoding bug~~ moot (ours). ~~Client-side resilience layer~~ moot for 502s. ~~One-pager / Confluence~~ updated Sep 24.
 
 ## Core Purpose and Messaging Notes (Sep 23)
 
 **Delivered Sep 23 (separate from the technical investigation): a user-facing one-pager slide** for Shannon — `MRL Debrief/MRL Debrief - Process One-Pager.pptx`, built via `build_mrl_debrief_onepager.py` (Sandbox/Merck root) on the official Merck V&I theme template. **v1 was rejected as "very light"** — a generic Select→Gather→Draft→Refine→Deliver flow that missed what the debriefs are actually FOR. **v2 (final):** titled "MRL Debrief: Leadership-Ready by Morning," an illustrative overnight timeline (~5 PM talk delivered → ~8 PM draft ready → evening writer review, target ~30 min → overnight leadership pre-read → 6 AM briefing) plus four value cards (Time, Consistency, Coordination, Context). Timeline and the ~30-min figure come from Shannon's own description in the Jul 30 "Prototype introductory session and MRL Debrief" transcript and are labeled illustrative/target on-slide; no invented hours-saved stats. Still zero mention of the 502 bug, ESMO timing, or any blockers — Shannon's ask was "capture what the process is, not document its failings."
 
+**One-pager v3 (Sep 24), after Shannon's on-the-fly reframe:** same title, timeline, and four value cards, but stage 1 now says the RMSD uploads captures of key slides (not "already in Congress AI"), stage 2 says the RMSD chooses what the writeup covers and then generates, and stage 3 is add competitive context + program relevance, then approve. Also added a row of section "chips" (8 checked, 2 unchecked, labelled "Example: sections an RMSD selects for one writeup") that mirrors the engine's WRITEUP_SECTIONS. CONSISTENCY card now reads "Drafts follow the debrief format medical writers already use". Sep 23 version backed up in the session scratchpad only.
+
+**Confluence page updated Sep 24:** now reflects zero schema-validation failures after the normalizer (ASCO 89/100 first-call success, 11 no-content), HR/CI improvement, the encoding issue corrected as JPA-side, Shannon's on-the-fly reframe (RMSD captures + section selection), the writeup format, and new next steps (intake route with Uri, data rights, safety section, format review, ESMO pilot with a fallback, SEP after tiering). It keeps the earlier usability finding that upload workflows are hard for many RMSDs, since that sits in tension with self-upload.
+
 **Confluence page rewritten Sep 23:** `MRL Debrief/MRL Debrief Automation - Confluence.md` replaced the stale Aug 7 "handoff to Apex" version with a current status page (purpose, status table, Sep 16 root causes, live-test findings, Uri's confirmations, what the rebuild does, next steps with If successful / If not successful branching). Merck-internal audience, so it's candid about open issues. It's the paste-ready source for Merck's Confluence (Congress AI space); JPA can't edit Confluence directly. Keep it in sync when status changes (e.g., after Uri's normalizer re-test). **Tone rule from Matt:** Uri/EPAM read this page, so don't call out their misfires by name — the normalizer line says "rolling out," not that the first deploy failed. Candid about system issues, diplomatic about people.
 
 **Core purpose of MRL Debrief (don't lose this again — v1 missed it):** per Shannon (Jul 30), an RMSD/MSL is assigned a talk (typically a late-breaker) and owes a debrief to **senior leadership the next morning** (~6 AM meeting). RMSD fills the template → medical writer consolidates into the format leaders want → Executive Director of Scientific Affairs co-presents and fields questions. Formats vary across congresses today; leaders want one consistent format across ASCO/ESMO/etc. Shannon's target state: data ~5 PM, draft in the tool ~8 PM, ~30 min to tailor and approve, leaders pre-read before the room instead of seeing it cold at 6 AM. Value framing = time saved for writers, consistency, coordinated handoffs, informed leaders. Source transcript: `transcripts/Congress AI_ Prototype introductory session and MRL Debrief 2026 07 30.docx`.
 
-## Current State (Sep 18, 2026) — Engine built, live Congress Library test blocked on Uri
+## History: Sep 18, 2026 (superseded) — Engine built, live Congress Library test blocked on Uri
 
 Moved from analysis (Sep 16) to a working engine rebuild, tested on both the dev machine and the Merck VDI (33/33 tests passing on both), pushed to `github.com/moremland-jpa/merck-mrl-debrief-engine`. Live-testing against the real Congress Library API on Sep 18 confirmed auth works for read (GET) endpoints, found the real ESMO 2026 congress_id, but hit a wall on the one endpoint that matters most: `POST /api/debrief/generate` returns a CSRF error Uri's original instructions didn't cover. A question was sent to Uri Sep 18; **next session should check for his reply first** — that answer determines whether the Congress Library schema migration actually closed the Results/safety gap this whole analysis is about.
 
@@ -75,7 +84,7 @@ Moved from analysis (Sep 16) to a working engine rebuild, tested on both the dev
 
 Also installed Node.js locally and on the VDI (portable, added to PATH). `Merck/CLAUDE.md` updated to reflect this (Sep 24).
 
-## Current State (Sep 16, 2026) — Root cause analysis update delivered
+## History: Sep 16, 2026 (superseded) — Root cause analysis update delivered
 
 Compared all 6 of Destiny's prototype ASCO 2026 debrief decks against the corresponding sections of the 3 real "MASTER FILE" writeup decks, abstract by abstract. Also read the prototype's surviving repo code (backend Azure Functions code is missing, only frontend/schema/docs survive) and Uri's Sep 14 Teams screenshot showing the actual API call shape. Delivered a new doc: `MRL Debrief/MRL Debrief Automation - Root Cause Analysis and Path to Parity (Update Sep 2026).docx`, extending the Aug 7 one-pager.
 
@@ -93,7 +102,7 @@ Recommended phasing (scoped strictly around the two unresolved legal blockers �
 
 **Important framing correction from Matt (Sep 16):** the 6 ASCO abstracts are historical benchmarks for validating approach, not live abstracts needing fixes — don't confuse "found a new source" with "let's go update these old decks." Also: success bar is NOT 100% automation — if the tool fully replaced a medical writer's judgment there'd be no need for one. Goal is getting the AI draft as close as possible (content + formatting) so the medical writer's actual writing job is faster/easier — a co-pilot framing, not a replacement one. Apply this bar to all future recommendations for this workstream.
 
-## Current State (Sep 10, 2026)
+## History: Sep 10, 2026 (superseded)
 
 **API fix is now concrete and scoped.** Per Uri (via Shannon, Sep 10 weekly check-in), reconnecting isn't a big deal -- Matt just needs a meeting with EPAM to get access to the backend tunnel into the **Congress Library tables** (the same ones Destiny's prototype pulled from). Root cause of the break: Congress Library went through a major schema transformation since ASCO (~3 columns → ~20 columns); EPAM is finishing testing, expected ready **end of week ~Sep 11-12**. Matt is not blocked on his own environment setup -- this connects directly to Destiny's existing work via EPAM.
 
@@ -101,7 +110,7 @@ Recommended phasing (scoped strictly around the two unresolved legal blockers �
 
 **Databricks as a dev environment:** Matt's Databricks access (see [[genesis-status]] for the compute-resource hurdle) can double as a code environment for the MRL Debrief prototyping work -- point it at a data folder as the source, useful once the API/tables are reconnected.
 
-## Current State (Sep 4, 2026)
+## History: Sep 4, 2026 (superseded)
 
 **Priority #1** in the Congress AI experiment stack (per Aug 20 weekly check-in). Patrick approved as exception to his desire to limit POCs, because Shannon made a strong case it ties into existing deliverables.
 

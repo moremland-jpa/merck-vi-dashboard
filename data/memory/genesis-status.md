@@ -1,11 +1,11 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- Patrick reframing first release as 'statement of principles' + bespoke report tools, incl. director-needs triage and USMA-vs-non-USMA feedback triage (Sep 11, full message). Joe Cianciulli Figma feedback: brand-specific topics, quarterly cadence, trending. Production release Sep 12 (backend enrichment only). Matt's Databricks compute access still pending. Feature intake process may move to Mural -- see [[genesis-feature-process]]. As of Sep 18, 2026."
+description: "Genesis Sentiment 2.0 -- Sep 25: confirmed findings-extraction duplicate-findings defect (extract_findings_v2d prompt, fix exists in v2e but not canonical), independently flagged by Matt via dashboard note too; Matt's field-team manual-labeling idea (training data + trust-building) not yet raised with the team; ESMO sentiment ask blocked on 3 open questions (what data, who uses it, what they want); RMSD dropped as Figma source filter; PowerPoint export agreed for demo but Export button still broken; Genesis Sep 28 weekly (Czech holiday, Jan/Michal out) is the GENESIS launch + ESMO discussion venue. Also: Patrick reframing first release as 'statement of principles' (Sep 11); production release Sep 12 (backend enrichment only); Matt's Databricks compute access still pending. As of Sep 25, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-18T13:38:56.096Z
+  modified: 2026-09-28T16:15:02.462Z
 ---
 
 ## Current State (Sep 4, 2026)
@@ -215,6 +215,45 @@ Michael Hamann's (EMEAC hub lead) project: global value dossiers in Gemini Noteb
 
 - **Gem formally accepted for Boston AI Ethics Panel.** Recommended by USMA stakeholder, spoke with Robin Wintersberry (Americas leader). Easy acceptance process.
 - Colin and Gem meeting Sep 3 afternoon to ideate on AI ethics content.
+
+## Key Developments (Sep 25) -- Teams thread, "Genesis 1-5" screenshots
+
+### Figma prototype feedback loop (Michal <-> Patrick)
+- Michal implemented Patrick's requested text edits.
+- **RMSD removed as a source-filter option** in the Figma prototype -- it isn't actually supported by the product, so it won't appear in any environment.
+- **PowerPoint export**: agreed to support in the demo. Jan Chmelar will share the file; Michal wants to review it before it goes to the dev team to wire up the **Export** button, which currently throws an error on click.
+
+### Oncology demo feedback (demo was Sep 24, relayed Sep 25)
+- Oncology asked for access to more of their own disease states so they can analyze ESMO results. Ted suggests a test environment instead of Figma -- still an open discussion, not decided.
+- **Data mismatch worth flagging:** the topics/findings shown in that demo were not Oncology data -- they were PH/sotatercept results. Confirm before referencing that demo content as Oncology's own in any follow-up.
+
+### SL vs. HCP terminology -- unresolved
+- Ted revised a Patrick statement to reference "SL" (Scientific Leader) instead of "HCP." Ted and Patrick then disagreed on the relationship: Ted thinks SL is used generically to include HCPs; Patrick thought SL is a *subset* of HCP (i.e., HCP is the broader category, including everyday treaters, not just thought leaders). Left open, no resolution in thread.
+- Reminder from Ted: insights come from RMSDs, MSLs (ex-US), and some reviewers -- not RMSDs alone.
+
+### ESMO sentiment ask -- three open questions block scoping (Patrick, Sep 25)
+- Oncology wants something similar to what Melissa and Miguel already showed their own leadership (findings displayed alongside topics) -- they're sending JPA/Genesis a copy of that format. Adi thinks matching it may be too big an ask by end of ESMO. *(Possibly the same Melissa Mims / Miguel already tracked under Congress AI ESMO planning in [[merck-stakeholders]] -- unconfirmed, worth checking before assuming they're the same people.)*
+- Patrick: technically doable -- Sentiment 2.0 Release 1 tech is largely complete -- but three things are still undefined:
+  1. What data would actually be analyzed for ESMO (insights aren't instant, there's a lag -- unclear how that's handled for a live congress)
+  2. Who from Oncology (ONC) would actually use it, so the team can brief them on Release 1's features/limitations
+  3. What ONC actually wants to learn from the analysis (sounds like it would be sent to the Genesis/JPA team to produce, not self-served)
+- **The Sep 28 Genesis weekly is the venue for this** -- agenda is the GENESIS launch with the Sentiment demo plus this ESMO ask (effectively: whether/how to launch Sentiment 2.0 Release 1 to users). Jan Chmelar and Michal Libich will miss it (Czech public holiday, Sep 28) -- may need a reschedule or their input gathered separately.
+
+### DIA (formerly ACE team) call rescheduled
+- The Genesis call with Alex and Charles from DIA (data-science team, renamed from ACE per the Aug 11 ACE+BI merge -- exact current name unconfirmed) moved from 10:30 AM ET to 11:00 AM ET on Sep 25 due to a conflict on Adi's team. Patrick flagged it as important to keep Sentiment 2.0 on track.
+
+### Findings-extraction duplicate-findings bug -- confirmed defect, fix not yet deployed (Ted, Sep 25)
+- Ted used GitHub CoPilot (with access to the Exodus source) to diagnose why some Genesis insights display ~6 near-duplicate "findings" that really restate the same 1-2 underlying claims with slightly reworded subject/product.
+- **Root cause confirmed:** the live corpus uses the canonical `extract_findings_v2d` prompt, documented to split one insight into multiple near-duplicate findings that each re-attach the same claim. The UI then shows each duplicate's distinct `self_contained_text`, which is why the wording differs per row even though the claim doesn't.
+- **A fix exists but isn't deployed:** a newer `extract_findings_v2e` prompt adds rules -- keep reasons/qualifiers attached to their claim, no two findings from one insight may assert the same thing, drop a finding fully contained in another -- but v2e is **not canonical**. Adopting it requires a full re-extraction, reclassification, re-embedding, and re-clustering of the corpus, not a quick swap.
+- Ted has a CoPilot-suggested code patch but is deliberately not touching Exodus code without MRL IT's (Jan Chmelar's) sign-off -- planning to review it with Jan directly.
+- Ted found more examples in a random sample, confirming this is widespread, not a one-off: INS1008730 (statin/LDL-C-intolerance claims, ~6 near-duplicates) and INS1016854 (KN-483 OS-difference claims, ~6 near-duplicates).
+- Matt independently flagged the same defect via a dashboard team-update note (Sep 25, 2:21 PM): "the current code will break insights down into findings that often repeat/duplicate each other. Anyone who sees this will lose trust in the system." Confirms this is the same v2d/v2e issue Ted diagnosed, from a second observation path -- discussion planned next week on what it would take to re-run all insights through v2e.
+
+### Field-Team Manual Labeling Idea (Matt, dashboard team-update note, Sep 25 3:38 PM)
+- Idea: ask field teams whether they'd be willing to manually assign sentiment to a set of insights (i.e., label them by hand), and how many they'd be willing to do.
+- Two uses for the labels: (1) training/validation data for the model -- what "right answers" look like -- and (2) a trust-building mechanism, so field teams see the model was built to "think the way they do" rather than having a black-box classification imposed on them.
+- Not yet raised with Patrick/Jan/Michal. Worth surfacing at the Sep 28 weekly alongside the ESMO sentiment ask and launch discussion, since it touches both data quality (relevant to the v2d/v2e findings-extraction problem above) and stakeholder trust (relevant to the Kate Lynn/Kristen buy-in track).
 
 ## Related Memories
 
