@@ -34,7 +34,7 @@ Set-Location $PSScriptRoot
 
 # ── Step 2: Check for any changes (data + code) ──
 
-$dataChanges = git diff --stat HEAD -- data/memory/
+$dataChanges = git diff --stat HEAD -- data/memory/ data/milestones.json
 $codeStatus = git status --porcelain -- "*.py" "*.txt" "*.toml" "pages/" "*.ps1" | Where-Object { $_ -notmatch "secrets\.toml" }
 
 $hasData = [bool]$dataChanges
@@ -48,7 +48,7 @@ if (-not $hasData -and -not $hasCode) {
 Write-Host ""
 if ($hasData) {
     Write-Host "Data changes:" -ForegroundColor Cyan
-    git diff --stat HEAD -- data/memory/
+    git diff --stat HEAD -- data/memory/ data/milestones.json
 }
 if ($hasCode) {
     Write-Host "Code changes:" -ForegroundColor Cyan
@@ -59,7 +59,7 @@ if ($hasCode) {
 
 $ErrorActionPreference = "Continue"
 
-git add data/memory/
+git add data/memory/ data/milestones.json
 if ($hasCode) {
     git add *.py pages/*.py requirements.txt nav.py sync.ps1
     git add *.py

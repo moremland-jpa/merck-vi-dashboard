@@ -87,6 +87,13 @@
     "end_date": "2026-10-10"
   },
   {
+    "id": "congress-ai-training-materials-oct6",
+    "label": "QRG, training slides, Quick Reference Video due noon (global training starts week of Oct 5)",
+    "workstream": "Congress AI",
+    "type": "deadline",
+    "date": "2026-10-06"
+  },
+  {
     "id": "esmo-2026",
     "label": "ESMO 2026",
     "workstream": "Congress AI",

@@ -1,11 +1,11 @@
 ---
 name: genesis-status
-description: "Genesis Sentiment 2.0 -- Sep 28 weekly: 'findings' confirmed as launch terminology, real concern is finding-quality not the label; Matt to get code access via Steve Bridgeman and quantify finding-identification issues ASAP; Patrick meeting the former-BI team (Ulf's backfill) Sep 29; adoption risk may be workflow inertia, not awareness. Also Sep 25: confirmed findings-extraction duplicate-findings defect (v2d prompt, fix exists in v2e but not canonical), independently flagged by Matt via dashboard note too; Matt's field-team manual-labeling idea (training data + trust-building) not yet raised with the team; ESMO sentiment ask blocked on 3 open questions; RMSD dropped as Figma source filter; PowerPoint export agreed for demo but Export button still broken. As of Sep 28, 2026."
+description: "Genesis Sentiment 2.0 -- Oct 1-2 Teams: duplicate-findings case was a faulty extraction that was re-run; Jan Chmelar says 500K+ findings will never be 100% right, 105 compute-hours to re-extract all, proposes sample-based quality assessment (Sentiment Analysis part 2 with Peter Baumeister's data scientists Oct 2); filter order decision = one global custom order matching XFly (Adi, Patrick agree). Sep 28 weekly: 'findings' confirmed as launch terminology, real concern is finding-quality not the label; Matt to get code access via Steve Bridgeman and quantify finding-identification issues ASAP; Patrick meeting the former-BI team (Ulf's backfill) Sep 29; adoption risk may be workflow inertia, not awareness. Also Sep 25: confirmed findings-extraction duplicate-findings defect (v2d prompt, fix exists in v2e but not canonical), independently flagged by Matt via dashboard note too; Matt's field-team manual-labeling idea (training data + trust-building) not yet raised with the team; ESMO sentiment ask blocked on 3 open questions; RMSD dropped as Figma source filter; PowerPoint export agreed for demo but Export button still broken. As of Sep 28, 2026."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-28T20:31:47.562Z
+  modified: 2026-10-06T17:35:50.655Z
 ---
 
 ## Current State (Sep 4, 2026)
@@ -190,6 +190,7 @@ Previewed Figma board with Joseph Cianciulli, Kate Lynn Bill, and Gem Roy. Key f
 10. **JPA: Define feature request/intake process** -- Matt working with Yun and Michal while Patrick travels. Prioritization framework with rationale.
 11. **Help Jan select meaningful filter set** for demo data -- needs business-relevant filters, not "oncology last 30 days"
 12. **Attend Jan's methodology presentation** -- enrichment pipeline deep dive (this week or next Monday)
+13. **Matt: Follow up on the benchmark discussion with Jan and the data scientists** -- link sent Oct 6 for further discussion; collect feedback on method and results, and fold in Jan's sample-based quality idea. Matt presented to Patrick and Adi Oct 5; capture their reactions.
 
 ## Insights Coach Agent (Gem Roy)
 
@@ -268,6 +269,27 @@ Michael Hamann's (EMEAC hub lead) project: global value dossiers in Gemini Noteb
 ### Adoption / Internal Promotion
 - **Potential promotion channels:** the Champions Network (Adi Zmiri) and the newly-integrated former-BI team both seen as opportunities to raise Genesis's internal profile.
 - **Real adoption risk reframed:** may not be lack of awareness of the tool, but internal teams' adherence to existing workflows over switching to Genesis.
+
+## Key Developments (Oct 1-2) -- Teams threads, "genesis 1-4" screenshots
+
+### Duplicate-Findings Defect: Extraction Re-run, Remaining Concern Is Quality at Scale (Ted Kwok, Jan Chmelar, Oct 1)
+- **Ted re-checked the dermatologist-biopsy insight** and found 11 findings that look like potential duplicates (punch/shave/excisional biopsy variants), differing from the earlier screen capture. Jan Chmelar asked what insight it was so he would not have to look it up in the database.
+- **Jan: the earlier screenshot data (available Sep 23-29) came from a faulty extraction, since changed and re-extracted.** The earlier set of 6 findings for that insight was faulty and should have been 2 (Ted agreed). Ted noted Copilot's suggestion targeted the extraction piece, so the re-extraction should have resolved it.
+- **Jan on the 11 now shown:** a GPT-5.6 evaluation against the production extraction rules (`extraction-v1`) judged them valid distinct findings, not duplicates: the rules say to create the smallest independently meaningful proposition, one finding per object when a predicate applies to several objects, preserve modality/conditions/qualifications/frequency, and avoid semantic duplicates, while similar findings may stay separate when they differ in modality or condition. Copilot, evaluated without those instructions, calls them redundant. Verification is intentionally permissive (fails only on a clear, objective violation). Treat this as Jan's position and a model's evaluation, not an independent audit.
+- **Scale and approach:** the TEST database alone holds more than 500K findings; Jan expects they will never all be 100% right. Re-extracting the whole database takes about **105 hours of compute**, so the proposed way to tune extraction is **representative samples assessed for a statistically significant sample**. The team is prepared to re-extract (for example for a better model or new instructions), tagging the whole database with a version tag (`extraction-v1` now). Quality will always vary somewhat even on one version because requests hit different Azure nodes: "there will always be a black box element." Relevant to Matt's action to quantify finding-identification issues.
+- **Patrick:** good topic for **part 2 of the Sentiment Analysis discussion (Oct 2) with Peter Baumeister's data scientists**; Jan said he would join. Ted did not have the meeting on his calendar.
+
+### Filter Order Decision (Jan Chmelar, Adi Zmiri, Patrick, Oct 2)
+- **Genesis filters are alphabetical (since April 2026); the goal is the same order as XFly.** Jan, after talking with Steve Bridgman, offered two options (one global setting, or user-specific order) and recommended one global setting; medium urgency.
+- **Adi Zmiri prefers the global setting matching XFly** (user-specific sounds complex); Patrick agreed. Gem asked whether users can still keep their own settings: users can still **save filters, but not set their own drop-down menu order.**
+
+## Key Developments (Oct 5-6) -- Genesis benchmark analysis shared (Matt)
+
+### Benchmark Analysis Presented and Shared (Oct 5-6)
+- **JPA's benchmark analysis is complete and pushed to GitHub** (`merck-genesis` repo). It tests the unique value of Genesis's finding-decomposition: 100 Genesis insights run as-is (no training or context) through GPTeal and Copilot with a simple prompt, compared with Genesis on findings per insight, sentiment, and topic, plus within-tool repeatability for Copilot and Genesis. Genesis is the reference, not ground truth. Detail in [[project-genesis-benchmark]].
+- **Oct 5:** Matt presented it to **Patrick and Adi**.
+- **Oct 6:** Matt sent the link to **Jan Chmelar and the data scientists** for further discussion. This lines up with Jan's Oct 1 proposal to assess finding quality on representative samples, and with the Sentiment Analysis discussion (part 2, with Peter Baumeister's data scientists).
+- **Not yet captured:** reactions from Patrick and Adi, and the headline results; add them here once Matt shares them.
 
 ## Related Memories
 

@@ -5,16 +5,19 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-28T20:31:37.623Z
+  modified: 2026-10-07T15:49:44.570Z
 ---
 
-## Current State (Sep 23, 2026)
+## Current State (Sep 23, 2026; updated Oct 7)
 
 **Target:** ESMO 2026 (Madrid, Oct 23-27) as the first scaled execution; AHA follows with the CV team.
 
+- **Training materials update (Oct 7):** Matt to record new video and update QRG for Writeup workflow on **Oct 12**, as soon as Ryta confirms the UI changes are ready to go. Original deadline was Oct 6 noon (Shannon, Sep 29) for QRG + training slides + video. Congress AI testing environment features and aesthetics changed; Shannon approved last week's changes and they are in test.
+- **Congress AI continuing in 2027 (Oct 7):** Shannon gave an update -- a team is being assembled to continue this workstream as part of a larger team effort, planned in Q4 2026, slated to begin Q1 2027.
+
 - **ESMO data drop Friday Sep 25:** ESMO releases LBA talk titles or abstract summaries. Plan is to send the Abstract Library link the same day so users can get access, see the ONC committee's global tier list, and see abstracts already tagged watch/debrief/write-up.
-- **Demo video needs a re-shoot:** the Sep 17 demo with Adebayo's team was well received, but the environment produced no output during it. A fresh recording with the current workflow wizard is targeted for the **Sep 30** meeting, after EPAM lands the latest Congress Ops requests and Shannon reviews them with Congress Ops (Merve to notify).
-- **Experiment queue:** a time-boxed abstract tiering experiment for Ante Harxhi (EDSA, CV) now goes **before** the SEP retrospective. Matt and Shannon discussing Sep 24.
+- **Demo video re-shoot DONE (Oct 5):** Matt recorded an up-to-date demo and sent Shannon the link. Original note:  the Sep 17 demo with Adebayo's team was well received, but the environment produced no output during it. A fresh recording with the current workflow wizard is targeted for the **Sep 30** meeting, after EPAM lands the latest Congress Ops requests and Shannon reviews them with Congress Ops (Merve to notify).
+- **Abstract tiering experiment underway (Oct 6-7):** Built end-to-end pipeline -- Congress Library API pull, CV keyword filter, PDF generator for GPTeal. First GPTeal test showed title-only data is insufficient (GPTeal flagged "very low confidence"). Next step: pull actual abstract content for ~10 abstracts to prove concept with richer data. Repo: `moremland-jpa/merck-abstract-tiering`. See [[project-abstract-tiering]] for full detail.
 - **JPA one-pagers:** MRL Debrief delivered Sep 23; the ESMO / AHA workflow experiments one-pager is still owed. Confluence pages are set up for both.
 - **This week's call:** Shannon, Gem, and Patrick out for in-person 2027 planning. Slot used for outstanding items (Debrief link update, workflow updates, video / reference guides); Matt and Uri catching up on MRL Debrief technical findings.
 - **Momentum:** the Sep 17 Congress Excellence Workshop went very well, and senior leaders agreed to pursue capital investment to scale Congress AI.
@@ -332,7 +335,24 @@ metadata:
 - **ACC (American College of Cardiology) floated as a content example** -- relevant to the CV team's tiering work.
 - **Next steps:** Shannon to hand off the tiering structure from Global Onc plus SLPs from ASCO; JPA to review previous tiering-experiment materials; Shannon to meet with the CV team on tiering in 2 weeks.
 
-## JPA Deliverables / Action Items (updated Sep 23)
+## Key Developments (Oct 5-6)
+
+### Updated Demo Video Sent; QRG Update Due End of Day Oct 6 (Matt)
+- **Matt recorded a demo video with up-to-date Congress AI functionality and sent the link to Shannon on Oct 5.** This is the re-record that was pending since the Sep 17 demo (the environment gave no output) and was targeted for Sep 30.
+- **Matt will update the Quick Reference Guide by end of day Oct 6.** Shannon's Sep 29 request was for the QRG, training slides, and Quick Reference Video by noon Oct 6 (global training starts the week of Oct 5), so confirm with her that end of day works and where the training slides stand.
+
+## Key Developments (Sep 29)
+
+### Training Materials Deadline and Test-Environment Changes (Shannon Teams, Tue Sep 29 3:44 PM)
+- Shannon is at an **ESMO planning meeting rolling out digital library access to EDSAs** at the same time as the weekly call, so she posted the topics in chat.
+- **Features and some aesthetics changed in the Congress AI testing environment.** Global training begins **next week (week of Oct 5)**, so she wants the **Quick Reference Guide, training slides, and Quick Reference Video ready no later than next Tuesday (Oct 6) at noon.** She will follow up with the SharePoint lead on the status of the page.
+- **Shannon has approved last week's changes and they have been pushed to test.**
+- **MRL Debrief tie-in:** screenshots for debriefs will be uploaded to the abstract library and processed like posters/presentations (Shannon uploads at ESMO). See [[mrl-debrief-status]].
+
+## JPA Deliverables / Action Items (updated Oct 6)
+
+- ~~**Matt: Record an up-to-date demo video**~~ DONE (recorded, link sent to Shannon Oct 5)
+- **Matt: Update the QRG by end of day Oct 6** -- Shannon asked on Sep 29 for QRG, training slides, and Quick Reference Video by noon Oct 6 (global training starts the week of Oct 5); confirm timing and the training slides with her. Re-check the QRG against the changes pushed to test (Sep 29) before it goes out.
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
 - **Matt: Confirm with Adam whether RWDEX mirror includes Pharma Projects fields** (not just Trial Trove) before doing any Sightline training -- Karena/Greg's team blocked regardless by the GCD contract-addendum precedent (see Sep 10 entry)
@@ -362,7 +382,7 @@ metadata:
 - **JPA: Review previous tiering-experiment materials** (Sep 28 ask) -- Global Onc's tiering structure may extend to other TAs and a CI-perspective experiment; Shannon handing off the Global Onc structure + ASCO SLPs; Shannon meeting CV team on tiering in 2 weeks
 - **JPA: One-pager on ESMO / AHA workflow experiments** -- Shannon's ask (Sep 22); Confluence page already set up. MRL Debrief one-pager delivered Sep 23
 - **Shannon + Congress Ops: Review EPAM's latest Congress Ops changes** -- Merve to notify when ready; approval gates the final video recording
-- **Matt + EPAM: Record fresh workflow demo video** -- current workflow wizard; target the Sep 30 meeting, after the Congress Ops changes are approved
+- ~~**Matt + EPAM: Record fresh workflow demo video**~~ DONE (Matt recorded an up-to-date demo and sent Shannon the link Oct 5; originally targeted for the Sep 30 meeting)
 - **Shannon + JPA: Send Abstract Library access link (Fri Sep 25)** -- same day as the ESMO data drop; users see the ONC committee global tier list and abstracts tagged watch/debrief/write-up
 - **Team: Debrief link update** -- outstanding item Shannon flagged for this week's open call slot (Sep 22)
 - **EPAM: Assignee feature suggestions from the Sep 17 demo** -- ability to remove assignees, list of all currently assigned writers, other assignees' names in the assignment email

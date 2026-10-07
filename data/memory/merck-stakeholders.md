@@ -1,21 +1,21 @@
 ---
 name: merck-stakeholders
-description: "Key people across all Merck workstreams -- roles, relationships, org changes. Sep 25: Adi's last name confirmed (Zmiri); added Alex and Charles from DIA (formerly ACE team), Genesis data scientists. Grace left JPA Sep 4; Molly Kuchler (Engagement Lead, Hub 7) started Sep 14, joined Congress AI Ways of Working Sep 16. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Karena Yu now also blocked by Citeline impasse. Updated Sep 25, 2026."
+description: "Key people across all Merck workstreams -- roles, relationships, org changes. Sep 29: confirmed the team is now AI Enablement, not Value & Implementation Organization/V&I (same entity as the Aug 6 rename, not separate). Sep 25: Adi's last name confirmed (Zmiri); added Alex and Charles from DIA (formerly ACE team), Genesis data scientists. Grace left JPA Sep 4; Molly Kuchler (Engagement Lead, Hub 7) started Sep 14. Added: Joseph Cianciulli, Jason Shaffer (Genesis). Corrected: Kate Lynn Bill (not Caitlin). Karena Yu now also blocked by Citeline impasse. Updated Sep 29, 2026."
 metadata: 
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-25T19:07:27.374Z
+  modified: 2026-09-29T14:50:20.643Z
 ---
 
-## Merck V&I Operations
+## Merck AI Enablement (formerly V&I Operations)
 
 | Person | Role | Workstreams | Notes |
 |--------|------|-------------|-------|
 | Patrick R. Leyden | Team lead (renamed to "AI Enablement" Aug 6) | All | Genesis product owner, drives strategy. Presenting to USMA ELT Aug 18. |
 | Shannon Smith | Congress AI lead | Congress AI, MRL Debrief | Primary JPA contact for congress work. Drives ESMO execution, stakeholder alignment, data rights escalation. Maintains a Mural board for evolving thinking. |
 | Ulf Nielsen | Genesis technical lead | Genesis | Built Exodus prototype. Departing Aug 31, 2026. Key knowledge holder for decomposition. Not a data scientist by training. |
-| Jan Chmelar | Genesis dev business owner | Genesis | Takes interim responsibility for everything post-Ulf. Has system access. Consolidating documentation. |
+| Jan Chmelar | Genesis dev business owner | Genesis | Takes interim responsibility for everything post-Ulf. Has system access. Consolidating documentation. In Matt's messages, "Jan" always means Jan Chmelar. |
 | Steve Bridgman | BI team lead | Genesis | Knows Databricks architecture. May assign bridge resource post-Ulf. Seemed less read-in on Databricks sentiment engineering than expected (Aug 6). |
 | Destiny Miller | MRL IT / Ignite team | MRL Debrief | Built the debrief automation prototype (JS/Azure Functions/React/SharePoint). |
 | Michal Libich | Genesis UX/Figma lead | Genesis | Building Figma prototypes for Sentiment 2.0. Drove V3 design incorporating workshop feedback (Aug 28). Scheduling follow-up user interviews based on analytics data. |
@@ -112,14 +112,14 @@ metadata:
 | Karena (Yu) | Greg Bryman's team (SSI, MRLIT) | Was on Shannon's original Sightline call -- now blocked by the same GCD contract-addendum impasse as Greg's team (Sep 10). Citeline/Northern Lights exploration. |
 | Rax Wang | RMSD (East team, CVMET) | Pharmacist. Sits on Digital Innovations Council. AHA interview Aug 10. |
 | Justin Harris | AHA planning contact (CVMET) | Won't be at AHA himself. Provided CI contacts and CVRG spreadsheet. |
-| Jan Feltman | Merck | Source of Apex rejection update (Aug 14). Apex not currently viable per his assessment. |
+| Jan Feltman | Merck | Source of Apex rejection update (Aug 14). Apex not currently viable per his assessment. Matt does not know him; do not confuse with Jan Chmelar. |
 | Michael Hamann | EMEAC hub lead | HTA/outcomes research project using Gemini Notebooks for Global Value Dossiers. Patrick formally requested JPA help Aug 13. |
 | Alex (DIA) | Data scientist, DIA (V&I data-science team, formerly ACE per the Aug 11 ACE+BI merge; exact current team name unconfirmed) | Genesis call with Adi's team, moved to 11 AM ET Sep 25 due to a scheduling conflict. Last name not yet captured. |
 | Charles (DIA) | Data scientist, DIA (same team as Alex above) | Same Sep 25 rescheduled Genesis call. Last name not yet captured. |
 
 ## Org Changes
 
-- **AI Enablement rename (Aug 6):** Patrick's team renamed from "Innovation and Emerging Projects" to "AI Enablement."
+- **AI Enablement rename (Aug 6):** Patrick's team renamed from "Innovation and Emerging Projects" to "AI Enablement." **Confirmed Sep 29:** this is the same entity as "Value & Implementation Organization" / "V&I" (the engagement-wide name used throughout this memory and in deck branding) -- not a separate rename. Deck footers and new brand references should say **AI Enablement** going forward (fixed in `merck_pptx_helpers.py` and [[merck-slide-style-guide]] Sep 29). Historical "V&I" mentions elsewhere (job titles, SharePoint/Confluence site names) are point-in-time snapshots -- don't assume those specific systems/titles were also renamed without checking.
 - **ACE + BI merge (Aug 11):** Analytics Center of Excellence joining BI team. Not yet officially announced.
 - **SLRM role sunsetting (end of 2026):** Congress Ops assumes SLRM responsibilities.
 - **Peter Baumeister promotion (Aug 12-13):** New team, 30 data scientists, "Congress Data as a Product" initiative.
