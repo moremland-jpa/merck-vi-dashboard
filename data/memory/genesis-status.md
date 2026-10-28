@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-10-06T17:35:50.655Z
+  modified: 2026-10-21T15:26:16.345Z
 ---
 
 ## Current State (Sep 4, 2026)
@@ -290,6 +290,37 @@ Michael Hamann's (EMEAC hub lead) project: global value dossiers in Gemini Noteb
 - **Oct 5:** Matt presented it to **Patrick and Adi**.
 - **Oct 6:** Matt sent the link to **Jan Chmelar and the data scientists** for further discussion. This lines up with Jan's Oct 1 proposal to assess finding quality on representative samples, and with the Sentiment Analysis discussion (part 2, with Peter Baumeister's data scientists).
 - **Not yet captured:** reactions from Patrick and Adi, and the headline results; add them here once Matt shares them.
+
+## Key Developments (Oct 8) -- Weekly check-in notes (Matt)
+
+### Demo Launched; Live Sentiment Release End of Month (Oct 8)
+- **Sentiment demo launched Wednesday Oct 7** (2 options, data toggles). **Live sentiment release is targeted for the end of October.**
+
+### Trust From the Start: Let Users Upload Their Own List (Oct 8)
+- **Patrick asked Matt to think about users distrusting the tool from the get-go.** Patrick's view: the answer may simply be letting people upload their own bespoke list of findings.
+- **Positioning:** Genesis is positioned as the expert, so Matt expects to need to prove the new model is good.
+- **Cost / next step:** upload is a high development need, so verify the exact plan with user interviews before committing.
+
+## Key Developments (Oct 12-21) -- screenshots added Oct 21 (meeting-note excerpts, Teams, GitHub docs)
+
+### Global Oncology's Own GPTeal Sentiment Prompt vs. Genesis (Teams, Oct 12)
+- **A forwarded Teams message (Rocio Ledesma, Oct 12 1:13 PM) shares the sentiment prompt that members of the global Oncology team use in GPTeal**, which FMAD colleagues in the US run after extracting all the insights. The prompt casts the model as an expert scientific writer, tells it to judge overall sentiment toward a topic (e.g. subcutaneous) as positive/neutral/negative, quantify each as a percentage of the total, identify patterns within each category, and optionally give at least one verbatim insight per category.
+- **The sender asks whether the team can also obtain the prompt behind Genesis** so the two can be compared and the differences understood. Open: who supplies the Genesis prompt. This is the manual workflow Genesis sentiment is competing with, and it lines up with Matt's benchmark framing (simple-prompt GPTeal vs. Genesis); see [[project-genesis-benchmark]].
+
+### Andy (Pulmonary Hypertension / COPD) -- How the Field Captures Sentiment Today (meeting-note excerpt, screenshot Oct 21; meeting date not shown)
+- **Who:** Andy led implementation and strategic execution for the pulmonary hypertension and COPD teams after recently moving off the CVM team; Daryl works with Andy; Charles and Patrick were also on. Matt introduced as a JPA data scientist; the discussion gathered Andy's feedback on Genesis (data used, how often analysis is done, how it fits the workflow, how it is shared, and whether outputs should be monthly or quarterly).
+- **Current process:** PH team moved from tracking 31 high-priority accounts with labor-intensive PowerPoint slides to a **quarterly account-level review** (priority accounts via ACE and DHH enterprise data; accounts lagging peers in guideline-concordant care). Summaries go to Brandon, Dean, and Bjorn. 16 priority accounts in scope; monthly sessions at US MAP meetings (20-30 min).
+- **Sentiment capture via Copilot + Microsoft Forms:** RMSDs fill a Form within **5-10 minutes** after an engagement and rate each insight 1-5 (1 = uncertainty, 3 = neutral, 5 = positive) using detailed assessment criteria; each entry is timestamped, and Copilot builds the analysis. Forms feed automated PowerPoint account summaries and quarterly cross-functional workshops. Viva does not yet provide a usable account-level capture. Andy said sentiment capture was initially hard (new method plus double documentation) but is now sustainable.
+- **Validation:** Andy and Daryl check RMSD sentiment against enterprise data in a master tracker. The two sources have generally correlated closely enough that Andy considers the form data accurate for telling the account story. ACE shares enterprise data monthly (moved from quarterly); the broader team stays blind to it so sentiment is not biased by prior-quarter trends.
+- **Gaps relevant to Genesis:** Insights only captures what RMSDs intentionally enter, so it does not always give the full account picture (hence the Form). **Form entries cannot be linked back to individual XFly insights** because account-level data is de-identified for compliance, and account lists change quarterly so naming is inconsistent (bracketed labels vs. dropdowns). Account-level analysis remains needed through the product lifecycle (pre-approval snapshots, post-approval data/medical-value narrative; COPD narrative changes).
+- **Patrick's sentiment 2.0 pitch (same meeting):** described the findings-based approach (LLM decomposes each selected insight into atomic findings and separate topics, analyzes sentiment per finding, runs repeatability checks); UI shows sentiment per driver, an AI summary, and linked findings so users can review the source insight and challenge a negative vs. neutral call; results below a relatively high confidence threshold are excluded; topics are LLM-generated from the full dataset, not predefined (e.g. nutrition, weight gain); roadmap includes following a topic and asking questions via chat. **Release expected "the following week" with two real but non-editable demo datasets (one oncology); a later version lets users filter their own data; initial launch supports Excel export** -- reliable data first, then customizable visuals and reports rather than a fully prescriptive product.
+
+### Oct 2 Sentiment Analysis Part 2 -- LLM Configuration and Follow-ups (meeting-note excerpt, screenshot added Oct 21)
+- **Jan clarified that nearly all individual pipeline steps run on "GPT Sol 5.6"** (as written in the notes) with task-specific prompts, instructions, and examples of desired and undesired behavior. Raji asked whether analyses could be compared across multiple LLMs; the transcript did not capture an answer.
+- **Follow-ups:** Peter to prioritize consulting support on the sentiment pipeline methodology and define model tests the team can run on its data; Zach to involve senior stakeholders in the insights development process and gather feedback on an effective sentiment and broader insights product.
+
+### Enrichment Stability n=600 -- Table Schema Documentation (GitHub screenshots, Oct 14)
+- **Dataset documented for the data scientists:** `insights` (600 rows, stratified TEST sample with design weights by therapy area x region x length tertile), `runs` (3 stability runs; the original 100 insights run 2026-10-02, 500 more processed later with the same input versions and prompt hashes), `findings` (12,174 rows, one per extracted finding per run, with verification and would-store-in-production flags), `classifications` (10,554 rows: aspect, actionability, sentiment labels with confidences and 0-100 strength/weight), and `finding_embeddings` (12,174 rows, text-embedding-3-large at 128 dimensions). Generated by `code/build_tables.py`, published as CSV and Parquet. See [[project-genesis-benchmark]].
 
 ## Related Memories
 

@@ -5,10 +5,12 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-10-07T15:49:33.221Z
+  modified: 2026-10-28T14:49:02.641Z
 ---
 
-## Current State (Oct 7, 2026) -- read this first
+## Current State (Oct 7, 2026; updated Oct 28) -- read this first
+
+**Oct 27-28 (Shannon Teams):** Shannon has all the ESMO first drafts from the MRL Debrief PoC but hasn't had time to build the comparison against the actual debriefs. She may need Matt's help to complete the experiment and write a brief recap -- to be discussed at the weekly JPA call. She attended an actual debrief session; **another MRL debrief is Fri Oct 30.** The ESMO 2026 experiments review call with EDSAs/GDMAs (first-draft report comparison, asset-focused reporting, Debrief) will follow ~5 days after Jill's comprehensive Congress summary goes out.
 
 **Technical status**
 - **Hosting handoff to Jan (Oct 7):** Jan Chmelar has the MRL Debrief repo plus all tokens and credentials needed to stage via AWS on the Merck side. This should give live access to the Congress Library and let anyone with the link (e.g. Shannon) use it. **Still waiting on final deploy as of Oct 7.**

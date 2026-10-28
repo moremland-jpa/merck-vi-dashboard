@@ -108,5 +108,28 @@
     "type": "milestone",
     "date": "2026-11-08",
     "end_date": "2026-11-12"
+  },
+  {
+    "id": "congress-ai-writeup-demos-oct15-16",
+    "label": "Congress AI write-up workflow demos (Oct 15 optional office hours, Oct 16 Congress Ops)",
+    "workstream": "Congress AI",
+    "type": "milestone",
+    "date": "2026-10-15",
+    "end_date": "2026-10-16"
+  },
+  {
+    "id": "aha-demo-oct29",
+    "label": "AHA write-up workflow demo",
+    "workstream": "Congress AI",
+    "type": "milestone",
+    "date": "2026-10-29"
+  },
+  {
+    "id": "genesis-live-sentiment-release",
+    "label": "Live sentiment release (target: end of month)",
+    "workstream": "Genesis",
+    "type": "milestone",
+    "date": "2026-10-26",
+    "end_date": "2026-10-30"
   }
 ]

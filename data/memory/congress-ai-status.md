@@ -1,23 +1,38 @@
 ---
 name: congress-ai-status
-description: "Congress AI -- ESMO data drop + Abstract Library link Fri Sep 25; Sep 17 Adebayo demo well received but environment gave no output, re-record targeted Sep 30 after Congress Ops changes; abstract tiering experiment (Ante Harxhi, CV) now ahead of SEP retrospective, and per Sep 28 update may extend to other TAs + a CI-perspective experiment (ACC as content example); JPA owes ESMO/AHA workflow one-pager (MRL one delivered); leads out this week for 2027 planning. As of Sep 28, 2026."
+description: "Congress AI -- ESMO data drop + Abstract Library link Fri Sep 25; Sep 17 Adebayo demo well received but environment gave no output, re-record targeted Sep 30 after Congress Ops changes; abstract tiering experiment (Ante Harxhi, CV) now ahead of SEP retrospective, and per Sep 28 update may extend to other TAs + a CI-perspective experiment (ACC as content example); JPA owes ESMO/AHA workflow one-pager (MRL one delivered); leads out this week for 2027 planning. As of Sep 28, 2026; Oct 21 update: write-up demos Oct 15-16 done, QRG + video posted by Shannon, AHA demo Oct 29."
 metadata: 
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-10-07T15:49:44.570Z
+  modified: 2026-10-28T14:49:00.330Z
 ---
 
-## Current State (Sep 23, 2026; updated Oct 7)
+## Current State (Sep 23, 2026; updated Oct 28)
 
 **Target:** ESMO 2026 (Madrid, Oct 23-27) as the first scaled execution; AHA follows with the CV team.
 
-- **Training materials update (Oct 7):** Matt to record new video and update QRG for Writeup workflow on **Oct 12**, as soon as Ryta confirms the UI changes are ready to go. Original deadline was Oct 6 noon (Shannon, Sep 29) for QRG + training slides + video. Congress AI testing environment features and aesthetics changed; Shannon approved last week's changes and they are in test.
-- **Congress AI continuing in 2027 (Oct 7):** Shannon gave an update -- a team is being assembled to continue this workstream as part of a larger team effort, planned in Q4 2026, slated to begin Q1 2027.
+- **ESMO wrap-up + post-congress priorities (Shannon Teams, Oct 27):** ESMO ran smoothly. Shannon's list for the rest of the week and beyond:
+  - **Mock report for med-writer comparison:** once all ESMO abstracts are in, Shannon works with Marharyta Hiruta's team to build the mock report; Cinnamon to ask Jen/Meli for the med writers' draft sent to EDSAs for final review. Likely not sent until after the last MRL debrief Fri Oct 30, so ETA Mon/Tue (to confirm).
+  - **AHA workflow meeting Thu Oct 29 (9am ET):** Cinnamon to copy Jill Boundar-Conner and Matt/Talia; Matt assists with office hours and plans the same walkthrough used for ESMO.
+  - **MRL Debrief PoC:** Shannon has all ESMO first drafts but hasn't built the comparisons; she may need Matt's help to finish the experiment and write a brief recap. Discuss at the weekly JPA call. Another debrief session is Fri Oct 30.
+  - **ESMO 2026 experiments review call (EDSAs/GDMAs):** 45 min, about 5 days after Jill distributes the comprehensive Congress summary (hold calendars now; include Danny Hsu, Jill's team, Eleonora, Patrick, Jonra). Covers first-draft report comparison, asset-focused reporting, and Debrief. Objective: decide whether AI provides first drafts of reports in 2027 and continue the digital-planning journey.
+  - **Legal/compliance debrief of ESMO + AHA experimentation** (Jen Hess, Margaret O'Neill, Eleonora, Patrick): what was learned plus a proposal for early 2027; targeted for the December week Shannon is at UG. **Shannon wants JPA's help building this debrief.**
+  - **Readership evaluation experiment (ESMO + AHA):** Jill agreed to send both reports as a digital link so opens can be counted; the team is NOT telling readers it's being tracked. Shannon expects it to be a game changer for the 2027 strategy (she suspects few read the reports beyond the people who create the write-ups: "a really expensive process that we have outgrown"). EPAM and Brano (MRL IT) lead.
+  - **USMA debrief:** Brandon and Uma want a project debrief; Shannon to plan an ESMO event review + demo with Gem Roy, then follow up on AHA and 2027 strategy/priority alignment.
+  - **Congress Data as a Product (2027 strategy):** set up time with Brano, Steve Bridgeman, Uri/Rita and the dev team. Shannon proposes starting by ingesting Larvol to democratize access; needs the right Sr leader on the CI team (specifically Jagruti). Framed as a requirement now ("or we are a no-go"); will be on the org scorecard.
+  - **AI assessment for SDLC revised:** must be submitted by end of November; needs EPAM and Gem's help as SMEs.
+
+- **Write-up workflow demos held Oct 15 and 16 (Oct 21):** JPA ran demos of the Congress AI write-up workflow on both days (Oct 15 = optional office-hour sessions, Oct 16 = mandatory Congress Ops meeting). Matt also recorded a video of the demo and updated the Quick Reference Guide; **Shannon posted both on Merck's SharePoint.** This closes the training-materials item that slipped from Oct 6 to Oct 12.
+- **Next demo: AHA, Oct 29 (Oct 21).** More demos of the tool are planned for the AHA team; the next is scheduled for Oct 29.
+- **UAT + ESMO readiness (Oct 7-8):** UAT with the Congress Ops team started Oct 6. Shannon wanted everything for summarizing ready by Tue Oct 13 and gave the staging link to users by that Friday to play with. Ryta (EPAM) was to confirm the latest ESMO info in the digital library and that LBAs are tagged; Shannon emails Ryta the process and triggers for changes by end of that week. Assignment emails: every Summary, Impact & Relevance, and Editor assignee is emailed on assignment and again when an abstract hits their queue; people sending assignments are cc'd on the medical-writer emails.
+- **AHA workflow (Oct 7):** Shannon met the AHA planning team Oct 7 to confirm the workflow -- simpler than oncology, fewer reassignments: one person does each summary, one person does all Relevance and Impact summaries.
+- **ESMO data-access opening (Oct 7):** ESMO leaders said JPA/Merck's work made them aware of a new way to access ESMO data, and asked Merck to send a proposal for a workflow for API needs. Colin is building the workflow diagram.
+- **Congress AI continuing in 2027 (Oct 7-8):** Shannon gave an update -- a team is being assembled to continue this workstream as part of a larger team effort, planned in Q4 2026, slated to begin Q1 2027. Congress AI is in the Congress Excellence Work Group's priorities for next year (Recommendations on Congress upskilling and standardization deck); Shannon plans to ask for her work to continue through mid-2027 so the pillar is set up and approved. Patrick and Gem see a natural path to bringing congress planning and the Congress Excellence team into Congress AI; scaling is on the 2027 priority list.
 
 - **ESMO data drop Friday Sep 25:** ESMO releases LBA talk titles or abstract summaries. Plan is to send the Abstract Library link the same day so users can get access, see the ONC committee's global tier list, and see abstracts already tagged watch/debrief/write-up.
 - **Demo video re-shoot DONE (Oct 5):** Matt recorded an up-to-date demo and sent Shannon the link. Original note:  the Sep 17 demo with Adebayo's team was well received, but the environment produced no output during it. A fresh recording with the current workflow wizard is targeted for the **Sep 30** meeting, after EPAM lands the latest Congress Ops requests and Shannon reviews them with Congress Ops (Merve to notify).
-- **Abstract tiering experiment underway (Oct 6-7):** Built end-to-end pipeline -- Congress Library API pull, CV keyword filter, PDF generator for GPTeal. First GPTeal test showed title-only data is insufficient (GPTeal flagged "very low confidence"). Next step: pull actual abstract content for ~10 abstracts to prove concept with richer data. Repo: `moremland-jpa/merck-abstract-tiering`. See [[project-abstract-tiering]] for full detail.
+- **Abstract tiering experiment underway (Oct 6-7):** Built end-to-end pipeline -- Congress Library API pull, CV keyword filter, PDF generator for GPTeal. First GPTeal test showed title-only data is insufficient (GPTeal flagged "very low confidence"). Next step: pull actual abstract content for ~10 abstracts to prove concept with richer data. Repo: `moremland-jpa/merck-abstract-tiering`. **Oct 7 meeting:** Matt caveated that he used a small number of titles (GPTeal does not accept Excel inputs), so confidence is low (title alone); Matt asked GPTeal for its reasoning/confidence. Shannon told Matt to migrate to the new GPTeal version and retry with the raw AHA title list; the Larvol list isn't sent yet but CVG titles are available and Shannon will send the list. See [[project-abstract-tiering]] for full detail.
 - **JPA one-pagers:** MRL Debrief delivered Sep 23; the ESMO / AHA workflow experiments one-pager is still owed. Confluence pages are set up for both.
 - **This week's call:** Shannon, Gem, and Patrick out for in-person 2027 planning. Slot used for outstanding items (Debrief link update, workflow updates, video / reference guides); Matt and Uri catching up on MRL Debrief technical findings.
 - **Momentum:** the Sep 17 Congress Excellence Workshop went very well, and senior leaders agreed to pursue capital investment to scale Congress AI.
@@ -335,6 +350,27 @@ metadata:
 - **ACC (American College of Cardiology) floated as a content example** -- relevant to the CV team's tiering work.
 - **Next steps:** Shannon to hand off the tiering structure from Global Onc plus SLPs from ASCO; JPA to review previous tiering-experiment materials; Shannon to meet with the CV team on tiering in 2 weeks.
 
+## Key Developments (Oct 7-8)
+
+### Oct 7 Weekly Check-in: UAT, AHA Workflow, ESMO Readiness
+- **UAT with the Congress Ops team started Oct 6.** Shannon met the AHA planning team Oct 7 to confirm the workflow: simpler than oncology with fewer reassignments; one person per summary, one person for all Relevance and Impact summaries.
+- **Shannon received Congress Excellence Work Group notes** (Recommendations on Congress upskilling and standardization deck): Congress AI is in the priorities for next year. She will ask for her work to continue through mid-2027 so the pillar is set up, approved, and continues seamlessly into the new workstream.
+- **ESMO leaders opened a data-access door:** they said JPA/Merck's work brought a new way to access ESMO data to their attention and asked Merck to send a proposal for a workflow for API needs. This is the workflow diagram Colin is building.
+- **ESMO timeline:** everything for summarizing ready by Tue Oct 13; LBAs reviewed by ESMO leaders Oct 8; ESMO abstract summaries available Oct 19 (Larvol files become available to upload); staging link to users by Fri Oct 9. Shannon confirmed the digital library for ESMO abstract uploads is in staging; Ryta to confirm the latest ESMO info is there and LBAs are tagged.
+- **New walkthrough video needed by early Monday (Oct 12)**; Merck is getting a SharePoint site to share training material. Shannon emails Ryta the process and triggers; Ryta implements changes by end of week. Shannon to recreate the current plan in Congress AI and resend the latest planner for EPAM.
+- **Office hours:** optional sessions Thu Oct 15 at 8 am and 8 pm ET (invites from Cinnamon once attendees are set); a separate mandatory Congress Ops meeting Oct 16.
+- **New MRL IT UX designer (ex-McKinsey) will be at ESMO.** Matt requested an MRL Debrief follow-up Monday post-lunch (Oct 12), scheduled over focus time.
+
+### Oct 8 Congress AI Prep and ESMO Office Hours (10/12)
+- **Live demo at all three office-hour meetings** the end of that week; Matt films the demo Wednesday; EPAM takes minor updates until then.
+- **Notifications:** every Summary, Impact & Relevance, and Editor assignee gets an email on assignment and again when an abstract is in their queue; senders are cc'd on the emails to medical writers. Shannon was finishing internal testing of assignment notifications.
+- **UX/workflow:** the new UX designer will meet with Shannon on workflow changes. Shannon and Matt to coordinate on the Congress AI office hours.
+- **Direction:** Patrick and Gem noted a natural path to bring congress planning and the Congress Excellence team into Congress AI; scaling is on the 2027 priority list.
+
+### Oct 15-16 Demos; Posted to SharePoint; AHA Demo Oct 29 (Matt, Oct 21)
+- **Demos of the write-up workflow ran Oct 15 and 16.** Matt recorded a video of the demo and updated the QRG; Shannon posted both on Merck's SharePoint.
+- **AHA demos continue;** the next is Oct 29.
+
 ## Key Developments (Oct 5-6)
 
 ### Updated Demo Video Sent; QRG Update Due End of Day Oct 6 (Matt)
@@ -349,10 +385,16 @@ metadata:
 - **Shannon has approved last week's changes and they have been pushed to test.**
 - **MRL Debrief tie-in:** screenshots for debriefs will be uploaded to the abstract library and processed like posters/presentations (Shannon uploads at ESMO). See [[mrl-debrief-status]].
 
-## JPA Deliverables / Action Items (updated Oct 6)
+## JPA Deliverables / Action Items (updated Oct 21)
 
-- ~~**Matt: Record an up-to-date demo video**~~ DONE (recorded, link sent to Shannon Oct 5)
-- **Matt: Update the QRG by end of day Oct 6** -- Shannon asked on Sep 29 for QRG, training slides, and Quick Reference Video by noon Oct 6 (global training starts the week of Oct 5); confirm timing and the training slides with her. Re-check the QRG against the changes pushed to test (Sep 29) before it goes out.
+- ~~**Matt: Record an up-to-date demo video**~~ DONE (recorded, link sent to Shannon Oct 5; re-recorded after the Oct 7 UI changes and posted to Merck SharePoint by Shannon)
+- ~~**Matt: Update the QRG by end of day Oct 6**~~ DONE (QRG updated and posted to Merck SharePoint by Shannon after the Oct 15-16 demos)
+- ~~**Matt: Run write-up workflow demos for ESMO office hours / Congress Ops**~~ DONE (Oct 15 and 16)
+- **Matt + Shannon: AHA write-up workflow demo** -- scheduled Oct 29; more AHA demos to follow
+- **Matt: Retry abstract tiering with raw AHA title list on new GPTeal version** -- Oct 7 ask from Shannon; ask for reasoning/confidence; Shannon to send CVG title list (see [[project-abstract-tiering]])
+- **Colin: ESMO API-needs workflow diagram** -- ESMO leaders asked Merck to send a proposal for an API-needs workflow (Oct 7)
+- **Shannon: Ask for Congress AI work to continue through mid-2027** -- Congress Excellence Work Group has Congress AI in next year's priorities (Oct 7)
+- **Shannon: Email Ryta the process and triggers; Ryta implements changes** -- end of week of Oct 7; Ryta also confirms latest ESMO info and LBA tags in the staging digital library
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
 - **Matt: Confirm with Adam whether RWDEX mirror includes Pharma Projects fields** (not just Trial Trove) before doing any Sightline training -- Karena/Greg's team blocked regardless by the GCD contract-addendum precedent (see Sep 10 entry)
