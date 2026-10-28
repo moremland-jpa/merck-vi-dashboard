@@ -131,5 +131,41 @@
     "type": "milestone",
     "date": "2026-10-26",
     "end_date": "2026-10-30"
+  },
+  {
+    "id": "genesis-go-nogo-oct28",
+    "label": "Sentiment 2.0 beta go/no-go (Wed Genesis touch-base call, after UAT)",
+    "workstream": "Genesis",
+    "type": "deadline",
+    "date": "2026-10-28"
+  },
+  {
+    "id": "genesis-beta-release-oct29",
+    "label": "Sentiment 2.0 beta release to MRL users (target; HH access delayed ~2-3 weeks)",
+    "workstream": "Genesis",
+    "type": "milestone",
+    "date": "2026-10-29"
+  },
+  {
+    "id": "xfly-team-split",
+    "label": "XFly team split / TA remap (Oct 30 or Nov 3, tied to Databricks change)",
+    "workstream": "Genesis",
+    "type": "milestone",
+    "date": "2026-10-30",
+    "end_date": "2026-11-03"
+  },
+  {
+    "id": "mrl-debrief-oct30",
+    "label": "Last ESMO MRL debrief session (med-writer draft expected Mon/Tue after)",
+    "workstream": "MRL Debrief",
+    "type": "milestone",
+    "date": "2026-10-30"
+  },
+  {
+    "id": "sdlc-ai-assessment",
+    "label": "AI assessment for SDLC due (needs EPAM + Gem as SMEs)",
+    "workstream": "Congress AI",
+    "type": "deadline",
+    "date": "2026-11-30"
   }
 ]
