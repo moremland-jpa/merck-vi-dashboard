@@ -56,6 +56,21 @@ if milestones:
             continue
 
     if timeline_data:
+        bound_min = min(min(d["Start"].date() for d in timeline_data), today - timedelta(days=14))
+        bound_max = max(max(d["Finish"].date() for d in timeline_data), today + timedelta(days=14))
+        range_start, range_end = st.slider(
+            "Date range",
+            min_value=bound_min,
+            max_value=bound_max,
+            value=(max(today - timedelta(days=14), bound_min), bound_max),
+            format="MMM D, YYYY",
+        )
+        timeline_data = [
+            d for d in timeline_data
+            if d["Finish"].date() >= range_start and d["Start"].date() <= range_end
+        ]
+
+    if timeline_data:
         color_map = {ws: brand.WORKSTREAM_COLORS.get(ws, brand.TEAL) for ws in ws_options}
 
         fig = px.timeline(
@@ -83,6 +98,12 @@ if milestones:
             font=dict(family="Open Sans, Arial, sans-serif"),
         )
         fig.update_yaxes(autorange="reversed")
+        fig.update_xaxes(
+            range=[
+                datetime.combine(range_start, datetime.min.time()),
+                datetime.combine(range_end, datetime.min.time()) + timedelta(days=1),
+            ]
+        )
 
         tasks = [d["Task"] for d in timeline_data]
         for i in range(len(tasks)):
