@@ -27,12 +27,14 @@ WORKSTREAM_BG_COLORS = {
 }
 
 UPDATE_CATEGORIES = {
-    "Update":      ("&#x1F4AC;", "#004153", "#E8F1F3"),
-    "Decision":    ("&#x2705;",  "#1B7A2B", "#E6F4EA"),
-    "Blocker":     ("&#x1F6A8;", "#C62828", "#FDECEA"),
-    "Action Item": ("&#x1F3AF;", "#E37222", "#FFF0E5"),
-    "FYI":         ("&#x1F4CB;", "#595959", "#F5F5F5"),
+    "Internal Note": ("&#x1F4AC;", "#004153", "#E8F1F3"),
+    "Tracker":       ("&#x1F4CC;", "#E37222", "#FFF0E5"),
 }
+
+
+def normalize_category(category) -> str:
+    """Notes saved before Nov 2026 used Update/Decision/Blocker/Action Item/FYI; those show as Internal Note."""
+    return category if category in UPDATE_CATEGORIES else "Internal Note"
 
 
 def safe(text) -> str:
@@ -162,11 +164,8 @@ def inject_brand_css() -> None:
             margin-bottom: 0.5rem;
             border-radius: 0 4px 4px 0;
         }
-        .update-item.cat-update { border-left-color: #004153; }
-        .update-item.cat-decision { border-left-color: #1B7A2B; }
-        .update-item.cat-blocker { border-left-color: #C62828; }
-        .update-item.cat-action-item { border-left-color: #E37222; }
-        .update-item.cat-fyi { border-left-color: #595959; }
+        .update-item.cat-internal-note { border-left-color: #004153; }
+        .update-item.cat-tracker { border-left-color: #E37222; }
 
         .sync-dot {
             display: inline-block;
@@ -222,7 +221,8 @@ def status_badge(label: str, color: str = TEAL) -> str:
 
 
 def category_badge(category: str) -> str:
-    icon, fg, bg = UPDATE_CATEGORIES.get(category, UPDATE_CATEGORIES["Update"])
+    category = normalize_category(category)
+    icon, fg, bg = UPDATE_CATEGORIES[category]
     return (
         f'<span class="chip" style="background:{bg}; color:{fg}; '
         f'font-size:0.72rem; padding:2px 8px;">'

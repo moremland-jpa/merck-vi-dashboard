@@ -25,62 +25,12 @@ def is_connected() -> bool:
     return _get_client() is not None
 
 
-def hash_items(items: list[dict]) -> str:
-    canonical = json.dumps(items, sort_keys=True)
-    return hashlib.sha256(canonical.encode()).hexdigest()[:16]
 
 
-def load_action_overlay(workstream: str) -> dict | None:
-    client = _get_client()
-    if not client:
-        return None
-    try:
-        resp = (
-            client.table("action_edits")
-            .select("items, base_hash")
-            .eq("workstream", workstream)
-            .execute()
-        )
-        if resp.data:
-            return resp.data[0]
-    except Exception:
-        logger.exception("Failed to load action overlay for %s", workstream)
-        return None
 
 
-def save_action_overlay(
-    workstream: str, items: list[dict], base_hash: str
-) -> bool:
-    client = _get_client()
-    if not client:
-        return False
-    try:
-        client.table("action_edits").upsert(
-            {
-                "workstream": workstream,
-                "items": items,
-                "base_hash": base_hash,
-                "updated_at": datetime.now(timezone.utc).isoformat(),
-            }
-        ).execute()
-        return True
-    except Exception:
-        logger.exception("Failed to save action overlay for %s", workstream)
-        return False
 
 
-def clear_action_overlay(workstream: str) -> bool:
-    client = _get_client()
-    if not client:
-        return False
-    try:
-        client.table("action_edits").delete().eq(
-            "workstream", workstream
-        ).execute()
-        return True
-    except Exception:
-        logger.exception("Failed to clear action overlay for %s", workstream)
-        return False
 
 
 # ── User visits ──
@@ -147,7 +97,7 @@ def load_workstream_notes(
 
 
 def save_workstream_note(
-    workstream: str, author: str, content: str, category: str = "Update"
+    workstream: str, author: str, content: str, category: str = "Internal Note"
 ) -> bool:
     client = _get_client()
     if not client:
@@ -205,17 +155,3 @@ def count_new_notes_since(since: str) -> dict[str, int]:
         return {}
 
 
-def get_overlay_timestamps() -> dict[str, str]:
-    client = _get_client()
-    if not client:
-        return {}
-    try:
-        resp = (
-            client.table("action_edits")
-            .select("workstream, updated_at")
-            .execute()
-        )
-        return {r["workstream"]: r["updated_at"] for r in (resp.data or [])}
-    except Exception:
-        logger.exception("Failed to load overlay timestamps")
-        return {}

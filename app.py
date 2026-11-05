@@ -72,7 +72,7 @@ def _render_whats_new(
         for note in new_notes[:5]:
             ws = note.get("workstream", "")
             chip = brand.workstream_chip(ws)
-            category = note.get("category") or "Update"
+            category = brand.normalize_category(note.get("category"))
             cat_badge = brand.category_badge(category)
             time_str = brand.relative_time(note.get("created_at", ""))
             safe_author = brand.safe(note.get("author"))
@@ -90,7 +90,7 @@ def render_overview() -> None:
     st.markdown("# Merck V&I Program Dashboard")
     st.markdown(
         '<p class="meta-text">Collaborative workspace for workstream status, '
-        "action items, stakeholders, and milestones.</p>",
+        "open items, stakeholders, and milestones.</p>",
         unsafe_allow_html=True,
     )
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
@@ -147,7 +147,7 @@ def render_overview() -> None:
         if pending:
             meta_parts.append(
                 f'<span style="color:{brand.ORANGE};font-weight:600;">'
-                f"{pending} pending</span> action items"
+                f"{pending} open</span> items"
             )
         if done:
             meta_parts.append(f"{done} completed")

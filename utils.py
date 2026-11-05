@@ -42,50 +42,6 @@ def _read_file_safe(path: Path) -> str:
 
 
 
-def _merge_overlay(base_items: list[dict], overlay_items: list[dict]) -> list[dict]:
-    """Carry forward cloud edits when the base markdown changes.
-
-    Matches overlay items to new base items by description text.  Any overlay
-    item whose status, notes, due_date, or completed_on differs from its base
-    default is considered an edit and gets merged onto the matching new base
-    item.  New base items with no overlay match pass through untouched.
-    Manually-added items (source=manual) are always preserved.
-    """
-    edits: dict[str, dict] = {}
-    manual_items: list[dict] = []
-    for it in overlay_items:
-        if it.get("source") == "manual":
-            manual_items.append(it)
-            continue
-        desc = it.get("description", "").strip()
-        if not desc:
-            continue
-        has_edit = (
-            it.get("status", "Pending") != "Pending"
-            or it.get("notes", "").strip()
-            or it.get("due_date", "").strip()
-            or it.get("completed_on", "").strip()
-        )
-        if has_edit:
-            edits[desc] = it
-
-    if not edits and not manual_items:
-        return base_items
-
-    merged = []
-    for item in base_items:
-        desc = item.get("description", "").strip()
-        if desc in edits:
-            ov = edits.pop(desc)
-            merged.append({**item, **{
-                k: ov[k] for k in ("status", "notes", "due_date", "completed_on")
-                if k in ov
-            }})
-        else:
-            merged.append(item)
-
-    merged.extend(manual_items)
-    return merged
 
 
 @st.cache_data(ttl=60)
@@ -99,17 +55,6 @@ def load_workstream_status(key: str) -> dict:
     raw = _read_file_safe(path)
     body = parsers.strip_frontmatter(raw)
 
-    base_items = parsers.extract_action_items(body)
-    base_hash = db.hash_items(base_items)
-
-    overlay = db.load_action_overlay(key)
-    if overlay and overlay.get("base_hash") == base_hash:
-        action_items = overlay["items"]
-    elif overlay and overlay.get("items"):
-        action_items = _merge_overlay(base_items, overlay["items"])
-    else:
-        action_items = base_items
-
     return {
         "name": key,
         "description": fm.get("description", ""),
@@ -117,9 +62,7 @@ def load_workstream_status(key: str) -> dict:
         "modified": fm.get("modified", ""),
         "current_state": parsers.extract_current_state(body),
         "key_developments": parsers.extract_key_developments(body),
-        "action_items": action_items,
-        "base_action_items": base_items,
-        "action_items_base_hash": base_hash,
+        "action_items": parsers.extract_action_items(body),
         "open_questions": parsers.extract_open_questions(body),
         "raw_body": body,
     }
@@ -204,111 +147,10 @@ def load_milestones() -> list[dict]:
 
 
 
-def _find_action_section(raw: str) -> tuple[int, int] | None:
-    lines = raw.splitlines(keepends=True)
-
-    body_start = 0
-    if lines and lines[0].strip() == "---":
-        for i, line in enumerate(lines[1:], 1):
-            if line.strip() == "---":
-                body_start = i + 1
-                break
-
-    section_start = None
-    for i in range(body_start, len(lines)):
-        if lines[i].startswith("## "):
-            header = lines[i][3:].strip().lower()
-            if any(
-                kw in header
-                for kw in ["action item", "deliverable", "pending update", "recommendation"]
-            ):
-                section_start = i + 1
-                break
-
-    if section_start is None:
-        for i in range(body_start, len(lines)):
-            if lines[i].startswith("## ") and "action" in lines[i].lower():
-                section_start = i + 1
-                break
-
-    if section_start is None:
-        return None
-
-    section_end = len(lines)
-    for i in range(section_start, len(lines)):
-        if lines[i].startswith("## "):
-            section_end = i
-            break
-
-    return section_start, section_end
 
 
-def _rebuild_action_line(original_line: str, item: dict[str, str]) -> str:
-    owner = item.get("owner", "").strip()
-    desc = item.get("description", "").strip()
-    done = item.get("status", "") == "Done"
-
-    if " -- " in desc:
-        head, tail = desc.split(" -- ", 1)
-    else:
-        head, tail = desc, ""
-
-    bold = f"{owner}: {head}" if owner else head
-
-    stripped = original_line.lstrip()
-    leading = original_line[: len(original_line) - len(stripped)]
-
-    num_match = re.match(r"(\d+)\.\s+", stripped)
-    prefix = f"{num_match.group(1)}. " if num_match else "- "
-
-    if done:
-        body = f"~~**{bold}**~~"
-    else:
-        body = f"**{bold}**"
-
-    if tail:
-        body += f" -- {tail}"
-
-    return f"{leading}{prefix}{body}\n"
 
 
-def save_action_items(
-    workstream: str, items: list[dict[str, str]], base_hash: str = ""
-) -> bool:
-    if db.is_connected() and base_hash:
-        return db.save_action_overlay(workstream, items, base_hash)
-
-    cfg = WORKSTREAMS.get(workstream)
-    if not cfg:
-        return False
-
-    path = MEMORY_DIR / cfg["status_file"]
-    raw = _read_file_safe(path)
-    if not raw:
-        return False
-
-    bounds = _find_action_section(raw)
-    if not bounds:
-        return False
-
-    section_start, section_end = bounds
-    lines = raw.splitlines(keepends=True)
-
-    new_section: list[str] = []
-    item_idx = 0
-
-    for i in range(section_start, section_end):
-        line = lines[i]
-        m = parsers.ACTION_PATTERN.match(line) or parsers.NUMBERED_PATTERN.match(line)
-        if m and item_idx < len(items):
-            new_section.append(_rebuild_action_line(line, items[item_idx]))
-            item_idx += 1
-        else:
-            new_section.append(line)
-
-    new_lines = lines[:section_start] + new_section + lines[section_end:]
-    path.write_text("".join(new_lines), encoding="utf-8")
-    return True
 
 
 def get_stakeholders_for_workstream(workstream: str, limit: int = 3) -> list[str]:

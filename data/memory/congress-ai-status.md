@@ -420,43 +420,43 @@ metadata:
 - ~~**Matt: Update the QRG by end of day Oct 6**~~ DONE (QRG updated and posted to Merck SharePoint by Shannon after the Oct 15-16 demos)
 - ~~**Matt: Run write-up workflow demos for ESMO office hours / Congress Ops**~~ DONE (Oct 15 and 16)
 - **Matt + Shannon: AHA write-up workflow demo** -- scheduled Oct 29; more AHA demos to follow
-- **Matt: Retry abstract tiering with raw AHA title list on new GPTeal version** -- Oct 7 ask from Shannon; ask for reasoning/confidence; Shannon to send CVG title list (see [[project-abstract-tiering]])
-- **Colin: ESMO API-needs workflow diagram** -- ESMO leaders asked Merck to send a proposal for an API-needs workflow (Oct 7)
+- ~~**Matt: Retry abstract tiering with raw AHA title list on new GPTeal version**~~ -- Oct 7 ask from Shannon; ask for reasoning/confidence; Shannon to send CVG title list (see [[project-abstract-tiering]])
+- ~~**Colin: ESMO API-needs workflow diagram**~~ -- ESMO leaders asked Merck to send a proposal for an API-needs workflow (Oct 7)
 - **Shannon: Ask for Congress AI work to continue through mid-2027** -- Congress Excellence Work Group has Congress AI in next year's priorities (Oct 7)
 - **Shannon: Email Ryta the process and triggers; Ryta implements changes** -- end of week of Oct 7; Ryta also confirms latest ESMO info and LBA tags in the staging digital library
 
 - ~~**Matt: Submit TPA form** for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)
-- **Matt: Confirm with Adam whether RWDEX mirror includes Pharma Projects fields** (not just Trial Trove) before doing any Sightline training -- Karena/Greg's team blocked regardless by the GCD contract-addendum precedent (see Sep 10 entry)
+- ~~**Matt: Confirm with Adam whether RWDEX mirror includes Pharma Projects fields**~~ (not just Trial Trove) before doing any Sightline training -- Karena/Greg's team blocked regardless by the GCD contract-addendum precedent (see Sep 10 entry) [Team note: Citeline access no longer an option]
 - ~~**Matt: Schedule offline session with Adam** to walk through RWDEX tables~~ DONE (met Sep 1)
-- **Matt: Complete RWDEX trainings** -- ON HOLD per Shannon (Sep 10) until confirmed there's enough mirrored content to justify the use case
+- ~~**Matt: Complete RWDEX trainings**~~ -- ON HOLD per Shannon (Sep 10) until confirmed there's enough mirrored content to justify the use case [Team note: Citeline access no longer an option]
 - ~~**Matt: Prepare quick reference guide + backup demo slides** for Sept 1 demo~~ DONE (themed backup deck + QRG built Aug 31)
 - ~~**Matt + Rita: MRL Debrief -- meet with Destiny** on technical needs; troubleshoot centralized API migration blocker~~ DONE (Destiny's backend source obtained Sep 22)
 - ~~**Matt: Set up direct meeting with EPAM (Uri)** to reconnect MRL Debrief API to Congress Library backend tables~~ DONE (live connection working, auth resolved Sep 22; see [[mrl-debrief-status]])
 - ~~**Rita: Coordinate with Jen Devers Triggiani and Mellie** for Sept 2 planning feature preview~~ DONE (demo held Sep 2, discovered a bug, fixing)
-- **Matt: Update QRG** with demo follow-up items (upload limits, EP materials info); keep live link current for Adebayo
+- ~~**Matt: Update QRG**~~ with demo follow-up items (upload limits, EP materials info); keep live link current for Adebayo [Team note: Patrick linked the document. Adebayo will periodically add it to his slides; Due 2026-09-04]
 - **Cinnamon: Confirm MSL/PDT training timing and ESMO attendee subset** with Mellie/Jen
 - **EPAM: Implement serial workflow** (RMSD completes → wizard prompts reassign → PDT gets R&I field). Replaces earlier parallel co-editing direction.
 - **EPAM: Build medical writer email export** -- Word doc attachment on "Complete" status change, pre-populated recipients, CC to Congress Ops. Needs: last year's example Word doc, recipient list.
-- **EPAM: Talk to actual clinical director from last year** to understand real workflow before testing wizard
-- **Talia + Shannon: Refresh abstract library vision slide** before mid-Sept F2F
-- **Shannon: Create Congress AI page on V&I MedOps SharePoint** -- single source of truth for QRG, video, updates
+- ~~**EPAM: Talk to actual clinical director from last year**~~ to understand real workflow before testing wizard
+- ~~**Talia + Shannon: Refresh abstract library vision slide**~~ before mid-Sept F2F
+- ~~**Shannon: Create Congress AI page on V&I MedOps SharePoint**~~ -- single source of truth for QRG, video, updates [Team note: Using link to file for now]
 - **Shannon: Northern Lights deep dive** with HH Data Genie contact
 - **Shannon: CI team meeting** for AHA raw data access
 - ~~**Shannon: Legal call Sept 11** on abstract library data governance~~ DONE -- Jen Hess + Linda Kollmar approved ESMO and AHA (Sep 11)
 - **Shannon: Study Map legal finalization**
-- **Shannon: Set up on-site base camp** near corporate suites for ESMO support
+- ~~**Shannon: Set up on-site base camp**~~ near corporate suites for ESMO support
 - **Shannon: Provide last year's Word doc example + medical writer recipient list** to EPAM
-- **Cinnamon + Shannon: Schedule AHA EDSA kickoff** with Ante Harxhi -- initial call held Sep 9, follow-up TBD
+- ~~**Cinnamon + Shannon: Schedule AHA EDSA kickoff**~~ with Ante Harxhi -- initial call held Sep 9, follow-up TBD
 - ~~**Matt + EPAM: Prepare follow-up demo for Sep 17** -- Adebayo's USMA Core Planning team~~ DONE (held Sep 17 and well received, but the environment produced no output, so the recording needs a re-shoot; see below)
-- **Matt + Rita: Plan demo for ESMO Abstract Planning series** -- no demo currently slated; Shannon wants one closer to ESMO. Determine timing and content.
-- **Matt + Shannon: Discuss abstract tiering experiment (Sep 24)** -- Ante Harxhi (EDSA, CV) wants a quick, time-boxed AI experiment tiering abstracts by importance; Shannon wants it ahead of the SEP retrospective
-- **JPA: Review previous tiering-experiment materials** (Sep 28 ask) -- Global Onc's tiering structure may extend to other TAs and a CI-perspective experiment; Shannon handing off the Global Onc structure + ASCO SLPs; Shannon meeting CV team on tiering in 2 weeks
-- **JPA: One-pager on ESMO / AHA workflow experiments** -- Shannon's ask (Sep 22); Confluence page already set up. MRL Debrief one-pager delivered Sep 23
+- ~~**Matt + Rita: Plan demo for ESMO Abstract Planning series**~~ -- no demo currently slated; Shannon wants one closer to ESMO. Determine timing and content.
+- ~~**Matt + Shannon: Discuss abstract tiering experiment (Sep 24)**~~ -- Ante Harxhi (EDSA, CV) wants a quick, time-boxed AI experiment tiering abstracts by importance; Shannon wants it ahead of the SEP retrospective
+- ~~**JPA: Review previous tiering-experiment materials**~~ (Sep 28 ask) -- Global Onc's tiering structure may extend to other TAs and a CI-perspective experiment; Shannon handing off the Global Onc structure + ASCO SLPs; Shannon meeting CV team on tiering in 2 weeks
+- ~~**JPA: One-pager on ESMO / AHA workflow experiments**~~ -- Shannon's ask (Sep 22); Confluence page already set up. MRL Debrief one-pager delivered Sep 23
 - **Shannon + Congress Ops: Review EPAM's latest Congress Ops changes** -- Merve to notify when ready; approval gates the final video recording
 - ~~**Matt + EPAM: Record fresh workflow demo video**~~ DONE (Matt recorded an up-to-date demo and sent Shannon the link Oct 5; originally targeted for the Sep 30 meeting)
 - **Shannon + JPA: Send Abstract Library access link (Fri Sep 25)** -- same day as the ESMO data drop; users see the ONC committee global tier list and abstracts tagged watch/debrief/write-up
 - **Team: Debrief link update** -- outstanding item Shannon flagged for this week's open call slot (Sep 22)
-- **EPAM: Assignee feature suggestions from the Sep 17 demo** -- ability to remove assignees, list of all currently assigned writers, other assignees' names in the assignment email
+- ~~**EPAM: Assignee feature suggestions from the Sep 17 demo**~~ -- ability to remove assignees, list of all currently assigned writers, other assignees' names in the assignment email
 - **JPA: SEP retrospective on ASCO 2026 content** -- test how SEP information changes abstract summaries; now sequenced after the tiering experiment
 
 ## 2027 Planning

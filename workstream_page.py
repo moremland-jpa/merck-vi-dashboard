@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from datetime import date
 
-import pandas as pd
 import streamlit as st
 
 import brand
@@ -11,176 +10,36 @@ import parsers
 import utils
 
 
-def _normalize_items(items: list[dict]) -> list[dict]:
-    out = []
-    for it in items:
-        item = {
-            "owner": it.get("owner", ""),
-            "description": it.get("description", ""),
-            "status": it.get("status", "Pending"),
-            "due_date": it.get("due_date", ""),
-            "completed_on": it.get("completed_on", ""),
-            "notes": it.get("notes", ""),
-        }
-        if it.get("source"):
-            item["source"] = it["source"]
-        out.append(item)
-    return out
 
 
-_PENDING_COLS = {
-    "done": st.column_config.CheckboxColumn("", width=50, default=False),
-    "owner": st.column_config.TextColumn("Owner", width=120),
-    "description": st.column_config.TextColumn("Description", width="large"),
-    "due_date": st.column_config.DateColumn("Due", width=110, format="MMM D"),
-    "notes": st.column_config.TextColumn("Notes", width="medium"),
-}
-
-_DONE_COLS = {
-    "owner": st.column_config.TextColumn("Owner", width=120),
-    "description": st.column_config.TextColumn("Description", width="large"),
-    "notes": st.column_config.TextColumn("Notes", width="medium"),
-    "completed_on": st.column_config.TextColumn("Completed", width=100),
-}
-
-
-def _render_action_items(workstream: str, ws: dict) -> None:
-    items = _normalize_items(ws.get("action_items", []))
-    base_hash = ws.get("action_items_base_hash", "")
-    has_overlay = db.is_connected() and items != _normalize_items(
-        ws.get("base_action_items", items)
-    )
-
+def _render_open_items(ws: dict) -> None:
+    """Read-only list of open and completed items from the status file (no editing or check-off)."""
+    items = ws.get("action_items", [])
     if not items:
-        st.info("No structured action items found. Check the raw status below.")
-        with st.expander("Raw status content"):
-            st.markdown(ws.get("raw_body", ""))
+        st.info("No open items listed in the status file.")
         return
 
-    df = pd.DataFrame(items)
-    pending = df[df["status"] == "Pending"].reset_index(drop=True)
-    done = df[df["status"] == "Done"].reset_index(drop=True)
+    def line(item: dict) -> str:
+        owner = f"**{item['owner']}:** " if item.get("owner") else ""
+        return f"- {owner}{item['description']}"
 
-    if not pending.empty:
-        st.markdown(f"### Pending ({len(pending)})")
-
-        pending_display = pending[
-            ["owner", "description", "due_date", "notes"]
-        ].copy()
-        pending_display.insert(0, "done", False)
-        pending_display["due_date"] = pd.to_datetime(
-            pending_display["due_date"], errors="coerce"
-        ).dt.date
-
-        edited = st.data_editor(
-            pending_display,
-            use_container_width=True,
-            hide_index=True,
-            num_rows="fixed",
-            key=f"pending_{workstream}",
-            column_config=_PENDING_COLS,
-        )
-
-        has_changes = not edited.equals(pending_display)
-        if has_changes:
-            if st.button(
-                "Save changes", key=f"save_{workstream}", type="primary"
-            ):
-                updated = list(items)
-                p_idx = 0
-                today = date.today().isoformat()
-                for j, item in enumerate(updated):
-                    if item["status"] == "Pending" and p_idx < len(edited):
-                        row = edited.iloc[p_idx]
-                        marking_done = bool(row["done"])
-                        due = row.get("due_date")
-                        due_str = str(due) if pd.notna(due) else ""
-                        updated[j] = {
-                            **item,
-                            "owner": str(row["owner"]),
-                            "description": str(row["description"]),
-                            "due_date": due_str,
-                            "notes": str(
-                                row["notes"] if pd.notna(row["notes"]) else ""
-                            ),
-                            "status": "Done" if marking_done else "Pending",
-                            "completed_on": today if marking_done else "",
-                        }
-                        p_idx += 1
-                if utils.save_action_items(workstream, updated, base_hash):
-                    st.success("Changes saved.")
-                    utils.load_workstream_status.clear()
-                    utils.load_all_statuses.clear()
-                    st.rerun()
-                else:
-                    st.error("Failed to save changes.")
-
-    if not done.empty:
-        st.markdown(f"### Completed ({len(done)})")
-        st.dataframe(
-            done[["owner", "description", "notes", "completed_on"]],
-            use_container_width=True,
-            hide_index=True,
-            column_config=_DONE_COLS,
-        )
-
-    if has_overlay:
-        if st.button(
-            "Reset to source",
-            key=f"reset_{workstream}",
-            help="Discard cloud edits and reload from memory files",
-        ):
-            db.clear_action_overlay(workstream)
-            utils.load_workstream_status.clear()
-            utils.load_all_statuses.clear()
-            st.rerun()
-
-
-
-def _render_add_action_item(workstream: str, ws: dict) -> None:
-    if not db.is_connected():
-        return
-
-    with st.expander("Add action item", icon=":material/add_task:"):
-        with st.form(key=f"add_action_{workstream}", clear_on_submit=True):
-            cols = st.columns([2, 5])
-            with cols[0]:
-                owner = st.text_input("Owner")
-            with cols[1]:
-                description = st.text_input("Description")
-            cols2 = st.columns([2, 5])
-            with cols2[0]:
-                due_date = st.date_input("Due date (optional)", value=None)
-            with cols2[1]:
-                notes = st.text_input("Notes (optional)")
-            submitted = st.form_submit_button("Add", type="primary")
-            if submitted and description.strip():
-                items = _normalize_items(ws.get("action_items", []))
-                base_hash = ws.get("action_items_base_hash", "")
-                new_item = {
-                    "owner": owner.strip(),
-                    "description": description.strip(),
-                    "status": "Pending",
-                    "due_date": str(due_date) if due_date else "",
-                    "completed_on": "",
-                    "notes": notes.strip() if notes else "",
-                    "source": "manual",
-                }
-                items.append(new_item)
-                if utils.save_action_items(workstream, items, base_hash):
-                    st.success("Action item added.")
-                    utils.load_workstream_status.clear()
-                    utils.load_all_statuses.clear()
-                    st.rerun()
-                else:
-                    st.error("Failed to add action item.")
+    open_items = [i for i in items if i.get("status") != "Done"]
+    done_items = [i for i in items if i.get("status") == "Done"]
+    st.caption("From the status file, read-only. Status is tracked weekly in the Merck/JPA status tracker.")
+    if open_items:
+        st.markdown("\n".join(line(i) for i in open_items))
+    else:
+        st.caption("Nothing open.")
+    if done_items:
+        with st.expander(f"Completed ({len(done_items)})"):
+            st.markdown("\n".join(line(i) for i in done_items))
 
 
 def _render_single_update(note: dict, previous_visit: str | None) -> None:
     created = note.get("created_at", "")
     time_str = brand.relative_time(created) if created else ""
 
-    category = note.get("category") or "Update"
+    category = brand.normalize_category(note.get("category"))
     cat_badge = brand.category_badge(category)
     cat_class = f"cat-{category.lower().replace(' ', '-')}"
     sync_label = brand.sync_indicator(note.get("synced_at"))
@@ -207,7 +66,7 @@ def _render_team_updates(workstream: str) -> None:
         with st.form(key=f"update_form_{workstream}", clear_on_submit=True):
             note_text = st.text_area(
                 "Share an update",
-                placeholder="What's happening? Decisions made, blockers hit, progress updates...",
+                placeholder="What's happening? Decisions, blockers, progress, things to raise with Merck...",
                 label_visibility="collapsed",
                 height=80,
             )
@@ -229,6 +88,10 @@ def _render_team_updates(workstream: str) -> None:
                     workstream, user, note_text.strip(), category
                 )
                 st.rerun()
+        st.caption(
+            "**Tracker** notes go into the weekly Merck/JPA status tracker, so write them as you'd "
+            "want Merck to read them. **Internal Note** stays with the JPA team."
+        )
 
     notes = db.load_workstream_notes(workstream, limit=200)
     previous_visit = st.session_state.get("previous_visit")
@@ -271,8 +134,8 @@ def render(workstream: str) -> None:
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
 
-    tab_status, tab_actions, tab_people = st.tabs(
-        ["Status", "Action Items", "Stakeholders"]
+    tab_status, tab_items, tab_people = st.tabs(
+        ["Status", "Open Items", "Stakeholders"]
     )
 
     with tab_status:
@@ -319,9 +182,8 @@ def render(workstream: str) -> None:
             for q in questions:
                 st.markdown(f"- {q}")
 
-    with tab_actions:
-        _render_add_action_item(workstream, ws)
-        _render_action_items(workstream, ws)
+    with tab_items:
+        _render_open_items(ws)
 
     with tab_people:
         people = utils.load_stakeholders()

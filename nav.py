@@ -5,7 +5,6 @@ import streamlit as st
 NAV_ITEMS = [
     ("Overview", "app.py"),
     ("Workstreams", "pages/1_Workstreams.py"),
-    ("Action Items", "pages/6_Action_Items.py"),
     ("Calendar", "pages/5_Calendar.py"),
     ("Stakeholders", "pages/7_Stakeholders.py"),
 ]

@@ -1,0 +1,600 @@
+﻿[
+    {
+        "workstream":  "MRL Debrief",
+        "items":  [
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "ask Jan Chmelar where the tool can be hosted inside Merck\u0027s network -- internal VM/app platform, Databricks, or EPAM adding it to Congress AI; also approval path and token storage/sign-in. Fallback: Matt generates drafts on request from his VDI during ESMO.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "put the engine repo on Merck GitHub -- DONE (pushed Oct 6 to merck-gen/cdds-ese-mrl-debrief; prerequisite for IT hosting, but GitHub alone does not make it usable for Shannon)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "paste the Oct 6 Confluence page -- file is ready in `MRL Debrief/`.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "show Shannon the comparator table output -- ask which trials writers actually cite and whether CI databases could supply the result numbers.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "JPA",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "comparator follow-ups -- wire the finder into `generateDebrief` and the build route; add result numbers via the cited abstract (verbatim) or CI databases; confirm CT.gov search stays reachable from a hosted environment.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "propose an accuracy measure to Shannon -- she asked for %accuracy of correct data representation on capture-derived drafts; define how it is scored (e.g. fields correct against the writers\u0027 final deck) before ESMO.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Waiting on Uri -- (Shannon\u0027s Sep 28-29 answer: captures go through the abstract library like posters, uploaded by Shannon at ESMO; still open: what Uri/EPAM support is needed, upload-to-draft latency, phone photos OK?). **Plus:** can a safety/AE section be added to the output? **Plus (minor):** his normalizer writes an unvalidated CI into `notes` as a Python dict (6/102 endpoints; we strip it).",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "data-rights answer -- for AI processing of captures (via Congress Excellence Workgroup).",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt -\u003e Shannon (drafted but not yet sent, offered)",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  " -- send the LBA3508 writeup + one-pager v3; ask for format review with a medical writer, which sections are on by default, how the Presenter / PDT-EDT Partner fields get filled (engine assumes rmsd_presenter / mrl_discussant); flag the data-rights point and the upload-usability tension.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "ESMO (Oct 23-27) pilot",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  " -- a few assigned late-breakers, captures in, drafts out, writers time their review. Needs the Uri answers + data rights by early October; otherwise fall back to drafts from abstract content + same-day publications, with writers adding figures/numbers.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Needed for any live use by others",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  " -- decide where it runs inside Merck\u0027s network and how users sign in (the shared static dev token no longer expires, but needs a storage/access plan on a shared host).",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Engine follow-ups",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  " -- filter/flag empty 200s from industry symposia (ESMO Pfizer example); consider pre-building Background/Methods before the talk.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Legal",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  " -- ENABLE_CONGRESS_AI_CONTENT (off until cleared); PubMed abstract quoting.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "JPA",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "SEP retrospective -- after the abstract tiering experiment.",
+                          "completed_on":  ""
+                      }
+                  ],
+        "base_hash":  "df6b401950309496",
+        "updated_at":  "2026-10-28T15:26:24.656841+00:00"
+    },
+    {
+        "workstream":  "Asset Reporting",
+        "items":  [
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Create Confluence page for early asset reports -- per Shannon\u0027s Sep 22 Teams note",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Talia",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Draft foundational prompts for remaining priority assets -- review the SAC-TMT prompt, test through the Northern Lights beta module, share ahead of the Stephen Leong session",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Team",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Capture outcomes of the first biweekly Stephen Leong session (Sep 23)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "JPA",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Demo the asset normalization app to Stephen, Danny, and EPAM -- not yet scheduled",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "JPA",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Remaining demo-app updates -- MUSE pairing integration, NCT registry bucket, additional competitor data",
+                          "completed_on":  ""
+                      }
+                  ],
+        "base_hash":  "3b71849935d738ca",
+        "updated_at":  "2026-10-28T15:26:24.767935+00:00"
+    },
+    {
+        "workstream":  "Congress AI",
+        "items":  [
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Record an up-to-date demo video -- DONE (recorded, link sent to Shannon Oct 5; re-recorded after the Oct 7 UI changes and posted to Merck SharePoint by Shannon)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Update the QRG by end of day Oct 6 -- DONE (QRG updated and posted to Merck SharePoint by Shannon after the Oct 15-16 demos)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Run write-up workflow demos for ESMO office hours / Congress Ops -- DONE (Oct 15 and 16)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt + Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "AHA write-up workflow demo -- scheduled Oct 29; more AHA demos to follow",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Retry abstract tiering with raw AHA title list on new GPTeal version -- Oct 7 ask from Shannon; ask for reasoning/confidence; Shannon to send CVG title list (see [[project-abstract-tiering]])",
+                          "completed_on":  "2026-10-28"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Colin",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "ESMO API-needs workflow diagram -- ESMO leaders asked Merck to send a proposal for an API-needs workflow (Oct 7)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Colin",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "ESMO API-needs workflow diagram -- ESMO leaders asked Merck to send a proposal for an API-needs workflow (Oct 7)",
+                          "completed_on":  "2026-10-28"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Email Ryta the process and triggers; Ryta implements changes -- end of week of Oct 7; Ryta also confirms latest ESMO info and LBA tags in the staging digital library",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Submit TPA form -- for Citeline (aka Trial Trove) data access (coordinating with Adam and Uri)~~ DONE (submitted Sep 1 after meeting Adam)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "Citeline access no longer an option",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Confirm with Adam whether RWDEX mirror includes Pharma Projects fields -- (not just Trial Trove) before doing any Sightline training -- Karena/Greg\u0027s team blocked regardless by the GCD contract-addendum precedent (see Sep 10 entry)",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Schedule offline session with Adam -- to walk through RWDEX tables~~ DONE (met Sep 1)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "Citeline access no longer an option",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Complete RWDEX trainings -- ON HOLD per Shannon (Sep 10) until confirmed there\u0027s enough mirrored content to justify the use case",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Prepare quick reference guide + backup demo slides -- for Sept 1 demo~~ DONE (themed backup deck + QRG built Aug 31)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt + Rita",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "MRL Debrief -- meet with Destiny -- on technical needs; troubleshoot centralized API migration blocker~~ DONE (Destiny\u0027s backend source obtained Sep 22)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Set up direct meeting with EPAM (Uri) -- to reconnect MRL Debrief API to Congress Library backend tables~~ DONE (live connection working, auth resolved Sep 22; see [[mrl-debrief-status]])",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Rita",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Coordinate with Jen Devers Triggiani and Mellie -- for Sept 2 planning feature preview~~ DONE (demo held Sep 2, discovered a bug, fixing)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "Patrick linked the document. Adebayo will periodically add it to his slides",
+                          "owner":  "Matt",
+                          "status":  "Done",
+                          "due_date":  "2026-09-04",
+                          "description":  "Update QRG -- with demo follow-up items (upload limits, EP materials info); keep live link current for Adebayo",
+                          "completed_on":  "2026-09-08"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Ask for Congress AI work to continue through mid-2027 -- Congress Excellence Work Group has Congress AI in next year\u0027s priorities (Oct 7)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Email Ryta the process and triggers; Ryta implements changes -- end of week of Oct 7; Ryta also confirms latest ESMO info and LBA tags in the staging digital library",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Cinnamon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Confirm MSL/PDT training timing and ESMO attendee subset -- with Mellie/Jen",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "EPAM",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Talk to actual clinical director from last year -- to understand real workflow before testing wizard",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Talia + Shannon",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Refresh abstract library vision slide -- before mid-Sept F2F",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "Using link to file for now",
+                          "owner":  "Shannon",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Create Congress AI page on V\u0026I MedOps SharePoint -- single source of truth for QRG, video, updates",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "EPAM",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Implement serial workflow -- (RMSD completes → wizard prompts reassign → PDT gets R\u0026I field). Replaces earlier parallel co-editing direction.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "EPAM",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Build medical writer email export -- Word doc attachment on \"Complete\" status change, pre-populated recipients, CC to Congress Ops. Needs: last year\u0027s example Word doc, recipient list.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Legal call Sept 11 -- on abstract library data governance~~ DONE -- Jen Hess + Linda Kollmar approved ESMO and AHA (Sep 11)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Northern Lights deep dive -- with HH Data Genie contact",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Set up on-site base camp -- near corporate suites for ESMO support",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "CI team meeting -- for AHA raw data access",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Cinnamon + Shannon",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Schedule AHA EDSA kickoff -- with Ante Harxhi -- initial call held Sep 9, follow-up TBD",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt + EPAM",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Prepare follow-up demo for Sep 17 -- Adebayo\u0027s USMA Core Planning team~~ DONE (held Sep 17 and well received, but the environment produced no output, so the recording needs a re-shoot; see below)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt + Rita",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Plan demo for ESMO Abstract Planning series -- no demo currently slated; Shannon wants one closer to ESMO. Determine timing and content.",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Study Map legal finalization",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Provide last year\u0027s Word doc example + medical writer recipient list -- to EPAM",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt + Shannon",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Discuss abstract tiering experiment (Sep 24) -- Ante Harxhi (EDSA, CV) wants a quick, time-boxed AI experiment tiering abstracts by importance; Shannon wants it ahead of the SEP retrospective",
+                          "completed_on":  "2026-10-28"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Shannon + Congress Ops",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Review EPAM\u0027s latest Congress Ops changes -- Merve to notify when ready; approval gates the final video recording",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt + EPAM",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Record fresh workflow demo video -- DONE (Matt recorded an up-to-date demo and sent Shannon the link Oct 5; originally targeted for the Sep 30 meeting)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "JPA",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Review previous tiering-experiment materials -- (Sep 28 ask) -- Global Onc\u0027s tiering structure may extend to other TAs and a CI-perspective experiment; Shannon handing off the Global Onc structure + ASCO SLPs; Shannon meeting CV team on tiering in 2 weeks",
+                          "completed_on":  "2026-10-28"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Team",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Debrief link update -- outstanding item Shannon flagged for this week\u0027s open call slot (Sep 22)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "EPAM",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Assignee feature suggestions from the Sep 17 demo -- ability to remove assignees, list of all currently assigned writers, other assignees\u0027 names in the assignment email",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "JPA",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "One-pager on ESMO / AHA workflow experiments -- Shannon\u0027s ask (Sep 22); Confluence page already set up. MRL Debrief one-pager delivered Sep 23",
+                          "completed_on":  "2026-10-28"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "source":  "manual",
+                          "status":  "Done",
+                          "due_date":  "2026-09-17",
+                          "description":  "test add",
+                          "completed_on":  "2026-09-09"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "matt",
+                          "source":  "manual",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "test back to workstream",
+                          "completed_on":  "2026-09-09"
+                      }
+                  ],
+        "base_hash":  "f1fdaf2962447357",
+        "updated_at":  "2026-10-28T15:26:24.316092+00:00"
+    },
+    {
+        "workstream":  "Genesis",
+        "items":  [
+                      {
+                          "notes":  "",
+                          "owner":  "",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Continue strategic-technical bridge role post-Ulf -- architecture, strategy, stakeholder facilitation. Patrick\u0027s specific ask: \"listen to what we\u0027re doing and make sure we\u0027re not doing something completely asinine\" on data science assumptions.",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Lean into first release delivery -- partner with Jan, Michal, and devs. Next couple weeks = finishing backend data enrichment. Last couple weeks = enabling something.",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Matt offered working session with Gem -- on Insights Coach Agent (Studio/node config issues)",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "Met with Steve Bridgman and Sundaram 9/28. Will work on getting me access to the Data Science workspace instead of the current (Data Engineering) one. This will give me access to a good cluster",
+                          "owner":  "",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Get access to insights data in Databricks -- Matt has platform access, need actual table/data view. Jan (formerly listed as \"Joanna\") helping.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Get invite from Patrick -- for Genesis Core Team meetings (replacing Validation series)~~ DONE (Matt on invites as of Sep 3)",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "JPA",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Define feature request/intake process -- Matt working with Yun and Michal while Patrick travels. Prioritization framework with rationale.",
+                          "completed_on":  ""
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Help Jan select meaningful filter set -- for demo data -- needs business-relevant filters, not \"oncology last 30 days\"",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "",
+                          "status":  "Done",
+                          "due_date":  "",
+                          "description":  "Attend Jan\u0027s methodology presentation -- enrichment pipeline deep dive (this week or next Monday)",
+                          "completed_on":  "2026-09-24"
+                      },
+                      {
+                          "notes":  "",
+                          "owner":  "Matt",
+                          "status":  "Pending",
+                          "due_date":  "",
+                          "description":  "Follow up on the benchmark discussion with Jan and the data scientists -- link sent Oct 6 for further discussion; collect feedback on method and results, and fold in Jan\u0027s sample-based quality idea. Matt presented to Patrick and Adi Oct 5; capture their reactions.",
+                          "completed_on":  ""
+                      }
+                  ],
+        "base_hash":  "a68d38c3563de81a",
+        "updated_at":  "2026-10-28T15:26:24.454137+00:00"
+    }
+]

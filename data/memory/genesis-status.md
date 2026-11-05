@@ -198,18 +198,18 @@ Previewed Figma board with Joseph Cianciulli, Kate Lynn Bill, and Gem Roy. Key f
 
 ## JPA Action Items (Sep 10)
 
-1. **Continue strategic-technical bridge role post-Ulf** -- architecture, strategy, stakeholder facilitation. Patrick's specific ask: "listen to what we're doing and make sure we're not doing something completely asinine" on data science assumptions.
-2. **Lean into first release delivery** -- partner with Jan, Michal, and devs. Next couple weeks = finishing backend data enrichment. Last couple weeks = enabling something.
+1. ~~**Continue strategic-technical bridge role post-Ulf**~~ -- architecture, strategy, stakeholder facilitation. Patrick's specific ask: "listen to what we're doing and make sure we're not doing something completely asinine" on data science assumptions.
+2. ~~**Lean into first release delivery**~~ -- partner with Jan, Michal, and devs. Next couple weeks = finishing backend data enrichment. Last couple weeks = enabling something.
 3. KPI template (operational vs. strategic impact, kept separate)
 4. Document on why system of record matters vs. ad-hoc GPTeal (up to 20% variance, no validation)
 5. User guide / one-pager for Sentiment 2.0 rollout
 6. ~~Databricks access for Matt~~ DONE (Matt has access as of Sep 2). Working on table data view (minor technical hurdle -- expects resolution Sep 3).
-7. **Matt offered working session with Gem** on Insights Coach Agent (Studio/node config issues)
-8. **Get access to insights data in Databricks** -- Matt has platform access, need actual table/data view. Jan (formerly listed as "Joanna") helping.
+7. ~~**Matt offered working session with Gem**~~ on Insights Coach Agent (Studio/node config issues)
+8. **Get access to insights data in Databricks** -- Matt has platform access, need actual table/data view. Jan (formerly listed as "Joanna") helping. [Team note: Met with Steve Bridgman and Sundaram 9/28. Will work on getting me access to the Data Science workspace instead of the current (Data Engineering) one. This will give me access to a good cluster]
 9. ~~**Get invite from Patrick** for Genesis Core Team meetings (replacing Validation series)~~ DONE (Matt on invites as of Sep 3)
 10. **JPA: Define feature request/intake process** -- Matt working with Jan Chmelar and Michal while Patrick travels. Prioritization framework with rationale.
-11. **Help Jan select meaningful filter set** for demo data -- needs business-relevant filters, not "oncology last 30 days"
-12. **Attend Jan's methodology presentation** -- enrichment pipeline deep dive (this week or next Monday)
+11. ~~**Help Jan select meaningful filter set**~~ for demo data -- needs business-relevant filters, not "oncology last 30 days"
+12. ~~**Attend Jan's methodology presentation**~~ -- enrichment pipeline deep dive (this week or next Monday)
 13. **Matt: Follow up on the benchmark discussion with Jan and the data scientists** -- link sent Oct 6 for further discussion; collect feedback on method and results, and fold in Jan's sample-based quality idea. Matt presented to Patrick and Adi Oct 5; capture their reactions.
 14. **Patrick + Matt: Assign Genesis UAT ownership** -- meet Adi and the Scientific Insights team: process, responsibilities, go/no-go evidence requirements (Oct 30 meeting follow-up)
 15. **Colin + Matt + Patrick: Tighten Sentiment 2.0 scope and release requirements** -- document committed features (chat, output format) so omissions and late changes are traceable (Oct 30 follow-up)
