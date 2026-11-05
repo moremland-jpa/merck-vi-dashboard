@@ -1,6 +1,10 @@
 ---
 name: genesis-status
 description: "Genesis Sentiment 2.0 -- Oct 28 update: UAT underway; beta for MRL users only targeted Thu Oct 29 with go/no-go on the Wed Oct 28 call; HH access delayed ~2-3 weeks; Oct 23 go/no-go slipped (test DB still processing); Excel export phase 1; scope frozen; XFly team split/remap Oct 30-Nov 3; upload-your-own-insights debated Oct 12. Earlier -- Oct 1-2 Teams: duplicate-findings case was a faulty extraction that was re-run; Jan Chmelar says 500K+ findings will never be 100% right, 105 compute-hours to re-extract all, proposes sample-based quality assessment (Sentiment Analysis part 2 with Peter Baumeister's data scientists Oct 2); filter order decision = one global custom order matching XFly (Adi, Patrick agree). Sep 28 weekly: 'findings' confirmed as launch terminology, real concern is finding-quality not the label; Matt to get code access via Steve Bridgeman and quantify finding-identification issues ASAP; Patrick meeting the former-BI team (Ulf's backfill) Sep 29; adoption risk may be workflow inertia, not awareness. Also Sep 25: confirmed findings-extraction duplicate-findings defect (v2d prompt, fix exists in v2e but not canonical), independently flagged by Matt via dashboard note too; Matt's field-team manual-labeling idea (training data + trust-building) not yet raised with the team; ESMO sentiment ask blocked on 3 open questions; RMSD dropped as Figma source filter; PowerPoint export agreed for demo but Export button still broken. As of Sep 28, 2026."
+summary:
+  stands: "Sentiment 2.0 is live as a soft launch, about two weeks in (MRL users; HH access held back). No comms have gone out and early reception is cool."
+  latest: "Legal's wording guidance on \"drivers/barriers\" is under discussion. Users' own analyses don't match Genesis, and there is no written requirements baseline or named UAT owner."
+  next: "Build a requirements baseline and roadmap, assign UAT ownership, test newer LLMs, and review the new 600-insight stability data."
 metadata: 
   node_type: memory
   type: project

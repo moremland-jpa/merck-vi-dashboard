@@ -113,6 +113,7 @@ def load_workstream_status(key: str) -> dict:
     return {
         "name": key,
         "description": fm.get("description", ""),
+        "summary": fm.get("summary"),
         "modified": fm.get("modified", ""),
         "current_state": parsers.extract_current_state(body),
         "key_developments": parsers.extract_key_developments(body),

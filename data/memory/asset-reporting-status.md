@@ -1,6 +1,10 @@
 ---
 name: asset-reporting-status
 description: "Asset Reporting -- Shannon creating a Confluence page for early asset reports (Sep 22); first biweekly session with Stephen Leong's group Sep 23 (outcome not yet captured); Talia drafting prompts for remaining priority assets via Northern Lights beta deep research. Updated Sep 23, 2026."
+summary:
+  stands: "Early asset reporting is running as experiments. The EDSAs liked Shannon's HH OneSearch deep-research output."
+  latest: "It will likely be used for senior-leader reporting once the EDSAs have link access to validate the content."
+  next: "Secure EDSA access, capture the Stephen Leong session outcomes, finish prompts for remaining assets, and demo the normalization app."
 metadata: 
   node_type: memory
   type: project

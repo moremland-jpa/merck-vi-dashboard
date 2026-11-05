@@ -265,8 +265,9 @@ def render(workstream: str) -> None:
             unsafe_allow_html=True,
         )
 
-    if ws["description"]:
-        st.markdown(f"*{ws['description']}*")
+    summary = brand.summary_html(parsers.summary_items(ws.get("summary"), ws.get("description", "")))
+    if summary:
+        st.markdown(summary, unsafe_allow_html=True)
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
 

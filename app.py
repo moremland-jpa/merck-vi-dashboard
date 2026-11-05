@@ -6,6 +6,7 @@ import auth
 import brand
 import db
 import nav
+import parsers
 import utils
 
 st.set_page_config(
@@ -124,8 +125,9 @@ def render_overview() -> None:
         )
 
         body_parts = []
-        if description:
-            body_parts.append(f"<p>{brand.safe(description)}</p>")
+        summary = brand.summary_html(parsers.summary_items(ws_data.get("summary"), description))
+        if summary:
+            body_parts.append(summary)
 
         badge_parts = []
         if new_notes:

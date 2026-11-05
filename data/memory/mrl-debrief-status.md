@@ -1,6 +1,10 @@
 ---
 name: mrl-debrief-status
 description: "MRL Debrief -- reliability solved (Uri normalizer, zero 502s Sep 24); draft format rebuilt to match medical writers' decks with selectable sections; tool is a next-morning debrief of a talk already given, built from RMSD screenshots on the fly (confirmed from transcripts); waiting on Uri re capture intake + safety section and on data rights; one-pager v3 + Confluence updated Sep 24; Sep 28 update: Matt wants an individual meeting with Shannon to review progress, Sep 25 ESMO data may make testing more robust. Oct 5: demo done with Shannon; her feedback = writeups have a multi-row comparable-studies table, so a CT.gov comparator finder was built and pushed (bbea580). Oct 6: demo server now pulls LIVE Congress Library data on the VDI (static dev token, Node TLS-cert fix); Matt asking Jan where to host it for Shannon's team; Confluence page updated to Oct 6. As of Oct 6, 2026."
+summary:
+  stands: "The debrief generator is built and reads live congress data; reliability is solved."
+  latest: "Shannon has the ESMO first drafts but hasn't compared them with the real debriefs. The work is on hold pending her review."
+  next: "Help Shannon finish the comparison and recap, and run the medical writers' drafts through the generator before year end."
 metadata: 
   node_type: memory
   type: project

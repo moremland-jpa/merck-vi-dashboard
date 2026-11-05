@@ -41,6 +41,17 @@ def safe(text) -> str:
     return html.escape(str(text))
 
 
+def summary_html(items) -> str:
+    """Compact 'where it stands / latest / next' block from parsers.summary_items()."""
+    rows = "".join(
+        '<div class="ws-summary-row">'
+        + (f'<span class="ws-summary-label">{safe(label)}</span> ' if label else "")
+        + f"{safe(text)}</div>"
+        for label, text in items
+    )
+    return f'<div class="ws-summary">{rows}</div>' if rows else ""
+
+
 def inject_brand_css() -> None:
     st.markdown(
         """
@@ -109,6 +120,22 @@ def inject_brand_css() -> None:
         .meta-text {
             color: #595959;
             font-size: 0.8rem;
+        }
+
+        .ws-summary-row {
+            margin: 0.4rem 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #333333;
+        }
+        .ws-summary-label {
+            display: inline-block;
+            min-width: 6.5rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #004153;
         }
 
         .divider {

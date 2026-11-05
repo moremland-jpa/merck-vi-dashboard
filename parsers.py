@@ -21,10 +21,29 @@ def parse_frontmatter(path: Path) -> dict:
         return {
             "name": fm.get("name", ""),
             "description": fm.get("description", ""),
+            "summary": fm.get("summary"),
             "modified": str(modified),
         }
     except Exception:
         return {}
+
+
+SUMMARY_LABELS = [("stands", "Where it stands"), ("latest", "Latest"), ("next", "Next")]
+
+
+def summary_items(summary, description: str = "") -> list[tuple[str, str]]:
+    """(label, text) lines for a workstream header from the frontmatter `summary` mapping
+    (keys stands / latest / next). Without one, falls back to the start of the long description."""
+    if isinstance(summary, dict):
+        items = [(label, str(summary[k]).strip()) for k, label in SUMMARY_LABELS if summary.get(k)]
+        if items:
+            return items
+    if isinstance(summary, str) and summary.strip():
+        return [("", summary.strip())]
+    first = re.split(r"(?<=[.!?])\s", (description or "").strip(), maxsplit=1)[0]
+    if len(first) > 220:
+        first = first[:217].rstrip() + "..."
+    return [("", first)] if first else []
 
 
 def strip_frontmatter(text: str) -> str:

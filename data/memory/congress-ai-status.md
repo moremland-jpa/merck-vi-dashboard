@@ -1,6 +1,10 @@
 ---
 name: congress-ai-status
 description: "Congress AI -- ESMO data drop + Abstract Library link Fri Sep 25; Sep 17 Adebayo demo well received but environment gave no output, re-record targeted Sep 30 after Congress Ops changes; abstract tiering experiment (Ante Harxhi, CV) now ahead of SEP retrospective, and per Sep 28 update may extend to other TAs + a CI-perspective experiment (ACC as content example); JPA owes ESMO/AHA workflow one-pager (MRL one delivered); leads out this week for 2027 planning. As of Sep 28, 2026; Oct 21 update: write-up demos Oct 15-16 done, QRG + video posted by Shannon, AHA demo Oct 29."
+summary:
+  stands: "ESMO ran well: 59 of 60 write-ups finished within the 48-hour window, with one Wi-Fi content-loss incident."
+  latest: "A participant survey and end-to-end readout are in progress. The 2027 plan adds HIV, and a Dec 9 in-person day is being planned."
+  next: "Keep running AHA workflow demos, test Wi-Fi resilience, and schedule the SEP integration experiment as an early-2027 POC."
 metadata: 
   node_type: memory
   type: project
