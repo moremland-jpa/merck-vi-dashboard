@@ -1,0 +1,29 @@
+name: Supabase keep-alive
+
+# Daily read against the MerckVI Supabase project so the free tier doesn't pause it for inactivity.
+# Runs on GitHub's servers (no dependency on a laptop being on). A failed run emails the repo owner.
+# Needs repo secrets: SUPABASE_URL (https://<ref>.supabase.co) and SUPABASE_KEY (the anon key used by the app).
+
+on:
+  schedule:
+    - cron: "17 13 * * *"   # daily, 13:17 UTC
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Query workstream_notes
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
+            echo "Missing SUPABASE_URL or SUPABASE_KEY repo secret"; exit 1
+          fi
+          curl --fail --silent --show-error --output /dev/null \
+            --retry 4 --retry-delay 15 --retry-all-errors --max-time 30 \
+            -H "apikey: $SUPABASE_KEY" -H "Authorization: Bearer $SUPABASE_KEY" \
+            "${SUPABASE_URL%/}/rest/v1/workstream_notes?select=id&limit=1"
+          echo "Supabase responded OK"
