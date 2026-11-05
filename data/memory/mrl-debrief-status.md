@@ -5,10 +5,14 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-10-28T14:49:02.641Z
+  modified: 2026-11-05T18:39:37.637Z
 ---
 
-## Current State (Oct 7, 2026; updated Oct 28) -- read this first
+## Current State (Oct 7, 2026; updated Nov 5) -- read this first
+
+**Oct 29 check-in (Shannon):** she has all the first drafts that were sent to medical writers and needs Matt's help inputting them into the prototype generator to produce outputs before year end ("not super urgent," but she wants to report out); Patrick agreed to keep it as a deliverable and adjust Genesis deliverables around it. **Nov 5 check-in (Matt):** the MRL debrief work and the abstract-prioritization experiment are on hold waiting for Shannon's review (not her top priority right now).
+
+**Nov 2-5:** the Oct 30 meeting follow-up (Cinnamon, Teams) assigns **Shannon and the team to use the available MRL debrief materials to produce the prototype-generator outputs and prepare the debrief readout**. The ESMO summary slide (Nov 2) also says the medical-writer-versus-AI first-draft comparison is still being completed. Whether Matt's help on the comparison was confirmed at the weekly call is not recorded.
 
 **Oct 27-28 (Shannon Teams):** Shannon has all the ESMO first drafts from the MRL Debrief PoC but hasn't had time to build the comparison against the actual debriefs. She may need Matt's help to complete the experiment and write a brief recap -- to be discussed at the weekly JPA call. She attended an actual debrief session; **another MRL debrief is Fri Oct 30.** The ESMO 2026 experiments review call with EDSAs/GDMAs (first-draft report comparison, asset-focused reporting, Debrief) will follow ~5 days after Jill's comprehensive Congress summary goes out.
 
@@ -90,7 +94,10 @@ Full technical detail (architecture, tests, VDI setup, scripts, Uri's confirmati
 - **Shannon's Sep 28-29 capture-intake answer and the %-accuracy ask** are reflected on the Confluence page (status table row, Next steps 2 and 2a).
 - **Confluence page updated to Oct 6** (`MRL Debrief/MRL Debrief Automation - Confluence.md`) for Matt to paste.
 
-## Next Steps / Action Items (Oct 6)
+## Next Steps / Action Items (Nov 5)
+
+- **Shannon + team: Produce prototype-generator outputs from the available MRL debrief materials and prepare the debrief readout** -- Oct 30 meeting follow-up (Cinnamon)
+- **Matt: Help Shannon finish the draft-vs-actual comparison and brief recap** -- she may need help (Oct 27-28); confirm status
 
 - **Matt: ask Jan Chmelar where the tool can be hosted inside Merck's network** -- internal VM/app platform, Databricks, or EPAM adding it to Congress AI; also approval path and token storage/sign-in. Fallback: Matt generates drafts on request from his VDI during ESMO.
 - ~~**Matt: put the engine repo on Merck GitHub**~~ DONE (pushed Oct 6 to merck-gen/cdds-ese-mrl-debrief; prerequisite for IT hosting, but GitHub alone does not make it usable for Shannon)

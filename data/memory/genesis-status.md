@@ -5,10 +5,19 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-10-28T15:08:14.041Z
+  modified: 2026-11-05T18:42:18.998Z
 ---
 
-## Current State (Sep 4, 2026; updated Oct 28)
+## Current State (Sep 4, 2026; updated Nov 5)
+
+**Latest (Oct 30 - Nov 5; details in the Oct 30-Nov 5 section below):**
+- **Legal guidance on wording (Brandon Palermo, Oct 27):** avoid "Drivers" and "Barriers" for products (implies utilization); describe analyses as derived from insights "on the data"; safety concerns are never a Barrier. Genesis Sentiment 2.0 is built on "drivers", so labels and the driver-title/summary prompt need review. Not yet decided or scoped (no source shows a decision).
+- **Findings-quality thread (Kyle Snyder, Nov 2-3, .eml):** qualifier/descriptive sentences are being split into separate findings, and side effects of competitor products are scored as negative sentiment. Jan: could skew results at scale. Patrick: add a taxonomy of known competitors per TA and an official product list (MK/V name = generic = commercial name).
+- **Topics (Patrick + Matt, Teams Nov 4):** SMEs need to tell Genesis which topics to look for; strongest user feedback is pre-set or on-the-fly topics. On-the-fly means live processing instead of overnight pre-processing; Patrick is open to a "follow a topic" request processed overnight and delivered next day. Matt offered a demo with starting prompts. Patrick: "chat on the sentiment dashboard is almost ready to be enabled."
+- **Oct 29 weekly check-in follow-ups (Cinnamon's Teams list calls it the 10/30 meeting; the recording is dated Oct 29):** Patrick + Matt to assign Genesis UAT ownership with Adi and Scientific Insights; Colin, Matt, Patrick to tighten and document Sentiment 2.0 scope (chat and output format explicit so omissions and late changes are traceable); Colin, Gem, Patrick to consolidate Figma materials into a requirements baseline and roadmap; Patrick to push for a designated MRL IT technical project manager.
+- **New data (Kapildev, Oct 30):** a second n=600 stability dataset (`enrichment-fresh600-2026-30/` in cdds-ese-genesis-snippets) is available; see [[project-genesis-benchmark]].
+- **Rolled out (confirmed Nov 5 transcript):** Sentiment 2.0 is live in "week two" (beta/soft launch, about Oct 29-30). The chat on the sentiment dashboard was turned off at launch; Jan says it is ready to redeploy. No official communication has gone out (Patrick: none at this time); the USMA chief of staff was not aware of the rollout. Early reception per Patrick (Nov 4): "negatively to ignored." No usage numbers yet; next Genesis meeting Fri Nov 6 (Gem out).
+- **Patrick's three asks for Genesis (Nov 5):** suggest topics, follow your own topics, and generate an editable PowerPoint (at least a "statement of principles" on templates); then turn Genesis on for HH (a political, not technical, decision; USMA sign-off unlikely, "begrudging").
 
 **Where Sentiment 2.0 stands (Oct 28):**
 - **Beta launches to MRL users only, targeted Thu Oct 29.** Sentiment 2.0 is in UAT on the test environment (ingesting production data; business team runs UAT from Jan's UAT test plan + release notes R26.6). **Go/no-go is the Wed Oct 28 Genesis touch-base call** (Patrick dialing in from the road; Jan joins despite the Czech holiday). Deployment takes 30-90 min once approvals are in. The ESMO team expects to use it as first impressions turn into approved insights.
@@ -150,7 +159,7 @@ Key shifts from the user feedback session with Kate Lynn, Kristen, Gem, Adi, Ted
 
 ### Feature Request / Intake Process (Sep 8)
 - **JPA took action to define process** -- prioritization framework with rationale for what's being worked on and what's not. Matt: "Get ahead of it... otherwise the well gets poisoned because they'll talk to Brandon and say we're giving suggestions and they don't do any of them." Jan agreed: "worst thing is you ask for feedback and then you don't act on it or you don't get back."
-- Matt to work with Yun and Michal on this while Patrick is out.
+- Matt to work with Jan Chmelar and Michal on this while Patrick is out.
 
 ## Key Developments (Sep 10)
 
@@ -194,10 +203,19 @@ Previewed Figma board with Joseph Cianciulli, Kate Lynn Bill, and Gem Roy. Key f
 7. **Matt offered working session with Gem** on Insights Coach Agent (Studio/node config issues)
 8. **Get access to insights data in Databricks** -- Matt has platform access, need actual table/data view. Jan (formerly listed as "Joanna") helping.
 9. ~~**Get invite from Patrick** for Genesis Core Team meetings (replacing Validation series)~~ DONE (Matt on invites as of Sep 3)
-10. **JPA: Define feature request/intake process** -- Matt working with Yun and Michal while Patrick travels. Prioritization framework with rationale.
+10. **JPA: Define feature request/intake process** -- Matt working with Jan Chmelar and Michal while Patrick travels. Prioritization framework with rationale.
 11. **Help Jan select meaningful filter set** for demo data -- needs business-relevant filters, not "oncology last 30 days"
 12. **Attend Jan's methodology presentation** -- enrichment pipeline deep dive (this week or next Monday)
 13. **Matt: Follow up on the benchmark discussion with Jan and the data scientists** -- link sent Oct 6 for further discussion; collect feedback on method and results, and fold in Jan's sample-based quality idea. Matt presented to Patrick and Adi Oct 5; capture their reactions.
+14. **Patrick + Matt: Assign Genesis UAT ownership** -- meet Adi and the Scientific Insights team: process, responsibilities, go/no-go evidence requirements (Oct 30 meeting follow-up)
+15. **Colin + Matt + Patrick: Tighten Sentiment 2.0 scope and release requirements** -- document committed features (chat, output format) so omissions and late changes are traceable (Oct 30 follow-up)
+16. **Colin + Gem + Patrick: Requirements baseline and roadmap** -- decode the Figma materials and consolidate the summary, feedback, requirements, workflow inventory and readiness checklist (Oct 30 follow-up)
+17. **Matt: Review Kapildev's fresh600 stability data** -- run repeatability on the new tables (fresh600 set pushed to merck-genesis, `96168d3`), compare with his numbers, take up his walkthrough offer; ask whether `outcome`/`extraction_status` replaces `would_store_in_production`
+18. **Matt: Demo and starter prompts for on-the-fly topics** -- offered to Patrick Nov 4; live processing vs overnight pre-processing is the open trade-off
+19. **Patrick: Genesis dev team to write their roadmap in Confluence** -- asked for the Nov 6 Genesis meeting; Matt keeps pushing that the "invisible roadmap" be made visible and include technical requirements like find/select/analyze (Nov 5)
+20. **Matt: Get the data sets behind Justin's (and other SMEs') own sentiment analyses** -- Justin accepted a meeting the week of Nov 9 to compare approaches; use expert-labeled results as few-shot training examples (Nov 5)
+21. **Colin + JPA: Propose testing newer LLMs for sentiment** -- lower variance, better irony handling (Nov 5); also add Gem's requirements summary and tracker to the requirements evidence
+22. **Matt: Reply on Brandon's driver/barrier guidance** -- Patrick asked for Matt's view Nov 2; confirm with Jan whether label changes and a prompt guardrail fit the scope freeze; ask whether "negative" labels are acceptable to Legal
 
 ## Insights Coach Agent (Gem Roy)
 
@@ -375,6 +393,74 @@ Michael Hamann's (EMEAC hub lead) project: global value dossiers in Gemini Noteb
 - **Classic Genesis issues (not 2.0):** typo "Last 6 Month" -> "Last 6 Months" (Jan fixing); thumbs up/down on classic chat registers clicks but the color change broke (Jan may just remove them); Ted: no clear way to clear a long standard-prompt text when switching to a custom prompt (Ask Anything button was removed June 30, GNS-1288), Michal proposing helper text "Want a custom prompt? Deselect to edit."; All Insights page sort-by-sentiment has no sentiment indicator (backlog **GNS-1465**).
 - **Performance (Jan, Oct 26):** TEST build is ~5x faster on the slowest Filters call, ~2.2x on page load with all data, ~10x lower worst-case facet time, ~9x smaller facet response vs PROD (140K insights).
 - **Patrick (Oct 26):** release notes should state MRL access available now, HH coming soon.
+
+## Key Developments (Oct 30 - Nov 5) -- Teams, emails folder (.eml), screenshots Nov 2-5
+
+### Enrichment Stability: Fresh 600-Insight Dataset (Kapildev, Oct 30)
+- **Who:** Kapildev Latchubhukta, an ML engineer who recently joined the Genesis product team, messaged Matt on Friday Oct 30 (screenshot Nov 2).
+- **What:** a second stability test of the enrichment pipeline (extraction, then taxonomy classification) on **600 fresh insights from TEST, processed three times on the same inputs, with every batch reconciled**. Location: `enrichment-fresh600-2026-30/` (tables, a summary, a README) in `cdds-ese-genesis-snippets`.
+- **His reported results:** 1,693 of 1,800 insight instances succeeded (94%), 100 blocked, 7 failed; 12,563 findings extracted, 11,926 classified (95%). The blocked work is two extraction batches the verifier rejected (Run 2 batch 4, Run 3 batch 9).
+- **His comparison with the historical set (old insights):** classification much steadier, 4,228 / 3,810 / 3,888 per run (historical Run 2 classified only 2,596 of 4,206); every outcome accounted for. These are Kapildev's numbers; JPA's own repeatability run on the new tables is not recorded here yet. He offered a walkthrough.
+- **Note for the benchmark:** the new `findings.csv` has no `would_store_in_production` column (it has `extraction_status`, `outcome`, `extraction_batch`, `extraction_version`), so the "stored" variant can't run on it. See [[project-genesis-benchmark]].
+
+### Legal Guidance: "Drivers" and "Barriers" (Brandon Palermo email, Oct 27; screenshots Nov 2 and Nov 5)
+- **Sent** to the US Medical Affairs Extended LT (cc Renna Patel), "Guidance for Scientific Sentiment based on insights on the data," passing on Legal's guidance for sentiment analyses in all forums.
+- **Rule 1:** describe analyses as derived from insights **on the data** (e.g. "Scientific Confidence on the data"; "place in therapy based on the data").
+- **Rule 2:** avoid "Drivers" and "Barriers" when related to products, since one could infer product utilization. Use language based on what SLs/KDMs describe. Brandon's suggestions: Drivers = Strengths, Areas of Confidence or Perceived Benefits; Barriers = Challenges or Reservations. **Safety concerns should never be described as a Barrier.**
+- **Exceptions:** driver/barrier language is fine for non-product LDL guideline implementation and operational challenges, and "access barriers" in the payor context (clinical/financial/operational).
+- **Ask:** ET mid-quarter review slides should reflect the guidance.
+- **Status (Nov 5 check-in):** Gem says USMA treats it as Brandon's consideration, not a mandate; still under discussion and not cascaded.
+- **Why it matters for Genesis:** the UI labels ("drivers", "negative drivers") and the LLM-written driver titles/summaries may need a wording change and a guardrail; interviewees were already confused by "negative drivers." Static text fits inside the scope freeze; a prompt change for driver titles needs Jan's confirmation. Whether "negative" as a sentiment label is acceptable to Legal is not addressed in the email.
+
+### Findings-Quality Email Thread: Qualifier Sentences and Competitor Products (Kyle Snyder, Jan, Patrick; Nov 2-3)
+- **Source:** `emails/Re_ GENESIS Sentiment Findings.eml`, parsed to `emails/parsed/GENESIS_Sentiment_Findings.md` with `parse_emails.py` (5 messages, Matt cc'd from Patrick's first reply).
+- **Kyle Snyder (Associate Director, Scientific Insights), Mon Nov 2, to Jan (cc Adi, Patrick, Ted):** while exploring Sentiment 2.0 he saw insights broken into findings that are really qualifying statements. Example INS1104603: one sentence about a patient with 3 co-morbidities became 3 separate findings with different sentiment, though it only described the type of patient prescribed the product. Asks whether the LLM can be told a qualifying/descriptive sentence from a real finding. Second, philosophical question: how should side effects of competitor or non-Merck products be weighted? In the same insight, a patient who tried a competitor product and had side effects was recorded as a negative finding.
+- **Jan Chmelar, Nov 3:** will look at this case and asks how to find more similar insights. On competitors: he doesn't know, but a finding about someone else's product classified as negative sentiment could skew results at much greater scale.
+- **Patrick, Nov 3:** should we add a taxonomy of known competitors in a given TA to Genesis to help sentiment? **Jan:** that, or at least a list of Merck's own products from a definitive official source.
+- **Patrick (newest message):** that list should already exist; a "product list" could help, even as basic as "MK or V name = generic name = commercial name" plus all products.
+- **Open:** no owner or date for the product list or competitor taxonomy; no answer yet on a qualifier-vs-finding rule. Ties to the extraction-quality concern from Sep 28 and the scope freeze (extraction changes mean 100+ hours to re-run).
+
+### Topics and the "Justin" Feedback (Patrick + Matt, Teams Nov 4; screenshot Nov 5)
+- **Matt:** after reading "Justin's email" (not in the emails folder; surname and content not captured), noted that topics are at the **findings level**, so a topic filter shows any insight that contains a finding with that topic, even if most of its findings are about other topics. Patrick: true.
+- **Patrick's framing:** experts like Justin have workflows with invisible moving parts (and LLM assumptions invisible to them); "our sentiment approach is very neutral," while SME assumptions are "areas of strategic focus," not biases. Genesis needs to surface trends and topics, let SMEs tell Genesis which topics to look for, and output to an editable PPT format.
+- **Matt:** the strongest feedback so far is pre-set or choose-on-the-fly topics (Joe Cianciulli said the same). Patrick: how can we help Jan and the devs get there? Matt: it's a big change, from overnight pre-processing to live processing; he can try a demo and prompts as a starting point.
+- **Patrick:** even if a "follow a topic for sentiment" request must process overnight; Matt: scheduled reports delivered next day, possibly an auto-sent Excel. Patrick: at least a start, and as topics get serious and repeatable the approach can change; "getting a bit too technical for me." **Chat on the sentiment dashboard is almost ready to be enabled.**
+
+### Oct 30 Meeting Follow-ups That Touch Genesis (Cinnamon, Teams; screenshot Nov 5)
+- **Genesis UAT ownership:** meet Adi and the Scientific Insights team to assign clear ownership of Genesis UAT (process, responsibilities, go/no-go evidence requirements). (Patrick, Matt)
+- **MRL IT technical project management:** engage MRL IT leadership to establish or formally designate a proactive technical project manager for sequencing, dependencies, risks, roadmap and delivery accountability. (Patrick)
+- **Genesis requirements and roadmap:** decode the Genesis Figma materials and consolidate the executive summary, stakeholder feedback, requirements, workflow inventory, prioritization and readiness checklist into an agreed requirements baseline and roadmap. (Colin, Gem, Patrick)
+- **Sentiment 2.0 scope:** tighten scope and release requirements, explicitly documenting committed features such as chat and the intended output format so omissions or late changes are traceable. (Colin, Matt, Patrick)
+- **MRL IT alignment:** prepare a discussion guide with MRL IT covering observed delivery and UAT issues, role and responsibility boundaries, the requirements baseline and the roadmap. (Colin, Patrick)
+
+## Key Developments (Oct 29 & Nov 5) -- Merck/JPA weekly check-ins (transcripts)
+
+### Oct 29: UAT Ownership and the Missing Technical Project Manager
+- **Matt raised two things:** the UAT process (Jan pointed him to an Excel script when asked where the process is documented) and where release features/feedback are captured.
+- **Patrick:** he effectively outsourced UAT to the Scientific Insights team (they run UAT for the XFly releases); Adi's team may not have felt it was their role, so "we're all pointing at each other" and nobody clearly owned it. Plan: Matt and Patrick align with Adi's team on who owns UAT, then take the business requirements to MRL IT. He credits Matt as the only one "speaking truth to power" on these calls.
+- **MRL IT:** needs a proactive technical project manager (sequencing, dependencies, risk, delivery accountability) and it shouldn't fall to the business. The previous team managed UAT better; the current team ships faster but planning suffers, and changes arrive "implemented when I only asked if it was possible." Patrick thought Michal Libich (transcribed "Michael") was leaning toward taking on that role a month or two ago, but everything with him is reactive and the role needs to be proactive, probably because of the scope his leaders gave him; MRL IT has become harder to work with and Genesis is "last on their list." He must raise it without embarrassing the MRL IT lead he works with (the name is unclear in the transcript). Note: transcripts render Jan Chmelar as "Yun" at times.
+- **Colin:** the technical PM has to be bolted onto MRL IT, not outsourced; once it exists they'd also work with JPA and Patrick on the roadmap. Without written requirements MRL IT can fairly ask "what do you want us to build?"
+
+### Oct 29: Chat Dropped at Launch; Requirements Not Written Down
+- **Patrick:** chat with Genesis was in the Sentiment 2.0 scope (explained to him for weeks), then turned off at the last minute; the release almost broke at the last minute and shipped about 2 weeks late. The output is an Excel file, not the editable PowerPoint he has asked for ("the ingredients, not the cake"). "Nothing is written down" so none of it would hold up if challenged.
+- **Matt:** needs a requirements/feature document stating what is committed for each release (e.g. chat explicitly on it). **Colin:** classic software problem (business disconnected from requirements and dev); put together a requirements document and hold a roles-and-responsibilities discussion with MRL IT; decode the Figma into requirements; tighten what is in and out of scope for Sentiment 2.0; build a roadmap.
+- **ACE team** (Oct 29): still a wild card. Patrick is frustrated by "we do it completely differently, but don't stop what you're doing." Matt: keep two tracks apart (the deep technical modeling review vs the portal features: export, filters, etc.).
+
+### Oct 29: Gem's Requirements Summary and Tracker
+- **Gem Roy** built an executive summary of all USMA stakeholder input (requirements, workflow inventory, prioritization, roadmap, readiness checklist) from recordings, transcripts and Teams chats, not yet vetted. She also built an agent-driven tracker that runs Fridays 3 PM and after each Genesis meeting, updates the list and drafts an email she approves before sending (still in testing). Colin: "solved 75% of the conversation"; JPA will add these to the evidence for the requirements.
+- **Follow-up list from this call** is the Oct 29/30 Cinnamon list above (UAT ownership, scope tightening, requirements baseline, MRL IT technical PM, MRL IT discussion guide).
+
+### Nov 5: Rollout Week Two, No Comms, Brandon's Email Status
+- **Gem:** Sentiment 2.0 rolled out two weeks ago; she doesn't know usage or feedback; the USMA chief of staff/COO wasn't aware. USMA's view: send comms when it demonstrably works (wins), not for every update. **Matt:** it is a soft launch/beta, so no big comms is reasonable.
+- **Emails:** Matt was copied on two. "Justin's" (surname not stated) he reads as relatively minor, perhaps taken more negatively than written. **Brandon's** (Legal wording on "driver"/"barrier"): Gem says it is a consideration from Brandon, not a mandate; USMA is still discussing it and it hasn't cascaded. Matt: the label is easy to change in the app (a developer could do it in minutes) and the team should align before any comms go out.
+- **Matt (again):** formalize and document the development plan; Figma boards are not the right venue.
+
+### Nov 5: Why Users' Results Differ From Genesis; Roadmap and Tech Options
+- **Patrick:** UK users and USMA both say Genesis results differ from their own (GPTeal) analyses and they want to follow specific topics. Working theory: users filter insights before analysis ("their finger on the scale"), which could explain a different positive/negative/neutral spread; Jan doesn't disagree but notes nobody knows what GPTeal discards. **Justin** accepted a meeting next week to compare approaches.
+- **Matt:** get the users' data sets and results; they are the expert-labeled training examples the model is missing (few-shot style).
+- **Jan** is rebuilding Genesis (taking all feedback, agents working overnight) and reconciling Genesis Classic with Genesis Sentiment. Patrick wants a **find, select, then analyze** step (users want to drop some filtered insights) and asked the dev team to put their roadmap in Confluence for the Nov 6 meeting; open question whether to show them Gem's agentic review of Genesis notes.
+- **Colin:** the newest LLMs have much lower run-to-run variance and handle irony and mixed statements better (new Gemini models); test them even at higher cost, since a model change could simplify the roadmap. **Patrick:** Genesis has stayed in the OpenAI ecosystem; time to reconsider. **Gem/Matt/Colin:** an ontology and domain vocabulary are still needed; better models won't resolve domain terms like drivers/barriers (a Brandon-specific issue). The competitor-drug negative-sentiment case (Kyle's email) is an outlier test case.
+- **Strategic roadmap ownership (Gem):** it should come from Patrick's team, driven by requirements from Brandon and Kate Lynn, with Adi (insights) involved. Colin: fragmented ownership of roadmap, design/deployment and capability definition is a risk for Genesis.
 
 ## Related Memories
 

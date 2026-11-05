@@ -5,16 +5,21 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-23T18:43:54.548Z
+  modified: 2026-11-05T18:39:39.911Z
 ---
 
-## Current State (Sep 23, 2026)
+## Current State (Sep 23, 2026; updated Nov 5)
+
+- **OneSearch deep-research output (Shannon, Oct 29 check-in):** the EDSAs made an urgent request for asset-focused reporting. Shannon used **HH's OneSearch** (free access to its deep research beta module, which ingests Sightline data). She produced the research plan four times and used the first version because later runs began hallucinating that morning. The EDSAs liked the output and will probably use it for **senior-leader reporting the following week**.
+- **Oct 30 meeting follow-up (Cinnamon, Teams; screenshot Nov 5; it comes from the Oct 29 check-in):** Shannon and Rebecca Foringer to secure link-enabled access for the EDSA stakeholders so they can validate the OneSearch asset-reporting content before it is used for senior-leader reporting. The Teams message is the only source in this folder that mentions OneSearch; its relation to the asset-reporting demo app is not recorded.
 
 - **Shannon is creating a Confluence page for early asset reports** (Teams, Sep 22), alongside the pages already set up for MRL Debrief and the ESMO / AHA workflow experiments.
 - **First every-other-week session with Stephen Leong's group was scheduled for today (Sep 23).** Outcome not yet captured; add it once known.
 - JPA's open ask from Sep 10 (Talia): review the SAC-TMT prompt and draft foundational prompts for the remaining priority assets, run them through the Northern Lights beta deep research module, and share results ahead of that session.
 
-## Action Items (Sep 23)
+## Action Items (Nov 5)
+
+- **Shannon + Rebecca Foringer: Secure link-enabled access for EDSA stakeholders** -- so they can validate the OneSearch asset-reporting content before senior-leader use (Oct 30 follow-up)
 
 - **Shannon: Create Confluence page for early asset reports** -- per Shannon's Sep 22 Teams note
 - **Talia: Draft foundational prompts for remaining priority assets** -- review the SAC-TMT prompt, test through the Northern Lights beta module, share ahead of the Stephen Leong session

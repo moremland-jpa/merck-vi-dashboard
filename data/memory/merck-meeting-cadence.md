@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-09-11T17:42:53.949Z
+  modified: 2026-11-05T18:39:42.283Z
 ---
 
 ## Recurring Meeting Series
@@ -21,6 +21,8 @@ metadata:
 - **Attendees:** Shannon Smith, EPAM (Marharyta "Rita" Hiruta, Dmytro, Uri), JPA (Matt, Cinnamon, Talia)
 - **Covers:** EPAM dev coordination, feature specs, technical decisions, Larvol data, abstract library progress, write-up workflow, MRL Debrief integration. The tactical execution meeting for Congress AI.
 - **Transcript pattern:** `Congress AI Ways of Working_ EPAM and JPA YYYY MM DD.docx`
+
+**Upcoming (Nov 5 check-in):** in-person JPA/Merck full-day meeting **Dec 9** (9-4, Philadelphia area; Cinnamon drafting the agenda; morning = year-in-review and roadmaps for Congress AI, Genesis, Congress data as a product; afternoon ~90 min = innovation and "future of Medical Affairs"). Genesis meeting Fri Nov 6 (Gem out). Gem meets the USMA AI/innovation strategy lead and chief of staff Nov 16-17 and may bring USMA 2027 priorities (insights intelligence is one).
 
 ### Genesis Validation Weekly Touchpoint -- CONCLUDED
 - **Status:** Series ended. Replaced by Genesis Core Team meetings.

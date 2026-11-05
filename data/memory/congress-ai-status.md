@@ -5,12 +5,20 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-10-28T14:49:00.330Z
+  modified: 2026-11-05T18:39:47.177Z
 ---
 
-## Current State (Sep 23, 2026; updated Oct 28)
+## Current State (Sep 23, 2026; updated Nov 5)
 
 **Target:** ESMO 2026 (Madrid, Oct 23-27) as the first scaled execution; AHA follows with the CV team.
+
+- **Post-ESMO (Nov 2-5):** an ESMO summary slide, "ESMO 2026: From Scaled Execution to a Sustainable Congress Intelligence Model" (author and audience not shown), states what was proved (60 prioritized CI write-ups in a digital workflow, AI first drafts, human SME relevance/impact review, medical-writer handoff), what was learned (workflow scaled under congress timelines; draft length/format need refinement; **the medical-writer-versus-AI first-draft comparison is still being completed**; Larvol and Merck-specific planning updates remain operationally fragmented), what it enables (unified abstract library, reusable report outputs, governed congress data product, future search and synthesis) and next steps (complete comparative evidence, define future medical-writer sourcing/roles, formalize data-product ownership/schema/access, establish Legal/Compliance rights, retention, access and traceability controls). Governance foundation: human review, source traceability, copyright-aware access, defined ownership.
+- **ESMO results (Shannon, Oct 29 check-in):** **59 of 60 write-ups finished within the 48-hour window**; the last one is covered at the Friday Oct 30 virtual debrief. One incident of lost content, traced to an on-site Wi-Fi disconnect (users believed it was saved). Cinnamon/Rita are tallying technical feedback; a survey went to all workflow participants Oct 29, so the end-to-end readout will take a week or two for the draft and a few weeks overall; **Shannon wants Matt to review the draft**. Shannon attended an ESMO debrief on site (30,000 attendees, poor Wi-Fi), worked ~14-hour days remotely, and a new feature came out of it: an **instant IM chat inside the assignment**. An MRL IT colleague (Bronyo Rajat, spelling uncertain) shadowed her and was "mind blown." Matt covered the AHA-demo transition Oct 29; **one more AHA demo Mon Nov 2**.
+- **2027 plan (skeleton Patrick sent Eric):** keep scaling large tier-one oncology and CV, and **add HIV**; not ASH or San Antonio Breast. HIV is also "nipping at the heels" of Genesis.
+- **SEP integration experiment (Oct 29):** Shannon wants a retrospective test, ASCO 2026 and ESMO SEPs plus abstract summaries: week 1 gather the SEPs and summaries, week 2 have the AI rewrite abstracts based on the SEPs and compare. She needs it to show senior leaders why integrating SEPs matters (SEP authors, global and regional, can't connect the dots today; Apex didn't take it on). No driving deadline, so Talia proposed slating it as an early-2027 POC and Patrick agreed (reprioritize only if Shannon says a window is closing). The transcripts spell it "SCP"; it is SEP.
+- **MRL Debrief outputs (Oct 29):** Shannon has the first drafts that went to medical writers and wants Matt's help inputting them into the prototype generator for outputs before year end (not urgent). Patrick: keep it as a deliverable and adjust Genesis deliverables to fit.
+- **Dec 9 in-person JPA/Merck day (Philadelphia area; Nov 5):** 9-4. Morning = year in review and strategic roadmaps for Congress AI, Genesis, Congress data as a product (who owns multi-year roadmap, design/deployment, capabilities; no RACI needed); afternoon (~90 min) = innovation (USMA Innovation Awards, tech landscape, Colin's preview of the tech stack and "future of Medical Affairs" after his talk with Eric). Cinnamon drafts the agenda; venue decided before Thanksgiving. Flagged for next week: the SDLC AI assessment and the Congress-data-as-a-product roadmap (Shannon already opened the assessment link).
+- **Oct 30 meeting follow-ups (Cinnamon, Teams; these come from the Oct 29 check-in):** Shannon + ePAS to recreate the event Wi-Fi/content-loss scenario and evaluate a local-cache or equivalent recovery approach; Talia, Shannon and Matt to schedule the **SEP integration experiment as an early-2027 POC** unless a new business deadline reprioritizes it (the Teams list says "SCP"; read as SEP per the acronym rule); Shannon and the team to use the available MRL debrief materials to produce prototype-generator outputs and prepare the debrief readout.
 
 - **ESMO wrap-up + post-congress priorities (Shannon Teams, Oct 27):** ESMO ran smoothly. Shannon's list for the rest of the week and beyond:
   - **Mock report for med-writer comparison:** once all ESMO abstracts are in, Shannon works with Marharyta Hiruta's team to build the mock report; Cinnamon to ask Jen/Meli for the med writers' draft sent to EDSAs for final review. Likely not sent until after the last MRL debrief Fri Oct 30, so ETA Mon/Tue (to confirm).
@@ -385,7 +393,24 @@ metadata:
 - **Shannon has approved last week's changes and they have been pushed to test.**
 - **MRL Debrief tie-in:** screenshots for debriefs will be uploaded to the abstract library and processed like posters/presentations (Shannon uploads at ESMO). See [[mrl-debrief-status]].
 
-## JPA Deliverables / Action Items (updated Oct 21)
+## Key Developments (Oct 30 - Nov 5) -- screenshots Nov 2-5
+
+### ESMO Summary Slide: From Scaled Execution to a Sustainable Model (screenshot Nov 2)
+- Four-column slide (Proved at ESMO / Learned / Enables / Next) over a governance foundation bar; full content summarized in Current State above. Open item that matters for JPA: the med-writer-vs-AI comparison is still being completed (see [[mrl-debrief-status]] for the debrief-side comparison Shannon may need Matt's help with).
+- The "Next" column lines up with Shannon's Oct 27 list: Congress Data as a Product (Larvol ingest), data-product ownership/schema/access, Legal/Compliance debrief in December.
+
+### Oct 30 Meeting Follow-ups for Congress AI (Cinnamon, Teams; screenshot Nov 5)
+- **Wi-Fi resilience (Shannon, ePAS):** recreate the Wi-Fi/content-loss scenario seen at the event and evaluate local caching or equivalent recovery for high-volume connectivity conditions.
+- **SEP integration experiment (Talia, Shannon, Matt):** early-2027 POC unless a new business deadline requires reprioritization.
+- **MRL debrief outputs (Shannon, the team):** produce prototype-generator outputs from available MRL debrief materials and prepare the debrief readout.
+
+## JPA Deliverables / Action Items (updated Nov 5)
+
+- **Matt: Review Shannon's draft end-to-end ESMO readout** -- she asked for his review once the draft exists (survey out Oct 29; draft in a week or two)
+- **Cinnamon: Draft the Dec 9 in-person agenda** from the Nov 5 discussion; **Shannon: SDLC AI assessment and Congress-data-as-a-product roadmap** flagged for next week's check-in
+
+- **Shannon + ePAS: Evaluate Wi-Fi resilience (local cache or equivalent)** -- recreate the event content-loss scenario (Oct 30 follow-up)
+- **Talia + Shannon + Matt: Schedule the SEP integration experiment as an early-2027 POC** -- unless a new business deadline reprioritizes (Oct 30 follow-up)
 
 - ~~**Matt: Record an up-to-date demo video**~~ DONE (recorded, link sent to Shannon Oct 5; re-recorded after the Oct 7 UI changes and posted to Merck SharePoint by Shannon)
 - ~~**Matt: Update the QRG by end of day Oct 6**~~ DONE (QRG updated and posted to Merck SharePoint by Shannon after the Oct 15-16 demos)
