@@ -162,6 +162,35 @@
     "date": "2026-10-30"
   },
   {
+    "id": "genesis-dev-prague-week",
+    "label": "Genesis dev team in Prague workshops (limited availability; joins Monday call)",
+    "workstream": "Genesis",
+    "type": "milestone",
+    "date": "2026-11-09",
+    "end_date": "2026-11-13"
+  },
+  {
+    "id": "genesis-dominant-sentiment-readout",
+    "label": "Genesis weekly: dominant-sentiment-per-insight results + Kapildev's GPTeal replication due",
+    "workstream": "Genesis",
+    "type": "deadline",
+    "date": "2026-11-16"
+  },
+  {
+    "id": "xfly-vendor-release-nov16",
+    "label": "XFly vendor release (possibly big; Scientific Insights UAT capacity limited)",
+    "workstream": "Genesis",
+    "type": "milestone",
+    "date": "2026-11-16"
+  },
+  {
+    "id": "genesis-epam-rolloff",
+    "label": "EPAM developers leave Genesis team (internal replacements onboard Dec/Jan)",
+    "workstream": "Genesis",
+    "type": "milestone",
+    "date": "2026-12-31"
+  },
+  {
     "id": "sdlc-ai-assessment",
     "label": "AI assessment for SDLC due (needs EPAM + Gem as SMEs)",
     "workstream": "Congress AI",

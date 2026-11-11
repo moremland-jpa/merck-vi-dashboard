@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: reference
   originSessionId: 4b881dac-e446-4b63-b338-c9ba1f6228ea
-  modified: 2026-11-05T18:42:22.384Z
+  modified: 2026-11-11T14:53:30.105Z
 ---
 
 ## Merck AI Enablement (formerly V&I Operations)
@@ -15,10 +15,10 @@ metadata:
 | Patrick R. Leyden | Team lead (renamed to "AI Enablement" Aug 6) | All | Genesis product owner, drives strategy. Presenting to USMA ELT Aug 18. |
 | Shannon Smith | Congress AI lead | Congress AI, MRL Debrief | Primary JPA contact for congress work. Drives ESMO execution, stakeholder alignment, data rights escalation. Maintains a Mural board for evolving thinking. |
 | Ulf Nielsen | Genesis technical lead | Genesis | Built Exodus prototype. Departing Aug 31, 2026. Key knowledge holder for decomposition. Not a data scientist by training. |
-| Jan Chmelar | Genesis dev business owner | Genesis | Takes interim responsibility for everything post-Ulf. Has system access. Consolidating documentation. In Matt's messages, "Jan" always means Jan Chmelar. Teams transcripts often mis-transcribe him as "Yun" (and sometimes other names): treat "Yun" as Jan Chmelar. |
+| Jan Chmelar | Genesis dev business owner | Genesis | Takes interim responsibility for everything post-Ulf. Has system access. Consolidating documentation. In Matt's messages, "Jan" always means Jan Chmelar. Teams transcripts often mis-transcribe him as "Yun" (and sometimes other names): treat "Yun" as Jan Chmelar. Nov 6: covering for a departed colleague ("Wolf") and deep in technical work instead of product management; Patrick says two new internal AI/ML engineers were hired (Kapildev may be one); the two EPAM developers roll off at the end of December with internal replacements onboarding Dec/Jan. |
 | Steve Bridgman | BI team lead | Genesis | Knows Databricks architecture. May assign bridge resource post-Ulf. Seemed less read-in on Databricks sentiment engineering than expected (Aug 6). |
 | Destiny Miller | MRL IT / Ignite team | MRL Debrief | Built the debrief automation prototype (JS/Azure Functions/React/SharePoint). |
-| Michal Libich | Genesis UX/Figma lead | Genesis | Building Figma prototypes for Sentiment 2.0. Drove V3 design incorporating workshop feedback (Aug 28). Scheduling follow-up user interviews based on analytics data. Oct 29: Patrick thought Michal was drifting into the Genesis technical project manager role (sequencing, risk, delivery), but finds him reactive rather than proactive; transcripts render him "Michael." |
+| Michal Libich | Genesis UX/Figma lead | Genesis | Building Figma prototypes for Sentiment 2.0. Drove V3 design incorporating workshop feedback (Aug 28). Scheduling follow-up user interviews based on analytics data. Oct 29: Patrick thought Michal was drifting into the Genesis technical project manager role (sequencing, risk, delivery), but finds him reactive rather than proactive; transcripts render him "Michael." Nov 6: told the group the Genesis dev team never documented its backlog; after the sentiment-release delay the team agreed in a retrospective to use Jira, plan sprints and hold demos; will redefine team roles and responsibilities. In Prague all week of Nov 9 for workshops. |
 | Michael Hamann | EMEAC hub lead | Genesis, HTA | HTA/outcomes research project in EMEAC involving Gemini Notebooks (Aug 13). |
 | Linda Kollmar | New org leader | Congress AI | Potential executive sponsor now that Susanna moved. Immediately scheduled 30 min with Shannon on Sept 24 after intro blurb. Patrick has a good relationship. Meeting with Shannon + MRL compliance lead on Sep 12 re ESMO/AHA governance. |
 | Consuelo Dominguez | Merck Pubs (GMI-ESKAL) lead, Madrid | Congress AI | Posts full glossary of company submissions on SharePoint before Tier 1 events. Shannon + Rita had call to discuss pulling content into abstract library. |
@@ -44,6 +44,8 @@ metadata:
 | Ted Kwok | Associate Director, Scientific Insights, V&I Operations | Genesis | Running First Impressions experiment in XFly. Delivered x-Fly to GENESIS field mappings spreadsheet (Aug 27). Created CoPilot mind map visualization. |
 | Kyle Snyder | Associate Director, Scientific Insights, V&I Global Medical & Value Capabilities | Genesis | UAT tester on Adi's team. Nov 2 email to Jan (cc Adi, Patrick, Ted) flagged qualifier sentences split into findings (INS1104603) and how to weight competitor-product side effects. A leftover guidance-overlay browser extension showed up in his test setup (Oct 26). |
 | Kapildev Latchubhukta | ML engineer, Genesis product (recently joined; internal Merck) | Genesis | Added the fresh 600-insight stability dataset to cdds-ese-genesis-snippets (Oct 30) and offered Matt a walkthrough. |
+| Chris O'Brien [C] | Contractor on the Genesis access/survey side | Genesis | Nov 6: sent the survey to ~14 temporary-access "submitters" and got 1 reply ("maybe"); will send a firmer follow-up (access will be revoked) after the team reviews the wording. |
+| Justin Harris (Justin) | US Medical Affairs SME (cardiovascular / atherosclerosis insights); held up by Brandon as a good example | Genesis | Runs his own sentiment analysis (XFly tags, then Claude via GPTeal); Nov 9 feedback call with Patrick, Adi, Matt. Most available stakeholder for Genesis feedback, so Patrick is leaning on his input for USMA (Nov 6). Possibly the same Justin Harris listed under AHA planning below; not confirmed. |
 | Renna Patel | Merck (cc on Brandon's Oct 27 email) | Genesis | Role not stated; copied on Legal's sentiment-wording guidance. |
 | Milan | Cross-divisional committee | Congress AI | Tiers competitor abstracts from commercial perspective (separate from medical affairs tiering). |
 | Christine Dorenzio | CI team lead under Axiom | Congress AI | CI team provides initial abstract prioritization. |
