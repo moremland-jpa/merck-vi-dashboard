@@ -22,7 +22,7 @@ metadata:
 | Michael Hamann | EMEAC hub lead | Genesis, HTA | HTA/outcomes research project in EMEAC involving Gemini Notebooks (Aug 13). |
 | Linda Kollmar | New org leader | Congress AI | Potential executive sponsor now that Susanna moved. Immediately scheduled 30 min with Shannon on Sept 24 after intro blurb. Patrick has a good relationship. Meeting with Shannon + MRL compliance lead on Sep 12 re ESMO/AHA governance. |
 | Consuelo Dominguez | Merck Pubs (GMI-ESKAL) lead, Madrid | Congress AI | Posts full glossary of company submissions on SharePoint before Tier 1 events. Shannon + Rita had call to discuss pulling content into abstract library. |
-| Jen Hess | Legal/compliance | Congress AI | Governance for ESMO/AHA experiments. Sept 11 legal call scheduled. Patrick says she's been "more understanding" lately. |
+| Jen Hess | Legal/compliance | Congress AI | Governance for ESMO/AHA experiments. Nov 12: now a peer of Eric Torrance; expected (unofficial) senior executive sponsor of the Congress Excellence Work Group. Sept 11 legal call scheduled. Patrick says she's been "more understanding" lately. |
 | Rebecca Foringer | HH global data hub contact | Congress AI, Asset Reporting | For additional data needs. Backup contact: Lori Moore. |
 | Eleonora Ford | Congress Excellence Working Group | Congress AI | Reports to Susana. Leading governance by design, copyright team engagement, ESMO data partnership. |
 | Jill Boundar-Conner | Congress Ops lead (HH) | Congress AI | Responsibility for all Tier 1 congress planning. Controls med writer budget. Confirmed ESMO dual-track approach Jul 7. |
