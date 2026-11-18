@@ -4,7 +4,7 @@ description: "Genesis Sentiment 2.0 -- Oct 28 update: UAT underway; beta for MRL
 summary:
   stands: "Sentiment 2.0 has been in soft launch for about three weeks. The Genesis vs GPTeal sentiment gap is Patrick's top priority, and the Therapeutic Area dropdown and disclaimer are new fix items."
   latest: "Matt's Nov 12 read: GPTeal run on Genesis insights with the user's prompt came out less positive, not more, and the finding-vs-insight theory does not explain the gap. Review sessions Nov 12 and 13. Kyle flagged tagging headers leaking into the TA filter; Patrick wants the disclaimer replaced."
-  next: "Jan's dominant-sentiment test and Kapildev's replication (Nov 16 call); decide the TA/Category dropdown structure and a new disclaimer at the Nov 18 weekly; plan the topics-on-the-fly question and 2027 release."
+  next: "Outcomes of the Nov 16 Genesis call (Jan dominant-sentiment test, Kapildev replication; not yet briefed); decide the TA/Category dropdown structure and a new disclaimer at the Nov 18 weekly; plan the topics-on-the-fly question and 2027 release."
 metadata: 
   node_type: memory
   type: project
@@ -13,6 +13,8 @@ metadata:
 ---
 
 ## Current State (Sep 4, 2026; updated Nov 17)
+
+**Nov 18 (Matt Tracker note in the app):** Kapildev's 600 insights x3 Genesis runs vs Matt's 3 GPTeal runs (Justin Harris prompt); repeatability and comparison reviewed with Scientific Insights and data science. Genesis more repeatable and anecdotally accurate, but users like their GPTeal process, chiefly for custom-topic sentiment. Now broadly agreed Genesis's future depends on accepting custom topics (sentiment defined on the fly, e.g. positive on efficacy, neutral on biomarkers), which the current architecture does not do. GPTeal may also be learning in-conversation, unlike this blanket test.
 
 **Nov 12-16 (Nov 12 weekly check-in transcript; Teams screenshots Nov 11 and Nov 16):**
 - **GPTeal vs Genesis (Matt, Nov 12):** Matt ran the user's exact GPTeal prompt on a large set of the same insights; the result is a statistically significantly **lower** share of positive insights than Genesis, not higher. His finding-vs-insight granularity theory "doesn't explain it either." Open question: what the user actually ran or excluded. Patrick previewed Matt's deck Nov 11; review sessions Nov 12 (right after the check-in), with more folks, and Nov 13 with a broader group. Steering aim (Patrick): learn enough to explain to stakeholders what changes if they use GPTeal instead of Genesis, without going so deep it blocks shipping. This supersedes the Nov 9 working theory below.

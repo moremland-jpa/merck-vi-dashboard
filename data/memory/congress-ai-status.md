@@ -4,7 +4,7 @@ description: "Congress AI -- ESMO data drop + Abstract Library link Fri Sep 25; 
 summary:
   stands: "ESMO and AHA both ran smoothly in the digital workflow, and early survey feedback is strongly positive. Leaders are now aligning on what scaling Congress AI means for 2027."
   latest: "AHA finished at roughly 36 to 40 write-ups; ESMO survey: 22 respondents, none said stop, most reported saving hours per abstract. Jen Hess is expected to sponsor the Congress Excellence Work Group. A Congress AI scaling one-pager was shared Nov 13."
-  next: "Leaders' scaling call Nov 16 (Matt offered to join), the Larvol API unlock, readouts with AHA survey results, and the Dec 9 agenda."
+  next: "Outcome of the Nov 16 leaders scaling call (not yet briefed; Matt offered to join), the Larvol API unlock, readouts with AHA survey results, and the Dec 9 agenda."
 metadata: 
   node_type: memory
   type: project
