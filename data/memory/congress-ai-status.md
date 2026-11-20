@@ -2,9 +2,9 @@
 name: congress-ai-status
 description: "Congress AI -- ESMO data drop + Abstract Library link Fri Sep 25; Sep 17 Adebayo demo well received but environment gave no output, re-record targeted Sep 30 after Congress Ops changes; abstract tiering experiment (Ante Harxhi, CV) now ahead of SEP retrospective, and per Sep 28 update may extend to other TAs + a CI-perspective experiment (ACC as content example); JPA owes ESMO/AHA workflow one-pager (MRL one delivered); leads out this week for 2027 planning. As of Sep 28, 2026; Oct 21 update: write-up demos Oct 15-16 done, QRG + video posted by Shannon, AHA demo Oct 29."
 summary:
-  stands: "ESMO and AHA both ran smoothly in the digital workflow, and early survey feedback is strongly positive. Leaders are now aligning on what scaling Congress AI means for 2027."
-  latest: "AHA finished at roughly 36 to 40 write-ups; ESMO survey: 22 respondents, none said stop, most reported saving hours per abstract. Jen Hess is expected to sponsor the Congress Excellence Work Group. A Congress AI scaling one-pager was shared Nov 13."
-  next: "Outcome of the Nov 16 leaders scaling call (not yet briefed; Matt offered to join), the Larvol API unlock, readouts with AHA survey results, and the Dec 9 agenda."
+  stands: "ESMO and AHA ran smoothly and early survey feedback is strongly positive. The 2027 plan is to roll out effective Jan 1, starting digital planning with ASCO GI and GU."
+  latest: "At the Nov 19 check-in the team noted a scaling one-pager, ESMO wrap-up results and EPAM's list of desired tech updates for early December. How the Nov 16 leaders' scaling call went has not been briefed yet."
+  next: "Shannon presents to the Congress Excellence Work Group Mon Nov 30, the CI team must approve a Larvol-style API feed (the main blocker), and the Dec 9 in-person agenda gets finalized."
 metadata: 
   node_type: memory
   type: project
@@ -12,10 +12,15 @@ metadata:
   modified: 2026-11-05T18:39:47.177Z
 ---
 
-## Current State (Sep 23, 2026; updated Nov 17)
+## Current State (Sep 23, 2026; updated Nov 20)
 
 **Target:** ESMO 2026 (Madrid, Oct 23-27) as the first scaled execution; AHA follows with the CV team.
 
+- **Nov 19 check-in notes (from the tracker's Meeting Notes tab, typed in the meeting; the Nov 16 call outcomes were NOT briefed):**
+  - **Scaling:** Shannon generated a summary one-pager (the Nov 13 slide); everything rolls out effective **Jan 1**, and the questions asked reflect a desire to scale rapidly. Digital planning will be migrated for **ASCO GI (uses Prescient) and GU**. **Primary blocker: permission from the CI team for an API feed of Larvol-like data** (Larvol is now written generically; the tracker's "Larvol" key-contact was removed by Matt).
+  - **ESMO wrap-up:** Shannon presents to the Congress Excellence Work Group **Monday after Thanksgiving (Nov 30)** with ESMO draft-update results, survey results and EPAM's analysis of updates. Readership (PDF vs URL) could not be evaluated; **AHA was held up by EDSAs and will be the first URL** readership test.
+  - **Dec 9:** EPAM is compiling a list of desired tech updates for review in early December.
+  - **JPA account:** next point of contact is Steve Bridgeman; JPA compiles an email for Shannon to forward. Open question: can the team get a personal-device exemption or another workaround so access is usable. The team completed November trainings that week.
 - **Nov 12 weekly check-in (Shannon; transcript):**
   - **AHA went smoothly:** started at 40 write-ups, "ending up" about 36 (Shannon's wording; the Nov 13 slide says 40). No content-loss calls. Ante Harxhi (CV) was assigned all 40 as reviewer because CV has no PDT/clinical step between the RMSL's draft and his review; his feedback was very positive ("intuitive", an advocate, already listing 2027 priority events). His one must-fix: notification emails weren't aggregated, so his inbox flooded; EPAM to change. In CV the medical writer converts the debrief into the write-up, so those items don't go through the workflow again. The AHA survey went out Nov 11.
   - **ESMO survey:** 60 write-ups, 22 respondents, nobody said the workflow shouldn't move forward; most said it needs revisions; the majority said it saved a couple of hours per abstract on first use (Cinnamon summarizing). EPAM analytics on AI-draft use: 5 of 60 completely overridden and written manually, 13 used with minor revisions only. The medical-writer comparison report is being re-run now that the MRL daily debrief content is included; unveiling waits on that.

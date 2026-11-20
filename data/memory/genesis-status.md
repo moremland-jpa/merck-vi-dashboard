@@ -2,9 +2,9 @@
 name: genesis-status
 description: "Genesis Sentiment 2.0 -- Oct 28 update: UAT underway; beta for MRL users only targeted Thu Oct 29 with go/no-go on the Wed Oct 28 call; HH access delayed ~2-3 weeks; Oct 23 go/no-go slipped (test DB still processing); Excel export phase 1; scope frozen; XFly team split/remap Oct 30-Nov 3; upload-your-own-insights debated Oct 12. Earlier -- Oct 1-2 Teams: duplicate-findings case was a faulty extraction that was re-run; Jan Chmelar says 500K+ findings will never be 100% right, 105 compute-hours to re-extract all, proposes sample-based quality assessment (Sentiment Analysis part 2 with Peter Baumeister's data scientists Oct 2); filter order decision = one global custom order matching XFly (Adi, Patrick agree). Sep 28 weekly: 'findings' confirmed as launch terminology, real concern is finding-quality not the label; Matt to get code access via Steve Bridgeman and quantify finding-identification issues ASAP; Patrick meeting the former-BI team (Ulf's backfill) Sep 29; adoption risk may be workflow inertia, not awareness. Also Sep 25: confirmed findings-extraction duplicate-findings defect (v2d prompt, fix exists in v2e but not canonical), independently flagged by Matt via dashboard note too; Matt's field-team manual-labeling idea (training data + trust-building) not yet raised with the team; ESMO sentiment ask blocked on 3 open questions; RMSD dropped as Figma source filter; PowerPoint export agreed for demo but Export button still broken. As of Sep 28, 2026."
 summary:
-  stands: "Sentiment 2.0 has been in soft launch for about three weeks. The Genesis vs GPTeal sentiment gap is Patrick's top priority, and the Therapeutic Area dropdown and disclaimer are new fix items."
-  latest: "Matt's Nov 12 read: GPTeal run on Genesis insights with the user's prompt came out less positive, not more, and the finding-vs-insight theory does not explain the gap. Review sessions Nov 12 and 13. Kyle flagged tagging headers leaking into the TA filter; Patrick wants the disclaimer replaced."
-  next: "Outcomes of the Nov 16 Genesis call (Jan dominant-sentiment test, Kapildev replication; not yet briefed); decide the TA/Category dropdown structure and a new disclaimer at the Nov 18 weekly; plan the topics-on-the-fly question and 2027 release."
+  stands: "Sentiment 2.0 has been in soft launch for about three weeks. The Genesis vs GPTeal comparison is done and reviewed; it points to custom topics (sentiment defined on the fly) as the key to adoption."
+  latest: "Nov 18 Tracker note: Genesis was more repeatable, but users prefer GPTeal for custom-topic sentiment. Nov 19 check-in: Legal/compliance does not want chat turned on, and the insights process is being reworked upstream. How the Nov 16 call went has not been briefed."
+  next: "Get the Nov 16 call outcomes (Jan's dominant-sentiment test, Kapildev's replication), settle the TA dropdown and disclaimer (Nov 18 weekly), and prioritize the roadmap at the Dec 9 in-person day."
 metadata: 
   node_type: memory
   type: project
@@ -12,7 +12,12 @@ metadata:
   modified: 2026-11-11T19:24:07.869Z
 ---
 
-## Current State (Sep 4, 2026; updated Nov 17)
+## Current State (Sep 4, 2026; updated Nov 20)
+
+**Nov 19 check-in notes (tracker Meeting Notes tab; typed in the meeting):**
+- **Releases and chat:** the note reads "No more releases planned for 2027" (probably means no more this year, 2026, since Matt had heard one more release was likely; unverified, confirm). **Legal/compliance doesn't want chat functionality turned on** (this changes the Nov 9 plan to put chat back on Sentiment 2.0 first). Many stakeholder inputs for the roadmap; to be prioritized at the Dec 9 face-to-face.
+- **Insights process:** being reworked at a bigger-picture level; fixes need to happen upstream (capture, review, tagging in XFly), which ties to the TA dropdown tagging issue below. The tracker's "Filter display and disclaimer updates" row carries this note.
+- **Not briefed yet:** outcomes of the Nov 16 Genesis call.
 
 **Nov 18 (Matt Tracker note in the app):** Kapildev's 600 insights x3 Genesis runs vs Matt's 3 GPTeal runs (Justin Harris prompt); repeatability and comparison reviewed with Scientific Insights and data science. Genesis more repeatable and anecdotally accurate, but users like their GPTeal process, chiefly for custom-topic sentiment. Now broadly agreed Genesis's future depends on accepting custom topics (sentiment defined on the fly, e.g. positive on efficacy, neutral on biomarkers), which the current architecture does not do. GPTeal may also be learning in-conversation, unlike this blanket test.
 
